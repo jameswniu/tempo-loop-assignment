@@ -1,0 +1,14 @@
+node_modules/
+dist/
+*.log
+
+# Every .env variant is ignored, including scratch files like .env.tmp and
+# .env.local. Only the committed template is allowed through.
+.env*
+!.env.example
+# SQLite writes the database plus -wal, -shm and -journal siblings.
+data/*.db*
+.DS_Store
+frontend/node_modules/
+frontend/dist/
+coverage/
