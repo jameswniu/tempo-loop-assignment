@@ -65,7 +65,7 @@ citations were checked against the computed numbers.
 
 ![The generated narrative, its hypothesis with a confidence gauge, and the evidence chain where each claim names the metric it rests on](docs/images/narrative.png)
 
-A short recording of the whole flow, from an empty page to a grounded explanation: [demo.mp4](docs/images/demo.mp4)
+A short recording of the whole flow, from an empty page to a grounded explanation: [demo.mp4](https://raw.githubusercontent.com/jameswniu/tempo-loop-assignment/main/docs/images/demo.mp4)
 
 ![Recording of the page loading hono's metrics and asking the model to explain them](docs/images/demo.gif)
 
