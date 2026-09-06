@@ -1,7 +1,9 @@
 import 'dotenv/config';
+import { writeFileSync } from 'node:fs';
 import { EXPECTATIONS, loadCase, type Expectation } from './cases.js';
 import { generateNarrative, NarrativeNotGroundedError, type NarrativeResult } from '../src/llm/narrative.js';
 import { LlmError, AnthropicProvider, OpenAIProvider, type LlmProvider } from '../src/llm/provider.js';
+import { DEFAULT_MODEL, loadConfig, type Config } from '../src/config.js';
 
 /**
  * The suite to run before changing a prompt or swapping a model.
@@ -134,22 +136,72 @@ async function runCase(expectation: Expectation, provider: LlmProvider): Promise
 }
 
 function providers(argument: string | undefined): LlmProvider[] {
+  // The same parsing and defaulting the service boots with, so the eval
+  // measures the model a request would actually hit. The cases are frozen and
+  // the eval never calls GitHub, so the one variable the service insists on is
+  // filled in rather than making a reviewer mint a token to run the suite.
+  const config = loadConfig({ ...process.env, GITHUB_TOKEN: process.env.GITHUB_TOKEN || 'unused-by-the-eval' });
   const wanted = argument === undefined ? ['anthropic', 'openai'] : [argument];
   const built: LlmProvider[] = [];
 
-  if (wanted.includes('anthropic') && process.env.ANTHROPIC_API_KEY) {
-    built.push(new AnthropicProvider(process.env.ANTHROPIC_API_KEY, process.env.LLM_MODEL ?? 'claude-sonnet-5'));
-  }
-  if (wanted.includes('openai') && process.env.OPENAI_API_KEY) {
-    built.push(
-      new OpenAIProvider(
-        process.env.OPENAI_API_KEY,
-        process.env.EVAL_OPENAI_MODEL ?? 'gpt-4o',
-        process.env.OPENAI_BASE_URL,
-      ),
-    );
+  for (const provider of ['anthropic', 'openai'] as const) {
+    if (!wanted.includes(provider)) continue;
+    const key = provider === 'anthropic' ? config.ANTHROPIC_API_KEY : config.OPENAI_API_KEY;
+    if (!key) continue;
+    const model = modelFor(config, provider);
+    if (model === undefined) {
+      // A provider with a key is one the run was meant to compare. Dropping it
+      // quietly would let a partial run overwrite the report as if it were whole.
+      throw new Error('set EVAL_OPENAI_MODEL, because the compatible endpoint at OPENAI_BASE_URL has no known default model');
+    }
+    built.push(provider === 'anthropic' ? new AnthropicProvider(key, model) : new OpenAIProvider(key, model, config.OPENAI_BASE_URL));
   }
   return built;
+}
+
+/**
+ * The configured provider gets exactly the model the service resolved, which
+ * is what a request would hit. The other provider takes its own EVAL variable
+ * or the shared default, never LLM_MODEL, because that names a model for one
+ * provider only and handing it across sends a Claude name to an OpenAI
+ * endpoint, or the reverse, and a configuration failure gets written into the
+ * panel as if it were model quality.
+ */
+function modelFor(config: Config, provider: 'anthropic' | 'openai'): string | undefined {
+  const own = provider === 'anthropic' ? process.env.EVAL_ANTHROPIC_MODEL : process.env.EVAL_OPENAI_MODEL;
+  if (own) return own;
+  if (config.LLM_PROVIDER === provider) return config.LLM_MODEL;
+  // The same rule the service applies. A compatible endpoint has no default model.
+  if (provider === 'openai' && config.OPENAI_BASE_URL !== undefined) return undefined;
+  return DEFAULT_MODEL[provider];
+}
+
+interface RunSummary {
+  provider: string;
+  model: string;
+  cases: { name: string; passed: number; total: number }[];
+  passed: number;
+  total: number;
+}
+
+function summarise(provider: LlmProvider, outcomes: CaseOutcome[]): RunSummary {
+  return {
+    provider: provider.name,
+    model: provider.model,
+    cases: outcomes.map((o) => ({ name: o.case, passed: o.checks.filter((c) => c.passed).length, total: o.checks.length })),
+    passed: outcomes.reduce((s, o) => s + o.checks.filter((c) => c.passed).length, 0),
+    total: outcomes.reduce((s, o) => s + o.checks.length, 0),
+  };
+}
+
+/**
+ * Written once per invocation, after every provider has run, so the landing
+ * page panel is drawn from a report rather than typed, and so the report names
+ * every provider that ran. Writing it per provider let the last one overwrite
+ * the rest, and a provider that had just failed could vanish from the record.
+ */
+function writeSummary(runs: RunSummary[]): void {
+  writeFileSync(new URL('./last-run.json', import.meta.url), JSON.stringify({ runs }, null, 2) + '\n');
 }
 
 function report(provider: LlmProvider, outcomes: CaseOutcome[]): boolean {
@@ -185,13 +237,16 @@ if (selected.length === 0) {
 }
 
 let allPassed = true;
+const runs: RunSummary[] = [];
 for (const provider of selected) {
   // The cases share nothing, so they run together. Sequentially this is four
   // round trips of half a minute or more end to end, which is slow enough that
   // a person stops running it, and a suite nobody runs is not a suite.
   const outcomes = await Promise.all(EXPECTATIONS.map((expectation) => runCase(expectation, provider)));
   allPassed = report(provider, outcomes) && allPassed;
+  runs.push(summarise(provider, outcomes));
 }
+writeSummary(runs);
 
 if (selected.length > 1) {
   console.log('Both providers ran the same frozen cases. Compare the pass counts before swapping one in.\n');

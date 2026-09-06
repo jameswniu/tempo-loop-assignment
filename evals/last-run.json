@@ -1,0 +1,32 @@
+{
+  "runs": [
+    {
+      "provider": "openai-compatible (dashscope-intl.aliyuncs.com)",
+      "model": "qwen-plus",
+      "cases": [
+        {
+          "name": "concentrated-maintainer",
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "name": "distributed-review",
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "name": "mixed-signals",
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "name": "sparse-solo-repo",
+          "passed": 5,
+          "total": 5
+        }
+      ],
+      "passed": 18,
+      "total": 20
+    }
+  ]
+}

@@ -146,3 +146,22 @@ describe('perAttemptTimeout', () => {
     expect(perAttemptTimeout(100)).toBe(1_000);
   });
 });
+
+describe('DEFAULT_MODEL', () => {
+  it('defaults the model per provider, so a blank LLM_MODEL never hands one provider the other one\'s name', () => {
+    expect(loadConfig({ ...base, LLM_PROVIDER: 'anthropic', LLM_MODEL: '' }).LLM_MODEL).toBe('claude-sonnet-5');
+    expect(loadConfig({ ...base, LLM_PROVIDER: 'openai', LLM_MODEL: '' }).LLM_MODEL).toBe('gpt-4o');
+    expect(loadConfig({ ...base, LLM_PROVIDER: 'openai', LLM_MODEL: 'qwen-plus' }).LLM_MODEL).toBe('qwen-plus');
+  });
+
+  it('refuses a blank LLM_MODEL on a compatible endpoint, which has no known default model', () => {
+    const compatible = { ...base, LLM_PROVIDER: 'openai', OPENAI_API_KEY: 'sk-test-key', OPENAI_BASE_URL: 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1' };
+    expect(() => loadConfig({ ...compatible, LLM_MODEL: '' })).toThrow(/LLM_MODEL is required/);
+    expect(loadConfig({ ...compatible, LLM_MODEL: 'qwen-plus' }).LLM_MODEL).toBe('qwen-plus');
+  });
+
+  it('still boots for metrics only when the compatible endpoint has no key, since no provider is built', () => {
+    const config = loadConfig({ ...base, LLM_PROVIDER: 'openai', OPENAI_BASE_URL: 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1', LLM_MODEL: '' });
+    expect(narrativeKeyFor(config)).toBeUndefined();
+  });
+});

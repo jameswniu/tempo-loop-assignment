@@ -15,7 +15,9 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "eval": "tsx evals/run.ts",
     "verify": "tsx tools/verify-claims.ts",
-    "capture": "tsx tools/capture-raw.ts"
+    "capture": "tsx tools/capture-raw.ts",
+    "figures": "tsx tools/figures.ts",
+    "figures:check": "tsx tools/figures.ts --check"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.65.0",

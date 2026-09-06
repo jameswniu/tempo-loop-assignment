@@ -16,7 +16,15 @@ const blankToUndefined = (value: unknown): unknown => (value === '' ? undefined 
 const optionalText = (min = 1) =>
   z.preprocess((value) => (value === '' ? undefined : value), z.string().min(min).optional());
 
-const schema = z.object({
+/**
+ * The model each provider gets when LLM_MODEL is unset. One default for both
+ * would hand the OpenAI adapter a Claude name the moment someone switched
+ * provider without naming a model, and the eval harness resolves its models
+ * through this same table so the two cannot disagree.
+ */
+export const DEFAULT_MODEL = { anthropic: 'claude-sonnet-5', openai: 'gpt-4o' } as const;
+
+const shape = z.object({
   GITHUB_TOKEN: z.string().min(1, 'GITHUB_TOKEN is required'),
   ANTHROPIC_API_KEY: optionalText(),
   OPENAI_API_KEY: optionalText(),
@@ -27,7 +35,7 @@ const schema = z.object({
    */
   OPENAI_BASE_URL: optionalText(),
   LLM_PROVIDER: z.preprocess(blankToUndefined, z.enum(['anthropic', 'openai']).default('anthropic')),
-  LLM_MODEL: z.preprocess(blankToUndefined, z.string().default('claude-sonnet-5')),
+  LLM_MODEL: z.preprocess(blankToUndefined, z.string().optional()),
   PORT: z.preprocess(blankToUndefined, z.coerce.number().int().positive().default(8080)),
   /** Loopback by default. This service carries a GitHub token, so it should not
    *  listen on every interface unless someone deliberately asks it to. */
@@ -60,6 +68,22 @@ const schema = z.object({
     z.coerce.number().int().nonnegative().default(900),
   ),
 });
+
+const schema = shape
+  .superRefine((c, ctx) => {
+    // A compatible endpoint serves its own model names, so there is nothing
+    // sensible to fall back to and a guess would fail at the first request.
+    // Only when a key is present, though. Without one the narrative provider
+    // is never built and the metrics endpoint still has to boot.
+    if (c.LLM_PROVIDER === 'openai' && c.OPENAI_API_KEY !== undefined && c.OPENAI_BASE_URL !== undefined && c.LLM_MODEL === undefined) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['LLM_MODEL'],
+        message: 'LLM_MODEL is required when OPENAI_BASE_URL is set, because a compatible endpoint has no known default model',
+      });
+    }
+  })
+  .transform((c) => ({ ...c, LLM_MODEL: c.LLM_MODEL ?? DEFAULT_MODEL[c.LLM_PROVIDER] }));
 
 export type Config = z.infer<typeof schema>;
 

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 486" width="100%" role="img" aria-label="System map">
+<defs><linearGradient id="rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5f5f5"/><stop offset="0.5" stop-color="#d4d4d8"/><stop offset="1" stop-color="#a1a1aa"/></linearGradient></defs>
+<rect width="1200" height="486" fill="#0f1319"/>
+<rect x="0" y="0" width="6" height="486" fill="#345c8f"/>
+<text x="56" y="58" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#8b949e" letter-spacing="4">SYSTEM MAP</text>
+<text x="56" y="108" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="40" fill="#ffffff" font-weight="700">One query in, one checked answer</text>
+<text x="56" y="144" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" fill="#c9d1d9">The last layer refuses what it cannot trace to the first.</text>
+<rect x="900" y="40" width="244" height="84" fill="#161b22" stroke="url(#rim)" stroke-width="1.5"/><rect x="901.5" y="41.5" width="241" height="1" fill="#ffffff" fill-opacity="0.18"/>
+<text x="918" y="76" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#ffffff" font-weight="700">2 endpoints</text>
+<text x="918" y="108" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#8b949e">N / 50 calls</text>
+<text x="56" y="190" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#7aa2d4" letter-spacing="2">01  FETCH</text>
+<text x="56" y="220" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#8b949e">one query, filtered above</text>
+<rect x="56" y="242" width="340" height="188" fill="#161b22" stroke="url(#rim)" stroke-width="1.5"/><rect x="57.5" y="243.5" width="337" height="1" fill="#ffffff" fill-opacity="0.18"/>
+<text x="76" y="282" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#ffffff" font-weight="700">GraphQL search</text>
+<text x="76" y="316" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#c9d1d9">merged: does the window</text>
+<text x="76" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#c9d1d9">50 pull requests a page</text>
+<text x="76" y="376" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#c9d1d9">bots by __typename</text>
+<text x="76" y="412" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#8b949e">src/github/client.ts</text>
+<text x="430" y="190" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#7aa2d4" letter-spacing="2">02  COMPUTE</text>
+<text x="430" y="220" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#8b949e">pure, so a fixture pins it</text>
+<rect x="430" y="242" width="340" height="188" fill="#161b22" stroke="url(#rim)" stroke-width="1.5"/><rect x="431.5" y="243.5" width="337" height="1" fill="#ffffff" fill-opacity="0.18"/>
+<text x="450" y="282" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#ffffff" font-weight="700">computeInsights</text>
+<text x="450" y="316" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#c9d1d9">half-open [from, to)</text>
+<text x="450" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#c9d1d9">no self-review counts</text>
+<text x="450" y="376" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#c9d1d9">sums back to merged</text>
+<text x="450" y="412" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#8b949e">src/metrics/compute.ts</text>
+<text x="804" y="190" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#7aa2d4" letter-spacing="2">03  GROUND</text>
+<text x="804" y="220" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#8b949e">ids in, every one checked</text>
+<rect x="804" y="242" width="340" height="188" fill="#161b22" stroke="url(#rim)" stroke-width="1.5"/><rect x="805.5" y="243.5" width="337" height="1" fill="#ffffff" fill-opacity="0.18"/>
+<text x="824" y="282" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#ffffff" font-weight="700">generateNarrative</text>
+<text x="824" y="316" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#c9d1d9">fact table in, JSON out</text>
+<text x="824" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#c9d1d9">each citation looked up</text>
+<text x="824" y="376" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#c9d1d9">a mismatch is a 502</text>
+<text x="824" y="412" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#8b949e">src/llm/narrative.ts</text>
+</svg>

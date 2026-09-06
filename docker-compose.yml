@@ -12,7 +12,9 @@ services:
       GITHUB_TOKEN: ${GITHUB_TOKEN:?set GITHUB_TOKEN, see .env.example}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       LLM_PROVIDER: ${LLM_PROVIDER:-anthropic}
-      LLM_MODEL: ${LLM_MODEL:-claude-sonnet-5}
+      LLM_MODEL: ${LLM_MODEL:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-}
       # A container has to bind 0.0.0.0 for its published port to reach it at
       # all. The exemption comes from where that port is published, which is the
       # same value used in the mapping above.

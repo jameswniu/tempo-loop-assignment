@@ -1,0 +1,39 @@
+{
+  "model": "qwen-plus",
+  "command": "npm run eval -- openai",
+  "note": "Eight consecutive runs after the shape retry landed. The landing page median is taken over these and nothing else. Later runs are reported in NOTES.md and are not appended here, so the sample stays the one the cards describe.",
+  "runs": [
+    {
+      "passed": 16,
+      "total": 20
+    },
+    {
+      "passed": 17,
+      "total": 20
+    },
+    {
+      "passed": 16,
+      "total": 20
+    },
+    {
+      "passed": 16,
+      "total": 20
+    },
+    {
+      "passed": 17,
+      "total": 20
+    },
+    {
+      "passed": 17,
+      "total": 20
+    },
+    {
+      "passed": 17,
+      "total": 20
+    },
+    {
+      "passed": 17,
+      "total": 20
+    }
+  ]
+}
