@@ -164,7 +164,12 @@ smaller thing I can fully explain seemed better than a larger one I could not.
 A React page on the frontend, one screen with a repository field and a date range, the summary
 figures, the contributor table, and the narrative rendered with its evidence chain so each claim
 sits next to the metric id it came from. When the grounding check fails the page shows the failure
-rather than the prose.
+rather than the prose. A screenshot of it working is in the README.
+
+Two details in it are worth naming. The narrative is requested using the query that produced the
+metrics on screen rather than the live form fields, and a narrative that arrives after those metrics
+have been replaced is discarded. Either one missing puts one repository's prose beside another's
+table, which is this page's central claim broken in the most visible way possible.
 
 An evaluation suite in `evals/`. Four cases frozen from real repositories, chosen for different
 shapes: a concentrated maintainer, a distributed team, a large mixed one, and a solo repository

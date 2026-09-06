@@ -57,10 +57,18 @@ The counting rules are in `src/metrics/compute.ts`, and each has a test that pin
 
 ## Web page
 
+One screen. Enter a repository and a window, load the metrics, then ask for the explanation. Each
+claim in the evidence chain sits next to the metric id it came from, and the footer says how many
+citations were checked against the computed numbers.
+
+![The web page showing hono's review metrics and a generated narrative with its evidence chain](docs/images/web-page.png)
+
 ```bash
 npm run dev                          # API on 8080
 cd frontend && npm install && npm run dev    # page on 5173
 ```
+
+`docker compose up` serves the page and the API together on http://localhost:8080 instead.
 
 ## Everything else
 
