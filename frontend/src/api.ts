@@ -51,6 +51,7 @@ export interface Narrative {
     evidenceTotal: number;
     evidenceGrounded: number;
     unverifiedNumbersInNarrative: number[];
+    uncitedNumbersInNarrative: number[];
   };
   model: { provider: string; name: string; attempts: number };
   metrics: Insights;

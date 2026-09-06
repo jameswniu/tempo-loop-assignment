@@ -61,7 +61,13 @@ One screen. Enter a repository and a window, load the metrics, then ask for the 
 claim in the evidence chain sits next to the metric id it came from, and the footer says how many
 citations were checked against the computed numbers.
 
-![The web page showing hono's review metrics and a generated narrative with its evidence chain](docs/images/web-page.png)
+![Three health signals for hono over the summer, with the contributor table below](docs/images/signals.png)
+
+![The generated narrative, its hypothesis with a confidence gauge, and the evidence chain where each claim names the metric it rests on](docs/images/narrative.png)
+
+A short recording of the whole flow, from an empty page to a grounded explanation: [demo.mp4](docs/images/demo.mp4)
+
+![Recording of the page loading hono's metrics and asking the model to explain them](docs/images/demo.gif)
 
 ```bash
 npm run dev                          # API on 8080
