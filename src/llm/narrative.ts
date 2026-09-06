@@ -35,6 +35,7 @@ Rules you must follow:
 - Do no arithmetic. Do not turn a count into a percentage, subtract one figure from another, convert hours into days, or add anything up. Use the figures as the table gives them. Write "48 of 126" and not "38%", "153.28 hours" and not "over six days".
 - Where you have no exact figure, say it in words. "Most", "a handful", "the majority" and "far more" all need no citation.
 - Write numbers as digits rather than words, so 7 rather than seven.
+- Name the slowest-tenth wait by its id, p90, and cite reviewLatency.p90Hours when you do. Never write "90th percentile" or "ninetieth percentile" in any form. That spelling is refused.
 - Offer a root-cause hypothesis only where the numbers support one. If they do not, say the data cannot separate the likely causes and set a low confidence.
 - Confidence is your own calibration, from 0 to 1, and it is about the CAUSE you propose, not about whether the numbers are correct. The numbers are given; you are being asked how sure you are about why.
 - Anchors. Above 0.8 only when the pattern is extreme and one explanation is far better than the others. Between 0.4 and 0.7 when the pattern is clear but several causes would produce it. Below 0.4 when the sample is small, when almost nothing happened, or when you are really describing the data rather than explaining it.
@@ -125,6 +126,14 @@ function correctionFor(result: NarrativeResult): string {
       '  Say it in words instead. "Between them they submitted most of the reviews" needs no number' +
         ' and is true. Or name the individual figures the table does give you and let them stand.',
     );
+    // The one percentile the fact table carries. Its label is a claim about
+    // that metric and passes only with the metric in the evidence.
+    if (loose.includes(90)) {
+      parts.push(
+        '  If one of them is the 90 of "90th percentile", write p90 instead and cite reviewLatency.p90Hours,' +
+          ' or drop the phrase. The spelled-out percentile is refused in every form.',
+      );
+    }
   }
   const uncited = result.grounding.uncitedNumbersInNarrative;
   if (uncited.length > 0) {

@@ -243,7 +243,7 @@ export function sampleMedian(sample: Sample): { percent: number; runs: number } 
   const mid = Math.floor(rates.length / 2);
   const upper = rates[mid] as number;
   const lower = rates.length % 2 === 0 ? (rates[mid - 1] as number) : upper;
-  return { percent: Math.round((lower + upper) / 2), runs: rates.length };
+  return { percent: Math.round(((lower + upper) / 2) * 10) / 10, runs: rates.length };
 }
 
 const SAMPLE = sampleMedian(JSON.parse(readFileSync('evals/sample.json', 'utf8')) as Sample);

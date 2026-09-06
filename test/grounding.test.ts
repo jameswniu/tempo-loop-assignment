@@ -114,6 +114,34 @@ describe('scanNarrativeNumbers', () => {
     expect(scanNarrativeNumbers('Through 2026 the team kept a steady pace.', everyFact, everyFact, WINDOW).fabricated).toEqual([]);
   });
 
+  it('names the wait percentile by its id, p90, and refuses the ordinal spelling outright', () => {
+    const p90 = cited('reviewLatency.p90Hours');
+    const median = cited('reviewLatency.medianHours');
+    expect(scanNarrativeNumbers('The p90 wait was long.', p90, everyFact, WINDOW).fabricated).toEqual([]);
+    expect(scanNarrativeNumbers('Latency at p90 was long.', p90, everyFact, WINDOW).fabricated).toEqual([]);
+    expect(scanNarrativeNumbers('The p90-hour wait was long.', p90, everyFact, WINDOW).fabricated).toEqual([]);
+    expect(scanNarrativeNumbers('The p90 wait was long.', median, everyFact, WINDOW).fabricated).toEqual([90]);
+    expect(scanNarrativeNumbers('The p95-hour wait was long.', p90, everyFact, WINDOW).fabricated).toEqual([95]);
+    for (const spelling of ['90th percentile', 'ninetieth percentile', 'ninetieth-percentile', '90th-percentile']) {
+      expect(scanNarrativeNumbers(`The ${spelling} wait was long.`, p90, everyFact, WINDOW).fabricated, spelling).toEqual([90]);
+    }
+    expect(scanNarrativeNumbers('The 90th percentile of contributors waited.', p90, everyFact, WINDOW).fabricated).toEqual([90]);
+    const withSeventyFive = [...everyFact, { ...everyFact[0]!, id: 'contributor.someone.pullRequestsReviewed', value: 75 }];
+    expect(scanNarrativeNumbers('The 75th percentile wait was long.', p90, withSeventyFive, WINDOW).fabricated).toEqual([75]);
+  });
+
+  it('does not let a login that contains p90 pass for the label, or authorise it', () => {
+    const median = cited('reviewLatency.medianHours');
+    expect(scanNarrativeNumbers('p90bot did little.', median, everyFact, WINDOW).fabricated).toEqual([]);
+    const lookalike = [...median, { ...everyFact[0]!, id: 'contributor.p90bot.pullRequestsAuthored' }];
+    expect(scanNarrativeNumbers('The p90 wait was long.', lookalike, everyFact, WINDOW).fabricated).toEqual([90]);
+  });
+
+  it('still reads any other ordinal as a number', () => {
+    expect(scanNarrativeNumbers('Rank 90 reviewers by load.', everyFact, everyFact, WINDOW).fabricated).toEqual([90]);
+    expect(scanNarrativeNumbers('The 1234th busiest reviewer did little.', everyFact, everyFact, WINDOW).fabricated).toEqual([1234]);
+  });
+
   it('passes a value rounded for readability', () => {
     // reviewLatency.p90Hours is 9, medianHours is 4.
     expect(scanNarrativeNumbers('The slowest tenth waited about 9 hours.', cited('reviewLatency.p90Hours'), everyFact, WINDOW).fabricated).toEqual([]);

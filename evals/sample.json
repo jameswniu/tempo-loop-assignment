@@ -1,10 +1,10 @@
 {
   "model": "qwen-plus",
   "command": "npm run eval -- openai",
-  "note": "Eight consecutive runs after the shape retry landed. The landing page median is taken over these and nothing else. Later runs are reported in NOTES.md and are not appended here, so the sample stays the one the cards describe.",
+  "note": "Eight consecutive runs through the service's own OpenAI-compatible adapter, the deployed path, with the model this machine is configured for, with the wait percentile named by its id. Two of the eight lost two cases each to a provider timeout at the service's own limit, and a lost case is five failed checks, so every run is out of twenty. The landing page median is taken over these and nothing else. Every other sample is stated in NOTES.md and docs/REFEREE.md.",
   "runs": [
     {
-      "passed": 16,
+      "passed": 9,
       "total": 20
     },
     {
@@ -12,27 +12,27 @@
       "total": 20
     },
     {
-      "passed": 16,
+      "passed": 18,
       "total": 20
     },
     {
-      "passed": 16,
+      "passed": 19,
       "total": 20
     },
     {
-      "passed": 17,
+      "passed": 18,
       "total": 20
     },
     {
-      "passed": 17,
+      "passed": 9,
       "total": 20
     },
     {
-      "passed": 17,
+      "passed": 18,
       "total": 20
     },
     {
-      "passed": 17,
+      "passed": 18,
       "total": 20
     }
   ]

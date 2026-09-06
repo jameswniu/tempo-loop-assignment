@@ -105,6 +105,52 @@ function digitiseNumberWords(text: string): string {
 const DATE_SHAPED = /\d{4}-\d{2}-\d{2}(?:[T ][\d:.]+(?:Z|[+-]\d{2}:?\d{2})?)?/g;
 
 /**
+ * "90th percentile" is the name of the p90 metric, not a figure, and a model
+ * with the p90 wait in front of it writes exactly that. Only the percentile
+ * ranks the fact table carries are treated as labels, so "the 8th busiest
+ * reviewer" is still a number the scan sees and "95th percentile" is still
+ * an invented one. Without this every narrative naming the 90th percentile
+ * was refused for inventing the number 90.
+ */
+/**
+ * The only shapes in which a percentile label names the review wait, the one
+ * percentile the fact table carries: the label directly on a wait noun, or a
+ * wait noun at the label. "The 90th percentile of contributors waited" is
+ * neither and stays a number, an invented one.
+ */
+/** The word form of the ranks a fact table could carry, since the p90 description itself says "ninetieth". */
+const ORDINAL_WORDS: Record<string, string> = { '50': 'fiftieth', '75': 'seventy-fifth', '90': 'ninetieth', '95': 'ninety-fifth', '99': 'ninety-ninth' };
+const WORD_TO_RANK: Record<string, string> = Object.fromEntries(Object.entries(ORDINAL_WORDS).map(([rank, word]) => [word, rank]));
+
+/** A percentile spelled as an ordinal, in digits or words, hyphenated or not, with no noun attached. */
+const PERCENTILE_ORDINAL = new RegExp(`(?<![A-Za-z0-9_-])(\\d{1,2}(?:st|nd|rd|th)|${Object.values(ORDINAL_WORDS).join('|')})[\\s-]+percentile\\b`, 'gi');
+
+/**
+ * The id-shaped label on its own, "p90", which the generic scan would skip as
+ * an identifier. An id says which metric it names wherever it appears, so it
+ * needs no sentence around it. "p90bot" is a login, so the digits must end
+ * the token, while "p90-hour" is the label with a unit hung on it.
+ */
+const PERCENTILE_ID = /(?<![A-Za-z0-9_-])p(\d{1,2})(?![A-Za-z0-9_])/gi;
+
+function rankOf(label: string): string {
+  const digits = /^p?(\d{1,2})/i.exec(label);
+  if (digits) return digits[1]!;
+  return WORD_TO_RANK[label.toLowerCase()] ?? label;
+}
+
+function percentileRanks(facts: Fact[]): Set<string> {
+  const ranks = new Set<string>();
+  for (const fact of facts) {
+    // Only the latency percentile itself. A contributor whose login happens
+    // to contain p90 is not a percentile and must not authorise the label.
+    const match = /^reviewLatency\.p(\d{1,2})Hours$/.exec(fact.id);
+    if (match) ranks.add(match[1]!);
+  }
+  return ranks;
+}
+
+/**
  * Numbers, matched with any percent marker that follows them. Grouped numerals
  * are matched whole, because splitting "1,000" on the comma reads it as 1 and
  * 000, both of which match something harmless.
@@ -176,9 +222,28 @@ export function scanNarrativeNumbers(
 
   for (const instant of [window.from, window.to]) everyForm.plain.add(new Date(instant).getUTCFullYear());
 
-  const prose = digitiseNumberWords(narrative.replace(DATE_SHAPED, ' '));
   const fabricated: number[] = [];
   const uncited: number[] = [];
+
+  // A percentile label is a name only when the model cited that metric. Named
+  // without a citation it is a claim about one specific metric with no evidence
+  // behind it, and unlike a bare number it says which metric, so it fails the
+  // request the way an invented number does rather than being reported.
+  const citedRanks = percentileRanks(cited);
+  const invent = (rank: string): string => {
+    if (!fabricated.includes(Number(rank))) fabricated.push(Number(rank));
+    return ' ';
+  };
+  // The wait's percentile is named by its id, p90, and the prompt asks for
+  // exactly that. An id says which metric it names wherever it appears, so a
+  // cited one is a name and an uncited one is a claim with nothing behind it.
+  // The ordinal spelling, "90th percentile" in digits or words, is refused
+  // outright, because whether it names the wait or something else is a
+  // question of English the scanner cannot settle. Both passes remove what
+  // they recognised, so the generic scan never sees a percentile as a number.
+  let text = narrative.replace(PERCENTILE_ORDINAL, (_match: string, ordinal: string) => invent(rankOf(ordinal)));
+  text = text.replace(PERCENTILE_ID, (_match: string, rank: string) => (citedRanks.has(rank) ? ' ' : invent(rank)));
+  const prose = digitiseNumberWords(text.replace(DATE_SHAPED, ' '));
   for (const match of prose.matchAll(NUMBER_WITH_CONTEXT)) {
     const value = round12(Number(match[1]!.replace(/,/g, '')));
     if (!Number.isFinite(value)) continue;

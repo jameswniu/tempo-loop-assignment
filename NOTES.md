@@ -32,7 +32,7 @@ npm run dev
 cd frontend && npm install && npm run dev
 ```
 
-`npm test` runs 131 tests. `npm run eval` runs the model evaluation suite, described below. Node 22
+`npm test` runs 134 tests. `npm run eval` runs the model evaluation suite, described below. Node 22
 or later, which the lockfile requires.
 
 ## The metric, and why this one
@@ -142,6 +142,11 @@ made results worse. The draw that had been catching fabrications went on polish 
 suite fell from 18 of 20 to 16 and 17. This is a precision and recall trade with no free answer, and
 this paragraph is here so the choice is visible rather than buried.
 
+A metric named without a citation is the one case that does fail. "p90 wait" with no evidence item for p90 is refused and retried with the metric named in the
+correction, because unlike
+a bare number the label says exactly which metric it claims, so refusing it costs nothing a sound
+answer needs. The review argued that one a fifth time, on the label, and that time I agreed.
+
 **The prose number scan is a backstop, not a proof.** It has two tiers. A number matching nothing
 computed is a fabrication and fails the request. A number that matches a computed value the model
 did not cite is reported and does not, because refusing an otherwise sound answer over bookkeeping
@@ -177,38 +182,85 @@ where nobody reviews anything. Each case asserts that the citations ground, that
 invented, that the model reached for the metric that actually carries the story, and that its
 confidence sits in a defensible band. Cases run concurrently, so a full run is about 25 seconds.
 
-What it currently reports, against `qwen-plus` through an OpenAI-compatible endpoint: 16 or 17 of 20
-checks on each of eight consecutive runs, so a median of 85% and a spread of 80 to 85. Every run in
-that sample returned a well-formed answer for all four cases.
+What it reports now. The deployed path, the service's own OpenAI-compatible adapter with the model
+this machine is configured for, `qwen-plus`, scored 17 to 19 of 20 on the six runs of eight that
+completed and lost two cases each to provider timeouts on the other two. A lost case is five failed
+checks, so the eight runs read 9, 17, 18, 19, 18, 9, 18 and 18 of 20, a median of 90% and a spread
+of 45 to 95. That is the number on the landing page, because it is the code path a request
+actually takes, timeouts included.
 
-Those numbers are lower than the ones I nearly wrote here. An earlier five-run sample came back 18,
-18, 18, 18 and 17, and I was about to report 18 of 20 as the headline. The next three runs were 14
-of 16, 19 of 20 and 17 of 20, which made it obvious the first sample was a streak rather than a
-measurement. Two of those eight runs also contained a case that returned no usable answer at all, a
-hard failure a reviewer running the suite once had a real chance of hitting. Retrying a malformed
-response instead of throwing it straight past the retry loop brought those to zero across the next
-eight runs and tightened the spread from 75 to 95 down to 80 to 85. Of the two runs since, one had a
-case return nothing usable again, 14 of 16, and the other scored 18 of 20, so the class is rarer
-rather than gone.
+The shipped default model, `claude-sonnet-5`, is measured separately, through
+`npm run eval -- claude-code`, an eval-only provider that shells out to the Claude Code command line
+on a subscription login. Same model, same prompts, same schema, no key, and the call is lean, no
+settings, tools or servers loaded. It scored 19 or 20 of 20 on seven of eight consecutive runs and lost one case to a command line
+timeout on the eighth, 15 of 20 by the same rule, a median of 97.5% and a spread of 75 to 100. That
+is a comparison of the model and not of the deployed path. The command line is not the
+SDK adapter the service calls, it prepends system text of its own that the adapter never sends, and
+the Anthropic adapter path has not been run, because that needs a paid key and the command line does
+not. So it stays out of the badge and the hero. The provider is opt-in by name because the command
+line is not on a reviewer's machine by default, and a machine without it, or without a login, aborts
+the run before the report is touched.
 
-What still fails is consistent and is the same thing each time. The model does arithmetic it was
-told not to do, adding three contributors' review counts into a total of 180 that appears nowhere
-in the fact table, and the service refuses those answers. That is the gate working rather than a
-defect to tune away, and it is the number worth reporting: how often a given model produces an
-answer this service will accept.
+Those numbers are the second measurement, and the first one is worth keeping. The first eight Claude
+runs scored 17, 17, 19, 18, 20, 18, 18 and 19, a median of 90%, and every run failed the same check
+on the same number, 90. The model writes "90th percentile" for the p90 wait, and the scanner read
+the ordinal as a figure and refused the answer for inventing it. That is a scanner defect, not a
+model one. The wait's percentile is now named by its id. The prompt asks for p90, the fact table
+describes the metric that way, and the scanner treats a cited p90 as a name wherever it appears and
+an uncited one as a claim with nothing behind it. The ordinal spelling, 90th or ninetieth percentile
+in any form, is refused outright. Nine review rounds of grammar tried to tell "the 90th percentile
+wait" from "the 90th percentile contributor" sentence by sentence, each round finding a phrasing the
+last one got wrong in one direction or the other, and a rule that parses English was never going to
+converge. Ids in the prose was already the first item under what I would do next, so it moved up.
+One residual is known. A contributor whose login is shaped like the id with a hyphen after it,
+p90-dev, reads as the label, and an answer naming that contributor without citing p90 is refused
+rather than passed. That fails closed, and masking the logins the fact table already knows is the
+five-line fix if a repository like that ever turns up. Tests pin all
+three, and both models were re-measured on the fixed scanner, then once more after the label rule
+changed to a refusal. Every number in this section is from that last measurement.
 
-Reaching that number took eight measured runs and found three real defects, none of which any
-amount of stub testing would have surfaced. The prompt contained a contradiction, telling the model
-to cite every number it used and also to keep the evidence array to three to six entries. Instructions
-in a system message rather than a user message made the model return an empty evidence array on
-every attempt while the narrative came back fine, so the failure was silent. And telling the model
-to cite everything led it to write metric ids inline in the prose instead of filling the array,
-because nothing had told it the two fields have different jobs.
+Three samples were taken after the label rule changed to a refusal, and all are stated. The first
+fired in the minute after the machine woke from sleep and lost cases to provider timeouts in two of
+eight qwen runs, three cases in all, 8 of 12, 17, 16, 17, 13 of 16, 17, 17 and 16 as the harness
+counted them at the time, one failed check for a lost case, with Claude at 19, 14 of 16, 19, 18, 20,
+20, 19 and 19. The second, with the machine awake and idle, lost cases in four of eight qwen runs,
+8, 18, 17, 14, 18, 17, 14 and 13 of 20 by the current count, with Claude at 19, 16, 20, 13, 19, 20,
+19 and 18. The third, after the wait's percentile moved to its id, is the one above. The harness
+now counts five failed checks for a lost case, because one check of a smaller total let a run with a
+lost case outscore a run that answered every case badly, which put provider failures on the wrong
+side of the headline. The service's own limit is what the timeouts hit, 30 seconds an attempt and 75
+in all.
+
+Before either of those, `qwen-plus` had produced the eight-run sample the landing page carried until
+now, 16 or 17 of 20 on every run, a median of 85%. An earlier five-run sample had come back 18, 18,
+18, 18 and 17, and I nearly reported 18 of 20 as the headline before the next three runs, 14 of 16,
+19 of 20 and 17 of 20, made it obvious the first sample was a streak. Two of those runs also
+contained a case that returned nothing usable at all, a hard failure a reviewer running the suite
+once had a real chance of hitting. Retrying a malformed response instead of throwing it past the
+retry loop removed those. What remains on that provider is a timeout, one in the eight runs above,
+recorded as a failed case rather than a crashed suite.
+
+What still fails on qwen is one thing. It does arithmetic it was told not to do, adding contributors'
+counts into totals like 138, 148 and 180 that appear nowhere in the fact table, and the service
+refuses those answers. The missing latency citation on the distributed case went away once the
+prompt named p90, and two runs of eight lost two cases each to the provider's own timeout before any
+of that. That is the gate working rather than a defect to tune away, and it is the number
+worth reporting, how often a given model produces an answer this service will accept. Claude's misses across eight runs were two confidences below their band, one figure the table does
+not carry, a 10, and one command line timeout.
+
+Reaching those numbers took measured runs and found four real defects, none of which any amount of
+stub testing would have surfaced. The prompt contained a contradiction, telling the model to cite
+every number it used and also to keep the evidence array to three to six entries. Instructions in a
+system message rather than a user message made one provider return an empty evidence array on every
+attempt while the narrative came back fine, so the failure was silent. Telling the model to cite
+everything led it to write metric ids inline in the prose instead of filling the array, because
+nothing had told it the two fields have different jobs. And the ordinal above, which one model never
+wrote and the other wrote every time.
 
 Every figure on the landing page is generated by `tools/figures.ts` from the repository's own
 numbers. The eval panel is drawn from `evals/last-run.json`, which the suite writes on every run,
-and the 85% on the hero and the badge is the median over `evals/sample.json`, the eight runs named
-above, which the same check holds the README's own text to. Each string in a figure passes a fit
+and the 90% on the hero and the badge is the median over `evals/sample.json`, the eight qwen runs
+named above, which the same check holds the README's own text to. Each string in a figure passes a fit
 guard at generation time that names the offending text rather than letting it overflow a card, and
 `npm run figures:check` fails CI if a committed figure drifts from its generator, or if the README
 or these notes stop carrying the three hero numbers as measured: the 96% is recomputed from the
@@ -235,8 +287,8 @@ window today, so two overlapping windows share nothing.
 Add trend lines. Every number here is a single window, and the interesting version of the question
 is whether concentration is getting better or worse.
 
-Tie prose claims to metric ids rather than to bare values, which is the honest fix for the scan
-limit above.
+Tie every prose claim to a metric id, the way the wait's percentile already is, which is the honest
+fix for the scan limit above.
 
 ## What I used AI for
 

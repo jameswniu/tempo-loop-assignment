@@ -6,7 +6,7 @@
       "cases": [
         {
           "name": "concentrated-maintainer",
-          "passed": 5,
+          "passed": 4,
           "total": 5
         },
         {
@@ -25,7 +25,35 @@
           "total": 5
         }
       ],
-      "passed": 18,
+      "passed": 17,
+      "total": 20
+    },
+    {
+      "provider": "claude-code",
+      "model": "claude-sonnet-5",
+      "cases": [
+        {
+          "name": "concentrated-maintainer",
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "name": "distributed-review",
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "name": "mixed-signals",
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "name": "sparse-solo-repo",
+          "passed": 5,
+          "total": 5
+        }
+      ],
+      "passed": 20,
       "total": 20
     }
   ]

@@ -9,10 +9,10 @@
 <text x="78" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#ffffff" font-weight="700">96%</text>
 <text x="78" y="314" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#8b949e">one reviewer, hono</text>
 <rect x="430" y="214" width="340" height="122" fill="#161b22" stroke="url(#rim)" stroke-width="1.5"/><rect x="431.5" y="215.5" width="337" height="1" fill="#ffffff" fill-opacity="0.18"/>
-<text x="452" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#ffffff" font-weight="700">131</text>
+<text x="452" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#ffffff" font-weight="700">134</text>
 <text x="452" y="314" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#8b949e">tests, rules pinned</text>
 <rect x="804" y="214" width="340" height="122" fill="#161b22" stroke="url(#rim)" stroke-width="1.5"/><rect x="805.5" y="215.5" width="337" height="1" fill="#ffffff" fill-opacity="0.18"/>
-<text x="826" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#ffffff" font-weight="700">85%</text>
+<text x="826" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#ffffff" font-weight="700">90%</text>
 <text x="826" y="314" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#8b949e">eval pass, median of 8</text>
 <rect x="56" y="346" width="104" height="38" rx="19" fill="#161b22" stroke="#a1a1aa" stroke-width="1"/>
 <text x="108" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#c9d1d9" text-anchor="middle">fetch</text>

@@ -4,6 +4,7 @@ import { EXPECTATIONS, loadCase, type Expectation } from './cases.js';
 import { generateNarrative, NarrativeNotGroundedError, type NarrativeResult } from '../src/llm/narrative.js';
 import { LlmError, AnthropicProvider, OpenAIProvider, type LlmProvider } from '../src/llm/provider.js';
 import { DEFAULT_MODEL, loadConfig, type Config } from '../src/config.js';
+import { ClaudeCodeProvider, ProviderUnavailableError } from './claude-code.js';
 
 /**
  * The suite to run before changing a prompt or swapping a model.
@@ -14,8 +15,10 @@ import { DEFAULT_MODEL, loadConfig, type Config } from '../src/config.js';
  * whether the prose reads nicely, because that is not a thing a regression
  * suite can hold steady.
  *
- *   npm run eval                 both providers when both keys are present
- *   npm run eval -- anthropic    one of them
+ *   npm run eval                       both API providers, when both keys are present
+ *   npm run eval -- anthropic          one of them
+ *   npm run eval -- claude-code        the shipped default through a Claude Code login, no key
+ *   npm run eval -- openai,claude-code two at once, drawn as two blocks in the panel
  */
 
 interface CheckResult {
@@ -23,6 +26,15 @@ interface CheckResult {
   passed: boolean;
   detail: string;
 }
+
+/** The five checks every answered case is scored on. */
+const CHECK_NAMES = [
+  'evidence grounded',
+  'no invented numbers',
+  'cites the metric that carries the story',
+  'confidence is defensible',
+  'evidence chain is not empty',
+] as const;
 
 interface CaseOutcome {
   case: string;
@@ -93,6 +105,8 @@ async function runCase(expectation: Expectation, provider: LlmProvider): Promise
       uncited: result.grounding.uncitedNumbersInNarrative,
     };
   } catch (error) {
+    // Not a model result. It propagates past the loop so nothing is written.
+    if (error instanceof ProviderUnavailableError) throw error;
     if (error instanceof NarrativeNotGroundedError) {
       // The service refused this answer. That is the endpoint behaving
       // correctly and the model failing, so it is recorded as a failure here.
@@ -109,27 +123,13 @@ async function runCase(expectation: Expectation, provider: LlmProvider): Promise
       // A provider timeout or a dropped connection says nothing about the
       // model's answer, but a suite that dies on one reports nothing about the
       // cases it had not reached yet. Recorded, and the run carries on.
-      return {
-        case: expectation.name,
-        checks: [check('reached the provider', false, error instanceof Error ? error.message : String(error))],
-        attempts: 1,
-        outputTokens: 0,
-        failed: true,
-        uncited: [],
-      };
+      return lostCase(expectation.name, 'the provider never answered', error instanceof Error ? error.message : String(error));
     }
     if (error instanceof LlmError) {
       // The model returned something that is not the agreed shape at all. A
       // suite that dies here would report nothing about the other cases, so it
       // is recorded and the run carries on.
-      return {
-        case: expectation.name,
-        checks: [check('model returned the agreed shape', false, error.message)],
-        attempts: 1,
-        outputTokens: 0,
-        failed: true,
-        uncited: [],
-      };
+      return lostCase(expectation.name, 'the model returned something other than the agreed shape', error.message);
     }
     throw error;
   }
@@ -141,13 +141,23 @@ function providers(argument: string | undefined): LlmProvider[] {
   // the eval never calls GitHub, so the one variable the service insists on is
   // filled in rather than making a reviewer mint a token to run the suite.
   const config = loadConfig({ ...process.env, GITHUB_TOKEN: process.env.GITHUB_TOKEN || 'unused-by-the-eval' });
-  const wanted = argument === undefined ? ['anthropic', 'openai'] : [argument];
+  const wanted = argument === undefined ? ['anthropic', 'openai'] : argument.split(',');
+  const unknown = wanted.filter((w) => !['anthropic', 'openai', 'claude-code'].includes(w));
+  if (unknown.length > 0) throw new Error(`unknown provider ${unknown.join(', ')}. Pick from anthropic, openai, claude-code`);
   const built: LlmProvider[] = [];
 
   for (const provider of ['anthropic', 'openai'] as const) {
     if (!wanted.includes(provider)) continue;
     const key = provider === 'anthropic' ? config.ANTHROPIC_API_KEY : config.OPENAI_API_KEY;
-    if (!key) continue;
+    if (!key) {
+      // Left out of the list, a provider with no key is simply not run. Named
+      // in the list, it was asked for, and a run that quietly compares fewer
+      // providers than the command said would overwrite the report as if whole.
+      if (argument !== undefined) {
+        throw new Error(`${provider} was named and has no key. Set ${provider === 'anthropic' ? 'ANTHROPIC_API_KEY' : 'OPENAI_API_KEY'} or leave it out of the list`);
+      }
+      continue;
+    }
     const model = modelFor(config, provider);
     if (model === undefined) {
       // A provider with a key is one the run was meant to compare. Dropping it
@@ -155,6 +165,11 @@ function providers(argument: string | undefined): LlmProvider[] {
       throw new Error('set EVAL_OPENAI_MODEL, because the compatible endpoint at OPENAI_BASE_URL has no known default model');
     }
     built.push(provider === 'anthropic' ? new AnthropicProvider(key, model) : new OpenAIProvider(key, model, config.OPENAI_BASE_URL));
+  }
+  if (wanted.includes('claude-code')) {
+    // Opt-in only. It needs a Claude Code login on this machine and nothing else.
+    ClaudeCodeProvider.preflight();
+    built.push(new ClaudeCodeProvider(process.env.EVAL_ANTHROPIC_MODEL || DEFAULT_MODEL.anthropic));
   }
   return built;
 }
@@ -204,6 +219,24 @@ function writeSummary(runs: RunSummary[]): void {
   writeFileSync(new URL('./last-run.json', import.meta.url), JSON.stringify({ runs }, null, 2) + '\n');
 }
 
+/**
+ * A case that produced nothing to check, because the provider never answered
+ * or answered in the wrong shape, fails all five of its checks. Counting it as
+ * one check of a smaller total made a run with a lost case score higher than
+ * a run that answered every case badly, which put provider failures on the
+ * wrong side of the headline.
+ */
+function lostCase(name: string, reason: string, detail: string): CaseOutcome {
+  return {
+    case: name,
+    checks: CHECK_NAMES.map((c, i) => check(c, false, i === 0 ? `${reason}. ${detail}` : reason)),
+    attempts: 1,
+    outputTokens: 0,
+    failed: true,
+    uncited: [],
+  };
+}
+
 function report(provider: LlmProvider, outcomes: CaseOutcome[]): boolean {
   const total = outcomes.reduce((sum, o) => sum + o.checks.length, 0);
   const passed = outcomes.reduce((sum, o) => sum + o.checks.filter((c) => c.passed).length, 0);
@@ -227,7 +260,21 @@ function report(provider: LlmProvider, outcomes: CaseOutcome[]): boolean {
   return outcomes.every((o) => !o.failed);
 }
 
-const selected = providers(process.argv[2]);
+/** Nothing is written on this path. A report drawn from a missing command line is not a model result. */
+function exitIfUnavailable(error: unknown): void {
+  if (error instanceof ProviderUnavailableError) {
+    console.error(error.message);
+    process.exit(2);
+  }
+}
+
+let selected: LlmProvider[] = [];
+try {
+  selected = providers(process.argv[2]);
+} catch (error) {
+  exitIfUnavailable(error);
+  throw error;
+}
 if (selected.length === 0) {
   console.error(
     'No provider available. Set ANTHROPIC_API_KEY (or OPENAI_API_KEY) in .env.\n' +
@@ -238,13 +285,18 @@ if (selected.length === 0) {
 
 let allPassed = true;
 const runs: RunSummary[] = [];
-for (const provider of selected) {
-  // The cases share nothing, so they run together. Sequentially this is four
-  // round trips of half a minute or more end to end, which is slow enough that
-  // a person stops running it, and a suite nobody runs is not a suite.
-  const outcomes = await Promise.all(EXPECTATIONS.map((expectation) => runCase(expectation, provider)));
-  allPassed = report(provider, outcomes) && allPassed;
-  runs.push(summarise(provider, outcomes));
+try {
+  for (const provider of selected) {
+    // The cases share nothing, so they run together. Sequentially this is four
+    // round trips of half a minute or more end to end, which is slow enough that
+    // a person stops running it, and a suite nobody runs is not a suite.
+    const outcomes = await Promise.all(EXPECTATIONS.map((expectation) => runCase(expectation, provider)));
+    allPassed = report(provider, outcomes) && allPassed;
+    runs.push(summarise(provider, outcomes));
+  }
+} catch (error) {
+  exitIfUnavailable(error);
+  throw error;
 }
 writeSummary(runs);
 

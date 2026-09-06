@@ -29,7 +29,7 @@ export function buildFactSet(insights: Insights): Fact[] {
   if (insights.reviewLatency !== null) {
     facts.push(
       fact('reviewLatency.medianHours', insights.reviewLatency.medianHours, 'hours', 'median hours from a pull request opening to its first review by someone else'),
-      fact('reviewLatency.p90Hours', insights.reviewLatency.p90Hours, 'hours', 'ninetieth percentile of that same wait'),
+      fact('reviewLatency.p90Hours', insights.reviewLatency.p90Hours, 'hours', 'p90 of that same wait, the slowest tenth'),
       fact('reviewLatency.sampleSize', insights.reviewLatency.sampleSize, 'count', 'pull requests the latency figures are computed over'),
     );
   }
