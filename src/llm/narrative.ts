@@ -47,7 +47,14 @@ export interface NarrativeResult {
   hypothesis: { statement: string; confidence: number; reasoning: string };
   evidence: GroundedEvidence[];
   grounding: GroundingReport;
-  model: { provider: string; name: string; inputTokens: number; outputTokens: number };
+  model: {
+    provider: string;
+    name: string;
+    inputTokens: number;
+    outputTokens: number;
+    /** How many draws it took to pass the grounding checks. */
+    attempts: number;
+  };
 }
 
 export function buildPrompt(insights: Insights, options: NarrativeOptions): string {
@@ -106,6 +113,7 @@ export async function generateNarrative(
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
     const result = await attemptNarrative(insights, provider, options, index);
+    result.model.attempts = attempt;
     if (result.grounding.score === 1 && result.grounding.unverifiedNumbersInNarrative.length === 0) {
       return result;
     }
@@ -167,6 +175,7 @@ async function attemptNarrative(
       name: provider.model,
       inputTokens: completion.inputTokens,
       outputTokens: completion.outputTokens,
+      attempts: 1,
     },
   };
 }

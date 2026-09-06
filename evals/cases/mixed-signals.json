@@ -1,0 +1,457 @@
+{
+  "repository": "vitest-dev/vitest",
+  "window": {
+    "from": "2026-06-01T00:00:00.000Z",
+    "to": "2026-09-01T00:00:00.000Z"
+  },
+  "sampleComplete": true,
+  "totals": {
+    "pullRequestsMerged": 311,
+    "pullRequestsAuthoredByBots": 44,
+    "pullRequestsReviewed": 230,
+    "pullRequestsUnreviewed": 37,
+    "reviewsSubmitted": 505,
+    "contributors": 61,
+    "botAccountsExcluded": 6
+  },
+  "contributors": [
+    {
+      "login": "sheremet-va",
+      "pullRequestsAuthored": 105,
+      "pullRequestsReviewed": 140,
+      "reviewsSubmitted": 214,
+      "reviewComments": 90
+    },
+    {
+      "login": "hi-ogawa",
+      "pullRequestsAuthored": 70,
+      "pullRequestsReviewed": 71,
+      "reviewsSubmitted": 169,
+      "reviewComments": 112
+    },
+    {
+      "login": "AriPerkkio",
+      "pullRequestsAuthored": 14,
+      "pullRequestsReviewed": 43,
+      "reviewsSubmitted": 97,
+      "reviewComments": 84
+    },
+    {
+      "login": "macarie",
+      "pullRequestsAuthored": 5,
+      "pullRequestsReviewed": 14,
+      "reviewsSubmitted": 21,
+      "reviewComments": 8
+    },
+    {
+      "login": "lazerg",
+      "pullRequestsAuthored": 5,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "BonaventureCJ",
+      "pullRequestsAuthored": 4,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "dvmhmdsd",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 1,
+      "reviewsSubmitted": 2,
+      "reviewComments": 4
+    },
+    {
+      "login": "MarshallOfSound",
+      "pullRequestsAuthored": 3,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "iiio2",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "jszumski",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "koutaro-masaki",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "mdong1909",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "scttcper",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "soconnor-seeq",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "SveLil",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "toxik",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "aaravjaichand",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "AbhiPra24",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "arjun2075",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "bartlomieju",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "Brooooooklyn",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "ChihebBENCHEIKH1",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "davidxharris",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "DucMinhNe",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "fabon-f",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "filmaj",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "Gaurav1112",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "ghostdevv",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "GuillaumeLagrange",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "heyJonBray",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "hirehamir",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "hitenkalda",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "innoprej",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "jaxalo",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "jgamaraalv",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "k-yle",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "kade-robertson",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "lebovvskii",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "liuluochen6-af",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "liyimil",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "malobre",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "MatteoGabriele",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "matthewbordas",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "milas",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "NoiseFan",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "Nokel81",
+      "pullRequestsAuthored": 0,
+      "pullRequestsReviewed": 1,
+      "reviewsSubmitted": 1,
+      "reviewComments": 1
+    },
+    {
+      "login": "Pduhard",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "potatomatoooo",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "ryandiginomad",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "samchungy",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "shoaibyazdani",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "simshanith",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "smeng9",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "spokodev",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "todor-a",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "userquin",
+      "pullRequestsAuthored": 0,
+      "pullRequestsReviewed": 1,
+      "reviewsSubmitted": 1,
+      "reviewComments": 1
+    },
+    {
+      "login": "vladlenskiy",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "wojtekmaj",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "wouterkroes",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "xevrion",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "zakcutner",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    }
+  ],
+  "reviewLatency": {
+    "medianHours": 12.53,
+    "p90Hours": 247.44,
+    "sampleSize": 230
+  },
+  "reviewConcentration": {
+    "topReviewer": "sheremet-va",
+    "pullRequestsReviewed": 140,
+    "denominator": 230,
+    "share": 0.6087
+  }
+}

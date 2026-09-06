@@ -1,0 +1,2403 @@
+{
+  "window": {
+    "from": "2026-06-01T00:00:00Z",
+    "to": "2026-09-01T00:00:00Z"
+  },
+  "pullRequests": [
+    {
+      "number": 5300,
+      "title": "fix(types): allow symbol keys in Context<any> get and set fallbacks",
+      "author": {
+        "login": "lx3133584",
+        "isBot": false
+      },
+      "createdAt": "2026-08-25T21:50:43Z",
+      "mergedAt": "2026-08-28T06:38:16Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-28T06:37:41Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5291,
+      "title": "fix(client): normalize root WebSocket URLs",
+      "author": {
+        "login": "Ersaoktaviannn",
+        "isBot": false
+      },
+      "createdAt": "2026-08-24T04:22:33Z",
+      "mergedAt": "2026-08-27T00:20:10Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-27T00:19:53Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5297,
+      "title": "fix(client): keep a param value of \"index\" in $url() and $path()",
+      "author": {
+        "login": "MahathirMohammadShuvo",
+        "isBot": false
+      },
+      "createdAt": "2026-08-25T11:24:20Z",
+      "mergedAt": "2026-08-27T00:17:53Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-27T00:17:45Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5274,
+      "title": "fix(utils/stream): do not let abort listeners crash abort()",
+      "author": {
+        "login": "tushardev-365",
+        "isBot": false
+      },
+      "createdAt": "2026-08-21T11:28:20Z",
+      "mergedAt": "2026-08-23T07:34:05Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-23T07:33:46Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5246,
+      "title": "fix(cookie): allow parsing signed cookies with empty string values",
+      "author": {
+        "login": "spellsaif",
+        "isBot": false
+      },
+      "createdAt": "2026-08-16T08:41:58Z",
+      "mergedAt": "2026-08-23T07:24:02Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-23T07:23:46Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5288,
+      "title": "fix(request): serialize cached JSON body in cloneRawRequest",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-08-23T07:14:07Z",
+      "mergedAt": "2026-08-23T07:16:58Z",
+      "reviews": []
+    },
+    {
+      "number": 5282,
+      "title": "fix(request): drop stale content length for cloned FormData",
+      "author": {
+        "login": "Ersaoktaviannn",
+        "isBot": false
+      },
+      "createdAt": "2026-08-22T16:30:49Z",
+      "mergedAt": "2026-08-23T06:57:47Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-23T06:57:35Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5283,
+      "title": "fix(client): omit empty query delimiter",
+      "author": {
+        "login": "Ersaoktaviannn",
+        "isBot": false
+      },
+      "createdAt": "2026-08-22T16:54:09Z",
+      "mergedAt": "2026-08-23T05:49:26Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-23T05:49:01Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5255,
+      "title": "fix(accepts): support wildcard media types and specificity ordering in defaultMatch",
+      "author": {
+        "login": "adityajha77",
+        "isBot": false
+      },
+      "createdAt": "2026-08-17T17:29:45Z",
+      "mergedAt": "2026-08-22T05:55:00Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-22T05:54:50Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5256,
+      "title": "fix(client): support custom buildSearchParams and filter undefined query in $ws()",
+      "author": {
+        "login": "adityajha77",
+        "isBot": false
+      },
+      "createdAt": "2026-08-17T17:31:32Z",
+      "mergedAt": "2026-08-22T05:39:03Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-20T04:38:54Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "adityajha77",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-20T10:28:35Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-22T05:38:44Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5280,
+      "title": "fix(client): skip an undefined entry inside a form array",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-08-22T05:30:36Z",
+      "mergedAt": "2026-08-22T05:32:47Z",
+      "reviews": []
+    },
+    {
+      "number": 5272,
+      "title": "fix(client): skip an undefined entry inside a query array",
+      "author": {
+        "login": "MahathirMohammadShuvo",
+        "isBot": false
+      },
+      "createdAt": "2026-08-20T16:37:56Z",
+      "mergedAt": "2026-08-22T05:26:13Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-22T05:26:07Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5244,
+      "title": "fix(client): skip undefined header and cookie values",
+      "author": {
+        "login": "Ersaoktaviannn",
+        "isBot": false
+      },
+      "createdAt": "2026-08-15T19:56:58Z",
+      "mergedAt": "2026-08-22T05:13:48Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-22T05:13:37Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5222,
+      "title": "fix(etag): match If-None-Match tags with optional whitespace before the comma",
+      "author": {
+        "login": "contactjawad",
+        "isBot": false
+      },
+      "createdAt": "2026-08-12T15:34:41Z",
+      "mergedAt": "2026-08-22T04:41:16Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "usualoma",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-15T04:36:16Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "contactjawad",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-21T10:35:43Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-22T04:40:53Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5267,
+      "title": "perf(router): share null object creation",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-08-18T23:30:25Z",
+      "mergedAt": "2026-08-20T04:34:28Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-20T04:34:03Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5266,
+      "title": "fix(reg-exp-router): associate wildcard middleware with matching routes",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-08-18T23:09:10Z",
+      "mergedAt": "2026-08-19T11:34:41Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-19T11:32:12Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5264,
+      "title": "fix(jsx/dom): execute previous ref cleanup when ref prop changes on re-render",
+      "author": {
+        "login": "adityajha77",
+        "isBot": false
+      },
+      "createdAt": "2026-08-18T21:00:57Z",
+      "mergedAt": "2026-08-19T11:06:49Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-19T11:06:18Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5268,
+      "title": "fix(request): handle params on unmatched requests",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-08-19T00:21:44Z",
+      "mergedAt": "2026-08-19T10:58:41Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-19T10:58:09Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5226,
+      "title": "feat(pretty-json): support structured JSON content-types (+json)",
+      "author": {
+        "login": "adityajha77",
+        "isBot": false
+      },
+      "createdAt": "2026-08-13T21:26:58Z",
+      "mergedAt": "2026-08-18T10:22:57Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-18T10:22:45Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5247,
+      "title": "fix(utils/ipaddr): avoid truncation on embedded IPv4 addresses in expand IPv6",
+      "author": {
+        "login": "spellsaif",
+        "isBot": false
+      },
+      "createdAt": "2026-08-16T11:05:20Z",
+      "mergedAt": "2026-08-18T10:00:55Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-18T10:00:41Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5250,
+      "title": "fix(csrf): exempt OPTIONS request from CSRF validation",
+      "author": {
+        "login": "Jr-14",
+        "isBot": false
+      },
+      "createdAt": "2026-08-16T23:07:15Z",
+      "mergedAt": "2026-08-17T08:46:00Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-17T08:45:38Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5252,
+      "title": "fix(pattern-router/linear-router): prevent prefix overmatch on wildcard routes",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-08-17T00:56:48Z",
+      "mergedAt": "2026-08-17T03:01:21Z",
+      "reviews": []
+    },
+    {
+      "number": 5236,
+      "title": "fix(trie-router): match suffix wildcard routes",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-08-15T00:12:24Z",
+      "mergedAt": "2026-08-17T00:37:48Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-17T00:37:07Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5237,
+      "title": "refactor: Reduce TrieRouter bundle size without a meaningful performance regression",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-08-15T00:18:17Z",
+      "mergedAt": "2026-08-16T23:39:14Z",
+      "reviews": []
+    },
+    {
+      "number": 5238,
+      "title": "refactor(trie-router): trade registration speed for bundle size",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-08-15T00:23:32Z",
+      "mergedAt": "2026-08-16T23:39:02Z",
+      "reviews": []
+    },
+    {
+      "number": 5248,
+      "title": "docs(context): add custom headers append option example to Context JSDoc",
+      "author": {
+        "login": "yigiterturk-dev",
+        "isBot": false
+      },
+      "createdAt": "2026-08-16T22:14:51Z",
+      "mergedAt": "2026-08-16T23:32:23Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-16T23:31:49Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5235,
+      "title": "fix(cors): append Origin to Vary header on OPTIONS preflight",
+      "author": {
+        "login": "spellsaif",
+        "isBot": false
+      },
+      "createdAt": "2026-08-15T00:11:34Z",
+      "mergedAt": "2026-08-16T13:41:30Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-16T13:41:16Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5234,
+      "title": "fix(etag): avoid skipping headers when filtering 304 response headers",
+      "author": {
+        "login": "spellsaif",
+        "isBot": false
+      },
+      "createdAt": "2026-08-14T20:05:53Z",
+      "mergedAt": "2026-08-16T13:35:02Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-16T13:33:37Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5239,
+      "title": "fix(etag): copy pending stream bytes",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-08-15T02:23:18Z",
+      "mergedAt": "2026-08-16T13:20:29Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-16T13:20:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5227,
+      "title": "fix(client): prevent URL corruption when replaceUrlParam contains $ replacement tokens",
+      "author": {
+        "login": "adityajha77",
+        "isBot": false
+      },
+      "createdAt": "2026-08-13T22:14:35Z",
+      "mergedAt": "2026-08-16T13:13:52Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-16T13:13:36Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5214,
+      "title": "feat(secure-headers): add missing W3C Permissions-Policy directives",
+      "author": {
+        "login": "spellsaif",
+        "isBot": false
+      },
+      "createdAt": "2026-08-11T07:59:07Z",
+      "mergedAt": "2026-08-13T11:49:37Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T11:49:28Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5215,
+      "title": "fix(client): send falsy JSON bodies",
+      "author": {
+        "login": "Ersaoktaviannn",
+        "isBot": false
+      },
+      "createdAt": "2026-08-11T15:20:12Z",
+      "mergedAt": "2026-08-13T02:11:07Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T02:10:50Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5210,
+      "title": "  perf(cors): pre-join static array header options during initialization",
+      "author": {
+        "login": "spellsaif",
+        "isBot": false
+      },
+      "createdAt": "2026-08-10T12:08:35Z",
+      "mergedAt": "2026-08-13T01:11:16Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T01:09:58Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5209,
+      "title": "fix(url): strip trailing question mark correctly for optional params with regex quantifiers",
+      "author": {
+        "login": "spellsaif",
+        "isBot": false
+      },
+      "createdAt": "2026-08-10T12:05:45Z",
+      "mergedAt": "2026-08-13T00:55:57Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T00:55:21Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5196,
+      "title": "fix(etag): skip unsafe methods or error responses on non-* case",
+      "author": {
+        "login": "na-trium-144",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T14:34:45Z",
+      "mergedAt": "2026-08-07T06:33:21Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T06:32:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ababove20-jpg",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T12:04:54Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ababove20-jpg",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-10T04:52:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ababove20-jpg",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-10T04:58:43Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5205,
+      "title": "fix(etag): stabilize digest across stream chunks",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-08-09T08:05:37Z",
+      "mergedAt": "2026-08-10T01:20:30Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "ababove20-jpg",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T12:03:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-10T01:19:14Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ababove20-jpg",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-10T04:50:03Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5199,
+      "title": " fix(etag): resolve incorrect incremental hashing for chunked responses",
+      "author": {
+        "login": "spellsaif",
+        "isBot": false
+      },
+      "createdAt": "2026-08-07T07:27:25Z",
+      "mergedAt": "2026-08-09T07:35:35Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T07:35:23Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5197,
+      "title": " fix(secure-headers): output standard empty parentheses () instead of none for disabled Permissions-Policy directives",
+      "author": {
+        "login": "spellsaif",
+        "isBot": false
+      },
+      "createdAt": "2026-08-07T07:21:26Z",
+      "mergedAt": "2026-08-09T07:01:56Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T07:01:38Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5202,
+      "title": "fix(client): serialize multiple cookies correctly",
+      "author": {
+        "login": "Ersaoktaviannn",
+        "isBot": false
+      },
+      "createdAt": "2026-08-08T09:28:42Z",
+      "mergedAt": "2026-08-09T07:53:34Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T07:53:06Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5204,
+      "title": "fix(jsx): render async children of document metadata tags instead of [object Promise]",
+      "author": {
+        "login": "pacocartones",
+        "isBot": false
+      },
+      "createdAt": "2026-08-09T03:59:50Z",
+      "mergedAt": "2026-08-09T07:33:32Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T07:33:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 4988,
+      "title": "fix(utils/stream): re-acquire writer lock when pipe() throws",
+      "author": {
+        "login": "Sriharsha-dev369",
+        "isBot": false
+      },
+      "createdAt": "2026-06-01T18:01:15Z",
+      "mergedAt": "2026-08-06T02:11:15Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-06T02:10:44Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5189,
+      "title": "fix(trie-router): count every slash a pattern consumes",
+      "author": {
+        "login": "Jaybhade",
+        "isBot": false
+      },
+      "createdAt": "2026-08-04T15:28:40Z",
+      "mergedAt": "2026-08-05T23:56:49Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-05T23:56:32Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5154,
+      "title": "v4.13",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-22T09:23:36Z",
+      "mergedAt": "2026-08-03T21:39:42Z",
+      "reviews": []
+    },
+    {
+      "number": 5137,
+      "title": "fix(compress): set Vary: Accept-Encoding on negotiated responses",
+      "author": {
+        "login": "arhxam",
+        "isBot": false
+      },
+      "createdAt": "2026-07-19T01:44:17Z",
+      "mergedAt": "2026-08-03T21:23:59Z",
+      "reviews": []
+    },
+    {
+      "number": 5171,
+      "title": "feat(reg-exp-router): throw UnsupportedPathError during route registration",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-07-30T12:46:53Z",
+      "mergedAt": "2026-08-03T21:18:54Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T02:01:26Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5179,
+      "title": "fix(jsx): allow a function component to return an array",
+      "author": {
+        "login": "natsuki-engr",
+        "isBot": false
+      },
+      "createdAt": "2026-07-31T04:50:50Z",
+      "mergedAt": "2026-08-03T21:16:41Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T01:26:20Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5153,
+      "title": "feat(utils/headers): sync HTTP field types with the IANA registry",
+      "author": {
+        "login": "akahoshi1421",
+        "isBot": false
+      },
+      "createdAt": "2026-07-22T06:04:24Z",
+      "mergedAt": "2026-08-03T21:15:32Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-22T08:49:10Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5141,
+      "title": "feat(jwt,jwk): add a configurable WWW-Authenticate realm",
+      "author": {
+        "login": "arhxam",
+        "isBot": false
+      },
+      "createdAt": "2026-07-20T01:24:23Z",
+      "mergedAt": "2026-08-03T21:13:07Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T08:31:49Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5132,
+      "title": "feat(middleware): add method-not-allowed middleware",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-07-17T23:27:21Z",
+      "mergedAt": "2026-08-03T21:10:28Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T20:45:21Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5063,
+      "title": "feat(jsx): add React-compatible overloads to useRef",
+      "author": {
+        "login": "ashunar0",
+        "isBot": false
+      },
+      "createdAt": "2026-06-30T10:03:21Z",
+      "mergedAt": "2026-08-03T21:08:03Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-01T08:31:48Z",
+          "state": "COMMENTED",
+          "commentCount": 2
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-06T09:50:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5119,
+      "title": "feat(cache): add first-class support for QUERY requests",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-07-15T12:46:32Z",
+      "mergedAt": "2026-08-03T21:02:09Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-15T21:53:13Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5115,
+      "title": "feat(cors): allow QUERY by default as a first-class method",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-07-14T22:48:59Z",
+      "mergedAt": "2026-08-03T21:00:05Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-14T23:11:53Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5111,
+      "title": "feat(etag): support conditional requests for the QUERY method",
+      "author": {
+        "login": "Cherry",
+        "isBot": false
+      },
+      "createdAt": "2026-07-13T00:55:28Z",
+      "mergedAt": "2026-08-03T20:58:08Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-13T23:09:45Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5070,
+      "title": "feat: add first-class QUERY method support",
+      "author": {
+        "login": "shellhaki",
+        "isBot": false
+      },
+      "createdAt": "2026-07-02T11:48:19Z",
+      "mergedAt": "2026-08-03T20:54:09Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-07-02T11:51:46Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-10T23:43:25Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5186,
+      "title": "perf(context): restore the `env` field initializer",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-08-03T20:44:33Z",
+      "mergedAt": "2026-08-03T20:46:42Z",
+      "reviews": []
+    },
+    {
+      "number": 5184,
+      "title": "perf(hono-base): restore the rest parameter in `fetch`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-08-03T20:36:08Z",
+      "mergedAt": "2026-08-03T20:39:29Z",
+      "reviews": []
+    },
+    {
+      "number": 5183,
+      "title": "chore(benchmarks): stabilize measurements by forcing mitata batching",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-08-03T20:28:47Z",
+      "mergedAt": "2026-08-03T20:31:16Z",
+      "reviews": []
+    },
+    {
+      "number": 5176,
+      "title": "perf(request): probe the body cache without allocating",
+      "author": {
+        "login": "kibertoad",
+        "isBot": false
+      },
+      "createdAt": "2026-07-30T18:59:56Z",
+      "mergedAt": "2026-08-03T03:57:00Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T03:56:41Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5175,
+      "title": "perf(request): allocate `#validatedData` lazily",
+      "author": {
+        "login": "kibertoad",
+        "isBot": false
+      },
+      "createdAt": "2026-07-30T18:58:55Z",
+      "mergedAt": "2026-08-03T02:55:12Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T02:54:58Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5182,
+      "title": "chore: update `bun.lock`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-08-03T02:24:55Z",
+      "mergedAt": "2026-08-03T02:27:01Z",
+      "reviews": []
+    },
+    {
+      "number": 5174,
+      "title": "perf(context): drop the throwaway `env` field initializer",
+      "author": {
+        "login": "kibertoad",
+        "isBot": false
+      },
+      "createdAt": "2026-07-30T18:57:50Z",
+      "mergedAt": "2026-08-02T09:20:41Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T09:20:26Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5173,
+      "title": "chore(benchmarks): correct src path on Windows, add json and middleware cases",
+      "author": {
+        "login": "kibertoad",
+        "isBot": false
+      },
+      "createdAt": "2026-07-30T18:55:12Z",
+      "mergedAt": "2026-08-02T02:09:50Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T02:08:52Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5168,
+      "title": "chore: remove undici in favor of global fetch",
+      "author": {
+        "login": "volukren",
+        "isBot": false
+      },
+      "createdAt": "2026-07-28T10:34:24Z",
+      "mergedAt": "2026-07-31T10:30:10Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-31T10:30:03Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5166,
+      "title": "fix(jsx): handle useSyncExternalStore subscription and snapshot changes",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-07-26T01:39:27Z",
+      "mergedAt": "2026-07-26T05:14:06Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-26T05:13:51Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5167,
+      "title": "chore: bump `@hono/node-server`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-26T05:05:50Z",
+      "mergedAt": "2026-07-26T05:07:57Z",
+      "reviews": []
+    },
+    {
+      "number": 5164,
+      "title": "fix(cookie): relax name validation when parsing Cookie header",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-25T04:32:22Z",
+      "mergedAt": "2026-07-26T05:04:10Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "BlankParticle",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-25T06:02:10Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5147,
+      "title": "fix(secure-headers): keep CSP callbacks scoped to their header",
+      "author": {
+        "login": "sahenjp",
+        "isBot": false
+      },
+      "createdAt": "2026-07-21T10:19:40Z",
+      "mergedAt": "2026-07-24T08:48:48Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T08:48:40Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5161,
+      "title": "fix: use `Object.create(null)` when parsing query, headers, and params",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-24T01:12:42Z",
+      "mergedAt": "2026-07-24T01:57:31Z",
+      "reviews": []
+    },
+    {
+      "number": 5145,
+      "title": "test(cloudflare-workers): add coverage for onClose, onError, send, and close in Cloudflare Workers websocket adapter",
+      "author": {
+        "login": "nikachello",
+        "isBot": false
+      },
+      "createdAt": "2026-07-20T19:48:07Z",
+      "mergedAt": "2026-07-24T01:45:42Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T01:45:26Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5158,
+      "title": "perf(urls): refactor `tryDecodeURIComponent`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-23T12:40:30Z",
+      "mergedAt": "2026-07-23T12:45:42Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-23T12:41:21Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        }
+      ]
+    },
+    {
+      "number": 5122,
+      "title": "perf(context): skip Headers creation when there are no headers to merge",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-16T09:30:41Z",
+      "mergedAt": "2026-07-22T09:30:39Z",
+      "reviews": []
+    },
+    {
+      "number": 5121,
+      "title": "perf(url/request): replace regex tests with `indexOf`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-16T09:12:48Z",
+      "mergedAt": "2026-07-22T09:23:01Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-16T09:25:31Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        }
+      ]
+    },
+    {
+      "number": 5118,
+      "title": "perf(context): iterate the header record with for..in",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-15T02:17:28Z",
+      "mergedAt": "2026-07-22T09:21:07Z",
+      "reviews": []
+    },
+    {
+      "number": 5113,
+      "title": "perf(hono-base): avoid rest parameter in `fetch`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-14T00:51:28Z",
+      "mergedAt": "2026-07-22T09:19:19Z",
+      "reviews": []
+    },
+    {
+      "number": 5138,
+      "title": "fix(sse): emit empty id field to reset Last-Event-ID",
+      "author": {
+        "login": "sahenjp",
+        "isBot": false
+      },
+      "createdAt": "2026-07-19T14:43:05Z",
+      "mergedAt": "2026-07-21T11:26:54Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-21T11:26:47Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5142,
+      "title": "fix(aws-lambda): add jwt and lambda authorizer types for API Gateway v2",
+      "author": {
+        "login": "gianghungtien",
+        "isBot": false
+      },
+      "createdAt": "2026-07-20T01:52:32Z",
+      "mergedAt": "2026-07-21T11:19:05Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-21T11:18:58Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5148,
+      "title": "ci: enable reports for type & bundle size check",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-21T11:04:34Z",
+      "mergedAt": "2026-07-21T11:06:54Z",
+      "reviews": []
+    },
+    {
+      "number": 5136,
+      "title": "test(validator): fix misspelled identifier in transform type test",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-18T23:08:22Z",
+      "mergedAt": "2026-07-18T23:10:28Z",
+      "reviews": []
+    },
+    {
+      "number": 5135,
+      "title": "fix(sse): emit retry feild when retry is `0`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-18T22:59:51Z",
+      "mergedAt": "2026-07-18T23:02:10Z",
+      "reviews": []
+    },
+    {
+      "number": 5133,
+      "title": "fix(request): fix multipart boundary mismatch in `cloneRawRequest`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-17T23:39:45Z",
+      "mergedAt": "2026-07-17T23:43:46Z",
+      "reviews": []
+    },
+    {
+      "number": 5131,
+      "title": "fix(utils/body): reuse cached formData in `parseBody()`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-17T23:24:07Z",
+      "mergedAt": "2026-07-17T23:26:28Z",
+      "reviews": []
+    },
+    {
+      "number": 5130,
+      "title": "refactor(aws-lambada): remove FIXME in `@ts-expect-error`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-17T22:58:55Z",
+      "mergedAt": "2026-07-17T23:01:57Z",
+      "reviews": []
+    },
+    {
+      "number": 5126,
+      "title": "fix: close quote in combine JSDoc example",
+      "author": {
+        "login": "kridaydave",
+        "isBot": false
+      },
+      "createdAt": "2026-07-17T05:00:46Z",
+      "mergedAt": "2026-07-17T23:01:42Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-17T23:01:06Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5117,
+      "title": "chore(benchmark): add app.fetch() overhead benchmark",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-15T01:57:21Z",
+      "mergedAt": "2026-07-15T02:01:10Z",
+      "reviews": []
+    },
+    {
+      "number": 5116,
+      "title": "test(context): assert case-insensitive header names in response helpers",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-15T00:04:00Z",
+      "mergedAt": "2026-07-15T00:07:04Z",
+      "reviews": []
+    },
+    {
+      "number": 5110,
+      "title": "fix(method-override): set duplex when forwarding a stream body in query mode",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-13T00:25:10Z",
+      "mergedAt": "2026-07-13T00:27:27Z",
+      "reviews": []
+    },
+    {
+      "number": 5096,
+      "title": "fix(client): replaceUrlParam should not match a param that prefixes another",
+      "author": {
+        "login": "devteamaegis",
+        "isBot": false
+      },
+      "createdAt": "2026-07-07T15:54:35Z",
+      "mergedAt": "2026-07-12T23:49:18Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-12T23:49:09Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5020,
+      "title": "fix(compress): do not compress 206 Partial Content responses",
+      "author": {
+        "login": "dr4gan0x",
+        "isBot": false
+      },
+      "createdAt": "2026-06-11T18:58:06Z",
+      "mergedAt": "2026-07-12T23:30:09Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-12T23:29:56Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5025,
+      "title": "fix(cache): deduplicate Cache-Control directives case-insensitively",
+      "author": {
+        "login": "nyxst4ck",
+        "isBot": false
+      },
+      "createdAt": "2026-06-16T21:32:33Z",
+      "mergedAt": "2026-07-12T23:25:54Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-12T23:25:37Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5104,
+      "title": "chore: update to ts6 in prep for ts7",
+      "author": {
+        "login": "BlankParticle",
+        "isBot": false
+      },
+      "createdAt": "2026-07-11T18:29:33Z",
+      "mergedAt": "2026-07-12T21:46:00Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "BlankParticle",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-11T18:30:40Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-11T23:33:19Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "BlankParticle",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-12T05:50:41Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-12T21:45:44Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5108,
+      "title": "chore(benchmark): remove not used benchmarks",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-12T00:10:12Z",
+      "mergedAt": "2026-07-12T00:19:16Z",
+      "reviews": []
+    },
+    {
+      "number": 5107,
+      "title": "chore(benchmark/routers): bump deps",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-11T23:59:24Z",
+      "mergedAt": "2026-07-12T00:06:26Z",
+      "reviews": []
+    },
+    {
+      "number": 5084,
+      "title": "fix(etag): treat If-None-Match: `*` as a match",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-04T09:31:35Z",
+      "mergedAt": "2026-07-10T09:27:28Z",
+      "reviews": []
+    },
+    {
+      "number": 5102,
+      "title": "fix(trie-router): match empty wildcard remainder after regexp param",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-07-09T22:51:31Z",
+      "mergedAt": "2026-07-10T09:25:38Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-10T08:49:11Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "usualoma",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-10T09:13:15Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "usualoma",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-10T09:15:53Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-10T09:20:36Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5103,
+      "title": "fix(types): strip extra properties from array types in JSONParsed",
+      "author": {
+        "login": "Arman-Luthra",
+        "isBot": false
+      },
+      "createdAt": "2026-07-10T08:38:22Z",
+      "mergedAt": "2026-07-10T09:15:03Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-10T09:14:49Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5101,
+      "title": "fix(aws-lambda): treat any non-identity content-encoding as binary",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-09T20:41:42Z",
+      "mergedAt": "2026-07-09T20:45:12Z",
+      "reviews": []
+    },
+    {
+      "number": 5099,
+      "title": "fix(lambda-edge): base64 encode content-encoded response bodies",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-09T20:16:53Z",
+      "mergedAt": "2026-07-09T20:30:10Z",
+      "reviews": []
+    },
+    {
+      "number": 5100,
+      "title": "test(workerd): add `compatibilityDate`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-09T20:23:00Z",
+      "mergedAt": "2026-07-09T20:25:27Z",
+      "reviews": []
+    },
+    {
+      "number": 5081,
+      "title": "docs(language): add JSDoc @example to languageDetector",
+      "author": {
+        "login": "codebybilal18",
+        "isBot": false
+      },
+      "createdAt": "2026-07-03T18:32:29Z",
+      "mergedAt": "2026-07-09T20:04:31Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-09T20:04:23Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5094,
+      "title": "fix(lambda-edge): resolve the handler with the value passed to the callback",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-07T09:33:45Z",
+      "mergedAt": "2026-07-07T09:41:35Z",
+      "reviews": []
+    },
+    {
+      "number": 5093,
+      "title": "chore: fix no-op tsc in test script",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-07T09:16:08Z",
+      "mergedAt": "2026-07-07T09:18:57Z",
+      "reviews": []
+    },
+    {
+      "number": 5092,
+      "title": "fix(client): merge function headers with per-request headers",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-07T09:08:53Z",
+      "mergedAt": "2026-07-07T09:10:46Z",
+      "reviews": []
+    },
+    {
+      "number": 5086,
+      "title": "docs(context-storage): fix JSDoc",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-04T23:35:11Z",
+      "mergedAt": "2026-07-04T23:37:29Z",
+      "reviews": []
+    },
+    {
+      "number": 5033,
+      "title": "fix(aws-lambda): detect V2 events by request context, not rawPath alone",
+      "author": {
+        "login": "VihaanAgarwal",
+        "isBot": false
+      },
+      "createdAt": "2026-06-19T10:05:14Z",
+      "mergedAt": "2026-07-04T23:32:28Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-04T23:30:27Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5085,
+      "title": "chore: bump `devDependencies`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-04T10:29:13Z",
+      "mergedAt": "2026-07-04T10:31:00Z",
+      "reviews": []
+    },
+    {
+      "number": 5059,
+      "title": "fix(bun): report the requested subprotocol on WSContext.protocol",
+      "author": {
+        "login": "mahirhir",
+        "isBot": false
+      },
+      "createdAt": "2026-06-28T22:52:36Z",
+      "mergedAt": "2026-07-04T09:21:13Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-30T06:13:55Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-04T09:20:56Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5071,
+      "title": "fix: avoid circular dependency between body.ts and request.ts",
+      "author": {
+        "login": "usualoma",
+        "isBot": false
+      },
+      "createdAt": "2026-07-02T12:10:38Z",
+      "mergedAt": "2026-07-03T05:06:29Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-02T12:38:53Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-03T05:05:50Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5067,
+      "title": "fix(utils/body,validator): normalize Content-Type media type for case-insensitive matching",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-07-01T09:39:48Z",
+      "mergedAt": "2026-07-01T09:42:27Z",
+      "reviews": []
+    },
+    {
+      "number": 5066,
+      "title": "chore: don't publish `*.tsbuildinfo`",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-30T21:26:29Z",
+      "mergedAt": "2026-06-30T21:28:08Z",
+      "reviews": []
+    },
+    {
+      "number": 5047,
+      "title": "docs(MIGRATION): fix req.raw.headers reference (property, not method)",
+      "author": {
+        "login": "EduardF1",
+        "isBot": false
+      },
+      "createdAt": "2026-06-26T14:25:03Z",
+      "mergedAt": "2026-06-30T21:08:49Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-30T21:08:18Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5062,
+      "title": "fix(serve-static): treat empty string content as found",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-30T07:16:04Z",
+      "mergedAt": "2026-06-30T07:18:37Z",
+      "reviews": []
+    },
+    {
+      "number": 5037,
+      "title": "fix(jsx): make merged context-isolation tests pass tsc type check",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-23T02:39:27Z",
+      "mergedAt": "2026-06-23T02:41:12Z",
+      "reviews": []
+    },
+    {
+      "number": 5036,
+      "title": "fix(jsx): cast awaitedFallback through unknown to fix Deno type check",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-23T02:22:04Z",
+      "mergedAt": "2026-06-23T02:29:08Z",
+      "reviews": []
+    },
+    {
+      "number": 5035,
+      "title": "ci: use npm Staged publishing",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-22T11:40:07Z",
+      "mergedAt": "2026-06-22T11:42:33Z",
+      "reviews": []
+    },
+    {
+      "number": 5028,
+      "title": "ci: publish to npm from CI with OIDC trusted publishing",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-18T00:41:28Z",
+      "mergedAt": "2026-06-18T01:04:08Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "BarryThePenguin",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-18T00:53:34Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5030,
+      "title": "chore: replace arg and glob with Bun native APIs in build script",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-18T01:53:40Z",
+      "mergedAt": "2026-06-18T02:11:36Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-18T01:56:52Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "BarryThePenguin",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-18T02:03:14Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 5029,
+      "title": "chore: remove unused devcontainer and gitpod configs",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-18T01:14:37Z",
+      "mergedAt": "2026-06-18T01:17:35Z",
+      "reviews": []
+    },
+    {
+      "number": 5013,
+      "title": "fix(lambda-edge): satisfy Deno lib types for Content-Length body encoding",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-09T03:55:46Z",
+      "mergedAt": "2026-06-09T03:57:21Z",
+      "reviews": []
+    },
+    {
+      "number": 5012,
+      "title": "test(aws-lambda): update integration tests",
+      "author": {
+        "login": "yusukebe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-09T03:15:47Z",
+      "mergedAt": "2026-06-09T03:17:04Z",
+      "reviews": []
+    },
+    {
+      "number": 5011,
+      "title": "chore(ci): bump codecov-action to v7.0.0",
+      "author": {
+        "login": "ryuapp",
+        "isBot": false
+      },
+      "createdAt": "2026-06-09T00:54:30Z",
+      "mergedAt": "2026-06-09T01:12:12Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-09T01:11:32Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 4998,
+      "title": "fix(utils/ipaddr): render the unspecified address binary as \"::\"",
+      "author": {
+        "login": "sarathfrancis90",
+        "isBot": false
+      },
+      "createdAt": "2026-06-03T03:33:34Z",
+      "mergedAt": "2026-06-03T21:51:33Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-03T21:51:12Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 4991,
+      "title": "refactor(timing): Test/add test for middleware timing",
+      "author": {
+        "login": "iNeoO",
+        "isBot": false
+      },
+      "createdAt": "2026-06-01T22:44:05Z",
+      "mergedAt": "2026-06-02T04:58:46Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-02T04:58:39Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 4982,
+      "title": "fix: clean up config files trailing comma, stale excludes, typesVersions gaps, jsr paths",
+      "author": {
+        "login": "Mohammad-Faiz-Cloud-Engineer",
+        "isBot": false
+      },
+      "createdAt": "2026-05-31T02:28:09Z",
+      "mergedAt": "2026-06-02T04:56:07Z",
+      "reviews": []
+    },
+    {
+      "number": 4973,
+      "title": "fix(utils/ipaddr): expand \"::\" to eight zero groups",
+      "author": {
+        "login": "ogyamada",
+        "isBot": false
+      },
+      "createdAt": "2026-05-25T23:50:53Z",
+      "mergedAt": "2026-06-02T04:55:12Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "usualoma",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-26T00:19:32Z",
+          "state": "COMMENTED",
+          "commentCount": 2
+        },
+        {
+          "author": {
+            "login": "ogyamada",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-26T01:37:38Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "ogyamada",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-26T01:37:39Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-26T04:03:04Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 4980,
+      "title": "refactor(language): Test/improve tests on languages middleware",
+      "author": {
+        "login": "iNeoO",
+        "isBot": false
+      },
+      "createdAt": "2026-05-30T13:09:10Z",
+      "mergedAt": "2026-06-01T01:39:52Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-01T01:37:06Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 4987,
+      "title": "fix(bearer-auth): mention verifyToken in missing-options error message",
+      "author": {
+        "login": "tan7vir",
+        "isBot": false
+      },
+      "createdAt": "2026-05-31T14:38:48Z",
+      "mergedAt": "2026-06-01T00:59:07Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "yusukebe",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-01T00:58:10Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    }
+  ],
+  "truncated": false,
+  "rateLimitRemaining": 4972
+}

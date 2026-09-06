@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { assertReachableConfigIsSafe, corsOrigins, loadConfig, narrativeKeyFor } from '../src/config.js';
+import {
+  assertReachableConfigIsSafe,
+  corsOrigins,
+  describeExposure,
+  loadConfig,
+  narrativeKeyFor,
+} from '../src/config.js';
 
 const base = { GITHUB_TOKEN: 'gh-token' };
 
@@ -70,6 +76,47 @@ describe('assertReachableConfigIsSafe', () => {
   it('refuses to boot open with no token, because both endpoints spend money', () => {
     const config = loadConfig({ ...base, HOST: '0.0.0.0' });
     expect(() => assertReachableConfigIsSafe(config)).toThrow(/API_TOKEN/);
+  });
+
+  it('allows an open bind whose port is published on loopback', () => {
+    // What docker-compose.yml does: bind 0.0.0.0 inside the container while the
+    // published port reaches the host's loopback only.
+    const config = loadConfig({ ...base, HOST: '0.0.0.0', PUBLISHED_ON: '127.0.0.1' });
+    expect(() => assertReachableConfigIsSafe(config)).not.toThrow();
+  });
+
+  /**
+   * The exemption and the port mapping read the same compose variable, so a
+   * wider publish revokes the exemption instead of leaving a stale one behind.
+   */
+  it('revokes the exemption when the port is published wider', () => {
+    const config = loadConfig({ ...base, HOST: '0.0.0.0', PUBLISHED_ON: '0.0.0.0' });
+    expect(() => assertReachableConfigIsSafe(config)).toThrow(/API_TOKEN/);
+  });
+
+  it('names the publish address in the refusal, so the cause is obvious', () => {
+    const config = loadConfig({ ...base, HOST: '0.0.0.0', PUBLISHED_ON: '203.0.113.4' });
+    expect(() => assertReachableConfigIsSafe(config)).toThrow(/published on 203\.0\.113\.4/);
+  });
+
+  it('says which of the three exposure states it is in', () => {
+    expect(describeExposure(loadConfig(base)).message).toMatch(/this machine only/);
+    expect(describeExposure(loadConfig({ ...base, API_TOKEN: 'a-token-long-enough' })).message).toMatch(
+      /bearer token/,
+    );
+  });
+
+  /**
+   * The open-but-declared state is the only one whose safety rests on something
+   * the process cannot check, so it is the only one that warns.
+   */
+  it('warns, rather than informs, when it is open on a declaration it cannot verify', () => {
+    const open = describeExposure(loadConfig({ ...base, HOST: '0.0.0.0', PUBLISHED_ON: '127.0.0.1' }));
+    expect(open.warn).toBe(true);
+    expect(open.message).toMatch(/Nothing here can check that/);
+
+    expect(describeExposure(loadConfig(base)).warn).toBe(false);
+    expect(describeExposure(loadConfig({ ...base, API_TOKEN: 'a-token-long-enough' })).warn).toBe(false);
   });
 
   it('leaves loopback alone', () => {

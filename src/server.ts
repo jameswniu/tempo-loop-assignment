@@ -1,5 +1,8 @@
 import Fastify, { type FastifyInstance } from 'fastify';
 import cors from '@fastify/cors';
+import fastifyStatic from '@fastify/static';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import {
   InvalidRepositoryError,
   PrivateRepositoryError,
@@ -20,6 +23,8 @@ export interface ServerDeps {
   corsOrigins: string[];
   /** When set, /v1 routes require `Authorization: Bearer <token>`. */
   apiToken?: string | undefined;
+  /** Built frontend to serve. Omitted in development, where Vite serves it. */
+  staticRoot?: string | undefined;
 }
 
 /** Fastify attaches a `validation` array to errors its own schema layer raises. */
@@ -150,6 +155,16 @@ export function buildServer(deps: ServerDeps): FastifyInstance {
     { prefix: '/v1' },
   );
 
+  /**
+   * The built frontend, when there is one. Serving it from the same origin as
+   * the API is what makes `docker compose up` a single port with no CORS
+   * involved at all: in development Vite proxies /v1 instead.
+   */
+  const staticRoot = deps.staticRoot;
+  if (staticRoot !== undefined && existsSync(staticRoot)) {
+    app.register(fastifyStatic, { root: resolve(staticRoot) });
+  }
+
   app.setErrorHandler((error, request, reply) => {
     if (error instanceof BadRequestError || error instanceof InvalidRepositoryError) {
       return reply.code(400).send({ error: 'bad_request', message: error.message });
@@ -188,12 +203,22 @@ export function buildServer(deps: ServerDeps): FastifyInstance {
     return reply.code(500).send({ error: 'internal_error', message: 'Something went wrong.' });
   });
 
-  app.setNotFoundHandler((_request, reply) =>
-    reply.code(404).send({
+  app.setNotFoundHandler((request, reply) => {
+    // A single page app owns its own routing, so an unknown non-API path is
+    // handed the page. Anything under /v1 is a real miss and says so.
+    if (
+      staticRoot !== undefined &&
+      existsSync(staticRoot) &&
+      !request.url.startsWith('/v1') &&
+      request.method === 'GET'
+    ) {
+      return reply.sendFile('index.html');
+    }
+    return reply.code(404).send({
       error: 'not_found',
       message: 'Try GET /v1/insights?repo=owner/name or GET /v1/insights/narrative?repo=owner/name',
-    }),
-  );
+    });
+  });
 
   return app;
 }

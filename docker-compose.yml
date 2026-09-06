@@ -1,0 +1,27 @@
+services:
+  insights:
+    build: .
+    ports:
+      # One variable drives both the publish address and the exemption below,
+      # so widening this cannot leave a stale unauthenticated exemption behind.
+      # Publish anywhere but loopback and the service refuses to start without
+      # an API_TOKEN.
+      - '${PUBLISHED_ON:-127.0.0.1}:8080:8080'
+    environment:
+      # Read from your shell or a .env file beside this compose file.
+      GITHUB_TOKEN: ${GITHUB_TOKEN:?set GITHUB_TOKEN, see .env.example}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      LLM_PROVIDER: ${LLM_PROVIDER:-anthropic}
+      LLM_MODEL: ${LLM_MODEL:-claude-sonnet-5}
+      # A container has to bind 0.0.0.0 for its published port to reach it at
+      # all. The exemption comes from where that port is published, which is the
+      # same value used in the mapping above.
+      API_TOKEN: ${API_TOKEN:-}
+      PUBLISHED_ON: ${PUBLISHED_ON:-127.0.0.1}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    volumes:
+      - cache:/app/data
+    restart: unless-stopped
+
+volumes:
+  cache:

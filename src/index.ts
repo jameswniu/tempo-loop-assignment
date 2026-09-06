@@ -1,4 +1,10 @@
-import { assertReachableConfigIsSafe, corsOrigins, loadConfig, narrativeKeyFor } from './config.js';
+import {
+  assertReachableConfigIsSafe,
+  corsOrigins,
+  describeExposure,
+  loadConfig,
+  narrativeKeyFor,
+} from './config.js';
 import { GitHubClient } from './github/client.js';
 import { CacheStore } from './cache/store.js';
 import { AnthropicProvider, OpenAIProvider, type LlmProvider } from './llm/provider.js';
@@ -25,6 +31,7 @@ const app = buildServer({
   logLevel: config.LOG_LEVEL,
   corsOrigins: corsOrigins(config),
   apiToken: config.API_TOKEN,
+  staticRoot: config.STATIC_ROOT,
 });
 
 for (const signal of ['SIGINT', 'SIGTERM'] as const) {
@@ -39,6 +46,9 @@ for (const signal of ['SIGINT', 'SIGTERM'] as const) {
 
 try {
   await app.listen({ port: config.PORT, host: config.HOST });
+  const exposure = describeExposure(config);
+  if (exposure.warn) app.log.warn(exposure.message);
+  else app.log.info(exposure.message);
   if (provider === null) {
     app.log.warn('No LLM key configured. /v1/insights/narrative will return 503.');
   }

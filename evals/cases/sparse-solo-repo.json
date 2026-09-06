@@ -1,0 +1,28 @@
+{
+  "repository": "jameswniu/multi-agent-rl-mapf-drone-navigation",
+  "window": {
+    "from": "2026-01-01T00:00:00.000Z",
+    "to": "2026-09-01T00:00:00.000Z"
+  },
+  "sampleComplete": true,
+  "totals": {
+    "pullRequestsMerged": 38,
+    "pullRequestsAuthoredByBots": 0,
+    "pullRequestsReviewed": 0,
+    "pullRequestsUnreviewed": 38,
+    "reviewsSubmitted": 0,
+    "contributors": 1,
+    "botAccountsExcluded": 1
+  },
+  "contributors": [
+    {
+      "login": "jameswniu",
+      "pullRequestsAuthored": 38,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    }
+  ],
+  "reviewLatency": null,
+  "reviewConcentration": null
+}

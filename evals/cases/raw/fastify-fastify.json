@@ -1,0 +1,5634 @@
+{
+  "window": {
+    "from": "2026-06-01T00:00:00Z",
+    "to": "2026-09-01T00:00:00Z"
+  },
+  "pullRequests": [
+    {
+      "number": 7003,
+      "title": "[Backport 5.x] chore: npm ignore remaining agent files",
+      "author": {
+        "login": "github-actions",
+        "isBot": true
+      },
+      "createdAt": "2026-08-31T10:09:37Z",
+      "mergedAt": "2026-09-01T09:11:14Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-31T10:11:44Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6744,
+      "title": "ci(ci): do not pass secrets to reusable workflow",
+      "author": {
+        "login": "Fdawgs",
+        "isBot": false
+      },
+      "createdAt": "2026-06-01T11:52:45Z",
+      "mergedAt": "2026-06-02T05:58:37Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-01T13:08:00Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-01T17:54:34Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6996,
+      "title": "chore: npm ignore remaining agent files",
+      "author": {
+        "login": "lazerg",
+        "isBot": false
+      },
+      "createdAt": "2026-08-29T01:57:03Z",
+      "mergedAt": "2026-08-31T10:09:01Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-29T06:33:36Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-30T04:21:33Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6972,
+      "title": "docs(ecosystem): remove deprecated http-wizard and rename fastify-better-sqlite3",
+      "author": {
+        "login": "ilteoood",
+        "isBot": false
+      },
+      "createdAt": "2026-08-22T16:55:48Z",
+      "mergedAt": "2026-08-23T18:19:15Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-23T17:06:14Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-23T18:19:09Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6973,
+      "title": "[Backport 5.x] fix: callNotFound should run not-found preHandler regardless of registration order",
+      "author": {
+        "login": "github-actions",
+        "isBot": true
+      },
+      "createdAt": "2026-08-23T08:04:30Z",
+      "mergedAt": "2026-08-23T08:07:01Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-23T08:06:59Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6965,
+      "title": "fix: callNotFound should run not-found preHandler regardless of registration order",
+      "author": {
+        "login": "mcollina",
+        "isBot": false
+      },
+      "createdAt": "2026-08-18T23:57:22Z",
+      "mergedAt": "2026-08-23T08:04:18Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-20T08:27:21Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-23T00:29:59Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6875,
+      "title": "test(types): assert LogController.requestCompleted accepts an undefined error",
+      "author": {
+        "login": "suzunn",
+        "isBot": false
+      },
+      "createdAt": "2026-07-26T19:17:14Z",
+      "mergedAt": "2026-08-20T14:10:50Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-08T06:36:07Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-12T08:55:56Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T09:41:39Z",
+          "state": "DISMISSED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-20T13:41:12Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-20T14:10:28Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6966,
+      "title": "docs: fix broken links in Style-Guide.md",
+      "author": {
+        "login": "Snehal-Pradhan",
+        "isBot": false
+      },
+      "createdAt": "2026-08-19T00:50:29Z",
+      "mergedAt": "2026-08-19T15:24:47Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-19T05:58:32Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-19T09:08:13Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-19T15:15:51Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-19T15:24:38Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6961,
+      "title": "[Backport 5.x] fix: report canonical route url for hidden prefix slash route",
+      "author": {
+        "login": "github-actions",
+        "isBot": true
+      },
+      "createdAt": "2026-08-17T11:55:58Z",
+      "mergedAt": "2026-08-17T12:19:22Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-17T12:19:00Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6719,
+      "title": "fix: report canonical route url for hidden prefix slash route",
+      "author": {
+        "login": "paulkagiri",
+        "isBot": false
+      },
+      "createdAt": "2026-05-08T14:19:21Z",
+      "mergedAt": "2026-08-16T13:56:42Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-08T20:13:48Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-18T10:40:58Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6954,
+      "title": "[Backport 5.x] fix: run preClose hook exactly once per declaring instance",
+      "author": {
+        "login": "github-actions",
+        "isBot": true
+      },
+      "createdAt": "2026-08-14T09:21:09Z",
+      "mergedAt": "2026-08-14T10:15:00Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-14T10:14:43Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6951,
+      "title": "docs: remove deprecated-API notices ahead of v6 cleanup",
+      "author": {
+        "login": "Tony133",
+        "isBot": false
+      },
+      "createdAt": "2026-08-13T21:34:49Z",
+      "mergedAt": "2026-08-14T09:56:53Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-14T08:05:01Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-14T08:59:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6940,
+      "title": "fix: run preClose hook exactly once per declaring instance",
+      "author": {
+        "login": "contactjawad",
+        "isBot": false
+      },
+      "createdAt": "2026-08-12T16:10:40Z",
+      "mergedAt": "2026-08-14T09:20:56Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T08:40:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T08:41:52Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T14:18:38Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6952,
+      "title": "[Backport 5.x] ci: allow backport in pr title",
+      "author": {
+        "login": "github-actions",
+        "isBot": true
+      },
+      "createdAt": "2026-08-14T06:37:09Z",
+      "mergedAt": "2026-08-14T08:02:25Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-14T06:57:25Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-14T08:01:55Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6948,
+      "title": "ci: allow backport in pr title",
+      "author": {
+        "login": "climba03003",
+        "isBot": false
+      },
+      "createdAt": "2026-08-13T15:43:34Z",
+      "mergedAt": "2026-08-14T06:36:55Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T16:03:18Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-14T06:36:54Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6950,
+      "title": "[Backport 5.x] test: fix reply.mediaType",
+      "author": {
+        "login": "github-actions",
+        "isBot": true
+      },
+      "createdAt": "2026-08-13T17:05:31Z",
+      "mergedAt": "2026-08-13T17:20:14Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T17:06:28Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6949,
+      "title": "test: fix reply.mediaType",
+      "author": {
+        "login": "climba03003",
+        "isBot": false
+      },
+      "createdAt": "2026-08-13T16:39:08Z",
+      "mergedAt": "2026-08-13T17:04:25Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T16:47:09Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T17:04:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6947,
+      "title": "[Backport 5.x] fix(content-type): return `undefined` for invalid media types",
+      "author": {
+        "login": "github-actions",
+        "isBot": true
+      },
+      "createdAt": "2026-08-13T15:32:49Z",
+      "mergedAt": "2026-08-13T15:53:06Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T15:33:22Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6946,
+      "title": "[Backport 5.x] feat: add `Reply.prototype.mediaType`",
+      "author": {
+        "login": "github-actions",
+        "isBot": true
+      },
+      "createdAt": "2026-08-13T15:32:40Z",
+      "mergedAt": "2026-08-13T15:52:18Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T15:33:14Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6945,
+      "title": "[Backport 5.x] test: use process-warning spyWarning for testing",
+      "author": {
+        "login": "github-actions",
+        "isBot": true
+      },
+      "createdAt": "2026-08-13T15:30:57Z",
+      "mergedAt": "2026-08-13T15:44:02Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T15:32:48Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6942,
+      "title": "fix(content-type): return `undefined` for invalid media types",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-08-13T10:14:15Z",
+      "mergedAt": "2026-08-13T15:32:28Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "jsumners",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T12:06:02Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T15:32:12Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6932,
+      "title": "feat: add `Reply.prototype.mediaType`",
+      "author": {
+        "login": "LiviaMedeiros",
+        "isBot": false
+      },
+      "createdAt": "2026-08-09T22:32:27Z",
+      "mergedAt": "2026-08-13T15:32:03Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-10T06:51:30Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "LiviaMedeiros",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-10T08:41:59Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-10T09:00:48Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T10:16:13Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6887,
+      "title": "test: use process-warning spyWarning for testing",
+      "author": {
+        "login": "climba03003",
+        "isBot": false
+      },
+      "createdAt": "2026-07-30T14:04:36Z",
+      "mergedAt": "2026-08-13T15:30:44Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T14:25:24Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-12T10:48:00Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T08:30:54Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-13T08:40:58Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6939,
+      "title": "[Backport 5.x] fix: remove raw response headers",
+      "author": {
+        "login": "github-actions",
+        "isBot": true
+      },
+      "createdAt": "2026-08-12T10:33:11Z",
+      "mergedAt": "2026-08-12T10:51:19Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-12T10:50:42Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6860,
+      "title": "fix: remove raw response headers",
+      "author": {
+        "login": "Ram-blip",
+        "isBot": false
+      },
+      "createdAt": "2026-07-21T10:34:08Z",
+      "mergedAt": "2026-08-12T10:32:57Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-21T20:35:34Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-30T09:15:31Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-11T08:45:20Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-12T10:15:03Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6911,
+      "title": "refactor(types)!: remove ResSerializerReply type",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T12:54:46Z",
+      "mergedAt": "2026-08-11T08:20:07Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-06T17:53:22Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-11T08:15:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6935,
+      "title": "refactor(types)!: remove deprecated req in request.d.ts",
+      "author": {
+        "login": "Tony133",
+        "isBot": false
+      },
+      "createdAt": "2026-08-10T16:13:46Z",
+      "mergedAt": "2026-08-11T07:58:48Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-11T07:58:33Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6934,
+      "title": "test: remove @sinonjs/fake-timers",
+      "author": {
+        "login": "climba03003",
+        "isBot": false
+      },
+      "createdAt": "2026-08-10T09:28:14Z",
+      "mergedAt": "2026-08-10T13:10:46Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-10T09:33:38Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-10T13:10:24Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6909,
+      "title": "refactor!: remove FSTDEP025",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T12:45:53Z",
+      "mergedAt": "2026-08-09T22:06:36Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T09:33:21Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T21:30:08Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T22:05:23Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6912,
+      "title": "refactor!: remove FSTDEP024 deprecation",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T13:05:36Z",
+      "mergedAt": "2026-08-09T20:42:01Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T09:33:38Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T20:40:29Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6913,
+      "title": "refactor!: remove FSTDEP023 deprecation",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T13:15:29Z",
+      "mergedAt": "2026-08-09T15:34:59Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T09:32:18Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T15:22:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T15:29:18Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6907,
+      "title": "docs: add per-route logging for Google Cloud Functions",
+      "author": {
+        "login": "slegarraga",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T08:53:24Z",
+      "mergedAt": "2026-08-09T08:11:15Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-06T16:28:33Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-08-06T17:24:28Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T05:56:57Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-08-09T08:02:54Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-09T08:03:51Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6922,
+      "title": "chore(sponsor): add testmu ai",
+      "author": {
+        "login": "Eomm",
+        "isBot": false
+      },
+      "createdAt": "2026-08-08T14:06:20Z",
+      "mergedAt": "2026-08-08T14:16:03Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-08T14:15:08Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-08T14:16:01Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6892,
+      "title": "fix: recognize constructor-assigned built-in properties as decorator …",
+      "author": {
+        "login": "aquie00t",
+        "isBot": false
+      },
+      "createdAt": "2026-08-01T17:25:27Z",
+      "mergedAt": "2026-08-08T06:36:43Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-04T05:55:04Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-04T20:03:54Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6846,
+      "title": "fix: reset lastIndex before testing global/sticky content-type RegExp parsers",
+      "author": {
+        "login": "zelinewang",
+        "isBot": false
+      },
+      "createdAt": "2026-07-15T00:19:30Z",
+      "mergedAt": "2026-08-08T06:37:50Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-15T03:49:07Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-15T06:24:01Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-08T06:37:40Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6908,
+      "title": "refactor!: remove FSTDEP022",
+      "author": {
+        "login": "climba03003",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T11:32:50Z",
+      "mergedAt": "2026-08-08T06:33:10Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T09:33:02Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T21:27:23Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6921,
+      "title": "chore(deps)!: upgrade undici v8.x",
+      "author": {
+        "login": "Tony133",
+        "isBot": false
+      },
+      "createdAt": "2026-08-07T16:42:09Z",
+      "mergedAt": "2026-08-07T21:26:14Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T21:26:06Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6914,
+      "title": "refactor(types)!: remove deprecated ValidationResult type alias",
+      "author": {
+        "login": "Tony133",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T13:22:18Z",
+      "mergedAt": "2026-08-07T19:54:17Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T19:54:08Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6915,
+      "title": "refactor!: disable error handler overrides by default",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T13:23:41Z",
+      "mergedAt": "2026-08-07T18:34:00Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T09:32:37Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T14:47:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6920,
+      "title": "refactor(types)!: remove deprecated FastifyRequestContext and FastifyReplyContext types",
+      "author": {
+        "login": "Tony133",
+        "isBot": false
+      },
+      "createdAt": "2026-08-07T08:20:41Z",
+      "mergedAt": "2026-08-07T11:58:03Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-07T11:57:54Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6910,
+      "title": "refactor!: remove Promise.withResolvers ponyfill",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T12:51:28Z",
+      "mergedAt": "2026-08-06T16:38:30Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-06T15:44:06Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6917,
+      "title": "chore: Bump fastify/workflows/.github/workflows/nested-quality.yml from 6.0.0 to 7.0.0",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-08-06T14:22:47Z",
+      "mergedAt": "2026-08-06T16:08:14Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-08-06T14:30:50Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-06T15:17:33Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6916,
+      "title": "chore: Bump fastify/workflows/.github/workflows/lock-threads.yml from 6.0.0 to 7.0.0",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-08-06T14:22:45Z",
+      "mergedAt": "2026-08-06T16:07:51Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-08-06T14:29:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-06T15:17:48Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6906,
+      "title": "refactor(types)!: remove deprecated FastifyLoggerInstance in favor of FastifyBaseLogger",
+      "author": {
+        "login": "Tony133",
+        "isBot": false
+      },
+      "createdAt": "2026-08-06T08:09:16Z",
+      "mergedAt": "2026-08-06T09:33:41Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-06T09:33:20Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6893,
+      "title": "docs(encapsulation): clarify nested plugin scopes",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-08-01T21:32:51Z",
+      "mergedAt": "2026-08-06T08:59:18Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T08:50:16Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T12:54:06Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T13:44:57Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-06T08:55:36Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6837,
+      "title": "fix: pass null instead of undefined to requestCompleted on success",
+      "author": {
+        "login": "lazerg",
+        "isBot": false
+      },
+      "createdAt": "2026-07-07T18:15:23Z",
+      "mergedAt": "2026-08-06T08:26:27Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-08T19:28:32Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-15T21:31:50Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-04T16:32:31Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-06T05:29:26Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-06T08:26:19Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6904,
+      "title": "ci!: increase minimum runtime version ",
+      "author": {
+        "login": "climba03003",
+        "isBot": false
+      },
+      "createdAt": "2026-08-05T16:11:56Z",
+      "mergedAt": "2026-08-06T08:16:03Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-05T18:09:57Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6899,
+      "title": "docs(readme): fix grammar and cjs capitalization",
+      "author": {
+        "login": "minirang",
+        "isBot": false
+      },
+      "createdAt": "2026-08-03T01:47:33Z",
+      "mergedAt": "2026-08-05T07:46:17Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-04T07:20:23Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-04T08:19:44Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-05T05:52:57Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-05T07:46:08Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6894,
+      "title": "docs(errors): document what the default error handler sends",
+      "author": {
+        "login": "basteez",
+        "isBot": false
+      },
+      "createdAt": "2026-08-02T09:25:12Z",
+      "mergedAt": "2026-08-05T06:52:48Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T17:49:36Z",
+          "state": "COMMENTED",
+          "commentCount": 2
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T19:31:22Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-04T07:19:22Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-08-04T07:22:32Z",
+          "state": "COMMENTED",
+          "commentCount": 2
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-04T16:47:31Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-04T18:34:35Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-05T05:49:24Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6903,
+      "title": "docs: document percent-decoded route params as untrusted input",
+      "author": {
+        "login": "mcollina",
+        "isBot": false
+      },
+      "createdAt": "2026-08-04T12:30:34Z",
+      "mergedAt": "2026-08-04T18:49:43Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-04T12:37:27Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-04T16:44:37Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6897,
+      "title": "refactor(types)!: remove deprecated FastifyPlugin type",
+      "author": {
+        "login": "Tony133",
+        "isBot": false
+      },
+      "createdAt": "2026-08-02T14:13:05Z",
+      "mergedAt": "2026-08-04T07:03:16Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T20:33:36Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T05:39:33Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T08:15:02Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T08:59:31Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6686,
+      "title": "docs: migrate Zod type provider to official @fastify package",
+      "author": {
+        "login": "Tony133",
+        "isBot": false
+      },
+      "createdAt": "2026-04-21T16:42:00Z",
+      "mergedAt": "2026-06-28T07:49:57Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-04T19:32:32Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-12T08:25:21Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-12T08:41:59Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-18T06:50:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T07:49:49Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6845,
+      "title": "fix: clear trailer state when removing all trailers",
+      "author": {
+        "login": "Ram-blip",
+        "isBot": false
+      },
+      "createdAt": "2026-07-14T13:45:16Z",
+      "mergedAt": "2026-08-03T13:37:21Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-14T17:23:44Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Ram-blip",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-14T17:57:12Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-14T18:13:18Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T13:05:49Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T06:23:22Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T12:49:01Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T13:37:18Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6889,
+      "title": "fix: do not force close in-flight connections when forceCloseConnections is 'idle'",
+      "author": {
+        "login": "aquie00t",
+        "isBot": false
+      },
+      "createdAt": "2026-07-31T14:30:27Z",
+      "mergedAt": "2026-08-03T07:53:19Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-31T15:06:56Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T06:18:55Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T06:21:13Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-03T07:53:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6891,
+      "title": "docs: clarify what attachValidation exposes on request.validationError",
+      "author": {
+        "login": "basteez",
+        "isBot": false
+      },
+      "createdAt": "2026-08-01T11:16:30Z",
+      "mergedAt": "2026-08-02T14:42:05Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-01T11:40:17Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "basteez",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-01T11:45:53Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-01T11:48:12Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T09:23:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T13:08:54Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6888,
+      "title": "fix(types): allow explicit http2: false in server options",
+      "author": {
+        "login": "Tony133",
+        "isBot": false
+      },
+      "createdAt": "2026-07-30T15:16:11Z",
+      "mergedAt": "2026-08-02T11:01:44Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-31T15:07:09Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-08-02T11:01:29Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6876,
+      "title": "docs: fix logController migration example and links",
+      "author": {
+        "login": "aquie00t",
+        "isBot": false
+      },
+      "createdAt": "2026-07-28T16:32:27Z",
+      "mergedAt": "2026-07-30T09:11:49Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-28T17:12:01Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-30T09:11:46Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6865,
+      "title": "fix: honor quoted-string in `Content-Type` parameter values",
+      "author": {
+        "login": "aquie00t",
+        "isBot": false
+      },
+      "createdAt": "2026-07-23T13:17:28Z",
+      "mergedAt": "2026-07-30T09:22:03Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-23T16:12:20Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T15:21:32Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-30T09:09:32Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6879,
+      "title": "fix: add http method override warning",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-07-29T11:20:00Z",
+      "mergedAt": "2026-07-30T10:00:14Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T12:15:55Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T13:06:26Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-30T09:08:07Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6867,
+      "title": "chore: Bump actions/labeler from 6.2.0 to 7.0.0",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-07-23T14:22:40Z",
+      "mergedAt": "2026-07-30T09:24:43Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-07-23T14:30:33Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-23T14:38:31Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T06:58:10Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6866,
+      "title": "chore: Bump actions/setup-node from 6.4.0 to 7.0.0",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-07-23T14:22:34Z",
+      "mergedAt": "2026-07-30T09:24:23Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-07-23T14:28:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-23T14:38:50Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T06:58:23Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6873,
+      "title": "chore(.npmrc): add min-release-age",
+      "author": {
+        "login": "Fdawgs",
+        "isBot": false
+      },
+      "createdAt": "2026-07-26T18:42:51Z",
+      "mergedAt": "2026-07-30T09:23:54Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-28T08:23:35Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-28T08:36:59Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-28T10:17:33Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-30T09:11:28Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6881,
+      "title": "fix: uncatchable throws in writeHead when using async hook",
+      "author": {
+        "login": "climba03003",
+        "isBot": false
+      },
+      "createdAt": "2026-07-29T13:16:44Z",
+      "mergedAt": "2026-07-30T09:20:20Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T13:59:50Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T15:39:17Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-30T09:07:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6856,
+      "title": "docs: use async trailer handlers in Reply examples",
+      "author": {
+        "login": "Ram-blip",
+        "isBot": false
+      },
+      "createdAt": "2026-07-20T10:49:20Z",
+      "mergedAt": "2026-07-30T09:08:27Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T12:22:20Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-30T09:08:24Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6877,
+      "title": "ci(links-check): pin linkinator server root to the workspace",
+      "author": {
+        "login": "aquie00t",
+        "isBot": false
+      },
+      "createdAt": "2026-07-28T18:07:04Z",
+      "mergedAt": "2026-07-29T13:30:15Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T07:30:04Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T10:38:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T13:15:34Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6880,
+      "title": "docs: update TypeScript docs to reference Fastify 5.x",
+      "author": {
+        "login": "Sasireddy001",
+        "isBot": false
+      },
+      "createdAt": "2026-07-29T11:38:26Z",
+      "mergedAt": "2026-07-29T17:54:12Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T12:17:37Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T13:09:24Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T13:17:44Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T15:28:52Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T15:29:13Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T17:44:34Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T17:53:57Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6871,
+      "title": "docs: specific warning suppression",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-07-24T14:55:47Z",
+      "mergedAt": "2026-07-29T07:29:07Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-25T06:04:02Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jsumners",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-25T10:29:43Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "jsumners",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-25T19:39:08Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-26T08:02:25Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-27T09:36:54Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T06:48:07Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-29T07:29:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6483,
+      "title": "fix(validation): correctly update falsy values from validator",
+      "author": {
+        "login": "jackjin1997",
+        "isBot": false
+      },
+      "createdAt": "2026-02-03T04:40:32Z",
+      "mergedAt": "2026-07-26T12:59:26Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-02-07T23:09:49Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-02-09T02:10:39Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-02-09T15:48:13Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-27T10:11:52Z",
+          "state": "COMMENTED",
+          "commentCount": 2
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-27T10:52:11Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "jackjin1997",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-27T15:47:28Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "jackjin1997",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-27T15:49:24Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-28T19:12:44Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-04-02T09:03:01Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-26T09:55:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6872,
+      "title": "docs(server): fix contradictory requestIdHeader default",
+      "author": {
+        "login": "sobol-sudo",
+        "isBot": false
+      },
+      "createdAt": "2026-07-24T21:46:35Z",
+      "mergedAt": "2026-07-26T08:26:01Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-26T08:25:43Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6859,
+      "title": "docs(getting-started): align import with exported routes",
+      "author": {
+        "login": "Solaris-star",
+        "isBot": false
+      },
+      "createdAt": "2026-07-21T07:25:43Z",
+      "mergedAt": "2026-07-25T20:22:44Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-23T08:37:42Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T06:54:26Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T11:09:43Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Solaris-star",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-25T18:26:43Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-25T19:33:53Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-25T20:10:08Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6724,
+      "title": "docs(ecosystem): update fastify-prisma repo URL",
+      "author": {
+        "login": "zrosenbauer",
+        "isBot": false
+      },
+      "createdAt": "2026-05-14T17:36:40Z",
+      "mergedAt": "2026-07-24T19:55:07Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-19T08:11:02Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T15:19:02Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T19:10:35Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-24T19:50:02Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6864,
+      "title": "style(types): enforce max line length",
+      "author": {
+        "login": "jean-michelet",
+        "isBot": false
+      },
+      "createdAt": "2026-07-22T14:45:35Z",
+      "mergedAt": "2026-07-24T11:06:00Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-22T18:22:42Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-23T08:36:42Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6869,
+      "title": "ci(dependabot): temporarily ignore typescript updates",
+      "author": {
+        "login": "Tony133",
+        "isBot": false
+      },
+      "createdAt": "2026-07-23T15:36:14Z",
+      "mergedAt": "2026-07-24T07:19:49Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-23T16:44:39Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-23T16:59:25Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6785,
+      "title": "docs(ecosystem): add @thecodepace/fastify-http-query",
+      "author": {
+        "login": "Puppo",
+        "isBot": false
+      },
+      "createdAt": "2026-06-12T07:08:46Z",
+      "mergedAt": "2026-06-12T07:46:03Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Puppo",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-12T07:12:11Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-12T07:29:25Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-12T07:45:54Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6772,
+      "title": "docs(type-providers): clarify as const usage",
+      "author": {
+        "login": "smith558",
+        "isBot": false
+      },
+      "createdAt": "2026-06-08T16:47:57Z",
+      "mergedAt": "2026-06-28T08:54:51Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-13T07:17:27Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-13T07:29:40Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T08:11:15Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6771,
+      "title": "docs(type-providers): update import for article consistency",
+      "author": {
+        "login": "smith558",
+        "isBot": false
+      },
+      "createdAt": "2026-06-08T16:37:48Z",
+      "mergedAt": "2026-07-05T09:26:00Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-13T07:17:34Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-13T07:28:12Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T09:25:45Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6853,
+      "title": "ci: pin actions to commit-hash",
+      "author": {
+        "login": "Fdawgs",
+        "isBot": false
+      },
+      "createdAt": "2026-07-18T06:22:46Z",
+      "mergedAt": "2026-07-19T08:53:17Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-07-18T06:25:28Z",
+          "state": "COMMENTED",
+          "commentCount": 4
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-18T08:43:42Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-18T10:19:39Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-19T08:52:56Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6852,
+      "title": "chore(sponsor): add n-ix",
+      "author": {
+        "login": "Eomm",
+        "isBot": false
+      },
+      "createdAt": "2026-07-18T05:56:30Z",
+      "mergedAt": "2026-07-18T18:21:55Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-18T06:28:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-18T08:10:01Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-18T18:21:45Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6854,
+      "title": "perf: reuse cached content types for response serialization",
+      "author": {
+        "login": "gurgunday",
+        "isBot": false
+      },
+      "createdAt": "2026-07-18T10:59:24Z",
+      "mergedAt": "2026-07-18T14:11:33Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-18T11:46:47Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-18T12:35:33Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-18T13:13:02Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6832,
+      "title": "feat: rfc10008 http query method",
+      "author": {
+        "login": "climba03003",
+        "isBot": false
+      },
+      "createdAt": "2026-07-04T20:45:47Z",
+      "mergedAt": "2026-07-16T09:17:07Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-04T20:53:39Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T11:42:58Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T17:52:55Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-07T07:59:54Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-11T23:05:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jsumners",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-14T10:50:33Z",
+          "state": "COMMENTED",
+          "commentCount": 3
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-14T12:22:50Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-14T12:24:37Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-14T12:26:41Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-16T09:17:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6823,
+      "title": "docs: fix incorrect description for validateInput in Request.md",
+      "author": {
+        "login": "thePranav-kpk",
+        "isBot": false
+      },
+      "createdAt": "2026-06-29T11:33:41Z",
+      "mergedAt": "2026-07-12T16:05:50Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-29T15:53:21Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-07-02T14:50:20Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-12T15:31:02Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-12T16:05:31Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6838,
+      "title": "fix: normalize method in findRoute",
+      "author": {
+        "login": "Ram-blip",
+        "isBot": false
+      },
+      "createdAt": "2026-07-08T11:30:19Z",
+      "mergedAt": "2026-07-11T14:15:45Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-08T15:44:40Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-08T17:00:32Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-11T13:57:29Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6839,
+      "title": "chore: Bump markdownlint-cli2 from 0.22.1 to 0.23.0",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-07-09T14:24:08Z",
+      "mergedAt": "2026-07-11T12:55:59Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-07-09T14:30:21Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-11T12:55:49Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6627,
+      "title": "docs: update Logging.md with per-route log level info",
+      "author": {
+        "login": "asppsa",
+        "isBot": false
+      },
+      "createdAt": "2026-03-31T05:11:52Z",
+      "mergedAt": "2026-07-05T09:25:13Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-04-02T12:28:03Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-04-14T13:44:08Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T09:24:52Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6680,
+      "title": "fix: derive request.port from request.host",
+      "author": {
+        "login": "mcollina",
+        "isBot": false
+      },
+      "createdAt": "2026-04-20T17:38:56Z",
+      "mergedAt": "2026-07-05T09:20:22Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "jsumners",
+            "isBot": false
+          },
+          "submittedAt": "2026-04-20T22:05:18Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-04-24T09:29:41Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T09:14:59Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T09:15:31Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T09:17:51Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6831,
+      "title": "perf: reduce per-request overhead in the request lifecycle",
+      "author": {
+        "login": "mcollina",
+        "isBot": false
+      },
+      "createdAt": "2026-07-04T08:12:52Z",
+      "mergedAt": "2026-07-05T08:44:59Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-04T13:43:47Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T08:12:22Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T08:41:40Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6800,
+      "title": "chore: Bump fast-json-stringify from 6.4.0 to 7.0.0 in the dependencies group across 1 directory",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-06-18T14:23:35Z",
+      "mergedAt": "2026-07-05T08:12:06Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-18T14:34:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-18T15:06:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-25T14:31:18Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-07-02T14:30:54Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T08:11:44Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6825,
+      "title": "docs: fix incorrect hook count in Hooks.md",
+      "author": {
+        "login": "thePranav-kpk",
+        "isBot": false
+      },
+      "createdAt": "2026-06-29T18:02:19Z",
+      "mergedAt": "2026-07-05T08:05:37Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-30T23:06:18Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-02T08:58:04Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-02T09:50:55Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T08:05:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6805,
+      "title": "docs: fix incorrect defaults and code examples in Server.md",
+      "author": {
+        "login": "Adit-Jain-srm",
+        "isBot": false
+      },
+      "createdAt": "2026-06-20T20:32:43Z",
+      "mergedAt": "2026-07-05T08:03:31Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-21T15:03:55Z",
+          "state": "COMMENTED",
+          "commentCount": 2
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T06:28:24Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-02T08:53:08Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6830,
+      "title": "fix: use ContentType to detect `json` and `charset` in reply.send",
+      "author": {
+        "login": "climba03003",
+        "isBot": false
+      },
+      "createdAt": "2026-07-02T20:08:25Z",
+      "mergedAt": "2026-07-05T07:57:10Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-02T20:26:07Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-02T20:41:54Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Ziiyodullayevv",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-03T08:04:45Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-03T08:45:59Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-05T07:55:10Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6580,
+      "title": "feat: introduce log controller layer",
+      "author": {
+        "login": "Eomm",
+        "isBot": false
+      },
+      "createdAt": "2026-03-14T16:47:53Z",
+      "mergedAt": "2026-07-05T07:49:15Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-14T19:55:35Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "jsumners",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-15T15:50:47Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-19T09:36:49Z",
+          "state": "COMMENTED",
+          "commentCount": 2
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-29T08:25:27Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-29T08:40:10Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "jsumners",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-29T13:57:18Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-04-01T09:31:29Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T09:36:04Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T12:47:22Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-29T16:04:34Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-29T17:10:38Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-30T10:54:17Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-30T12:16:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-01T09:05:08Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6820,
+      "title": "docs(ecosystem): add @stitchapi/fastify to Community plugins",
+      "author": {
+        "login": "rejifald",
+        "isBot": false
+      },
+      "createdAt": "2026-06-28T21:27:17Z",
+      "mergedAt": "2026-07-03T08:09:45Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-02T08:56:00Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-03T08:09:28Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6829,
+      "title": "chore: Bump @types/node from 25.9.4 to 26.0.1 in the dev-dependencies-typescript group",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-07-02T14:22:56Z",
+      "mergedAt": "2026-07-02T14:42:39Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-07-02T14:30:45Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-02T14:42:21Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6824,
+      "title": "docs: fix duplicate routeOptions entries in Request.md example",
+      "author": {
+        "login": "thePranav-kpk",
+        "isBot": false
+      },
+      "createdAt": "2026-06-29T17:32:39Z",
+      "mergedAt": "2026-07-02T08:57:50Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-29T20:36:15Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-30T23:05:55Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-02T08:57:44Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6810,
+      "title": "fix: clear socket._meta on reply.hijack() when onTimeout is registered",
+      "author": {
+        "login": "nerkoux",
+        "isBot": false
+      },
+      "createdAt": "2026-06-23T06:40:00Z",
+      "mergedAt": "2026-07-01T09:06:20Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-23T09:53:15Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-23T09:53:55Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "nerkoux",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-23T10:20:17Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "nerkoux",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-23T10:21:13Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-24T17:49:29Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 2
+        },
+        {
+          "author": {
+            "login": "nerkoux",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-24T20:15:09Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "nerkoux",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-24T20:16:58Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-25T08:35:49Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T06:27:14Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T11:20:15Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-29T17:43:22Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-30T07:46:47Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-07-01T09:05:40Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6821,
+      "title": "docs: remove marko from @fastify/view engines (support dropped)",
+      "author": {
+        "login": "EduardF1",
+        "isBot": false
+      },
+      "createdAt": "2026-06-29T09:05:39Z",
+      "mergedAt": "2026-06-29T15:52:25Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-29T14:10:17Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-29T15:52:22Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6817,
+      "title": "docs: fix broken and redirected links",
+      "author": {
+        "login": "Eomm",
+        "isBot": false
+      },
+      "createdAt": "2026-06-28T08:46:00Z",
+      "mergedAt": "2026-06-29T15:48:44Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T08:59:27Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T10:01:40Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-29T15:48:42Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6816,
+      "title": "Bumped v5.9.0",
+      "author": {
+        "login": "Eomm",
+        "isBot": false
+      },
+      "createdAt": "2026-06-28T08:16:57Z",
+      "mergedAt": "2026-06-28T08:20:22Z",
+      "reviews": []
+    },
+    {
+      "number": 6572,
+      "title": "docs(types): mark request metadata accessors as untrusted input",
+      "author": {
+        "login": "mcollina",
+        "isBot": false
+      },
+      "createdAt": "2026-03-09T21:17:19Z",
+      "mergedAt": "2026-06-28T08:02:43Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-10T07:55:57Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-10T10:52:40Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jsumners",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-10T10:55:58Z",
+          "state": "COMMENTED",
+          "commentCount": 2
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T07:52:56Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ilteoood",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T07:57:01Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T07:57:23Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6789,
+      "title": "docs: update Serverless guide Dockerfile to a supported Node.js version",
+      "author": {
+        "login": "harish885",
+        "isBot": false
+      },
+      "createdAt": "2026-06-14T12:27:55Z",
+      "mergedAt": "2026-06-28T08:01:58Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-14T14:54:46Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-15T04:06:29Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T08:01:50Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6622,
+      "title": "docs: fix incorrect code examples in Hooks and Server reference",
+      "author": {
+        "login": "rrodj",
+        "isBot": false
+      },
+      "createdAt": "2026-03-28T20:46:12Z",
+      "mergedAt": "2026-06-28T08:00:42Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-04-23T10:30:48Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T08:00:32Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6452,
+      "title": "docs: add warning about empty string coercion with nullable types",
+      "author": {
+        "login": "ritambh888",
+        "isBot": false
+      },
+      "createdAt": "2026-01-17T07:27:47Z",
+      "mergedAt": "2026-06-28T07:57:04Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-01-17T13:26:49Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "ritambh888",
+            "isBot": false
+          },
+          "submittedAt": "2026-01-17T14:18:29Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-01-17T16:07:19Z",
+          "state": "COMMENTED",
+          "commentCount": 2
+        },
+        {
+          "author": {
+            "login": "ritambh888",
+            "isBot": false
+          },
+          "submittedAt": "2026-01-17T16:19:58Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-01-27T19:54:53Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-01-31T08:31:34Z",
+          "state": "DISMISSED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-06T08:28:07Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-07T08:54:44Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "ritambh888",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-07T09:32:29Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-07T09:32:31Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "ritambh888",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-07T09:33:28Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-07T09:45:11Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "ritambh888",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-07T09:46:16Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-07T19:26:19Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T07:56:53Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6753,
+      "title": "fix: hasRequestDecorator/hasReplyDecorator misses constructor-assigned built-in properties",
+      "author": {
+        "login": "LeSingh1",
+        "isBot": false
+      },
+      "createdAt": "2026-06-04T23:10:00Z",
+      "mergedAt": "2026-06-28T07:45:40Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-05T08:19:43Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-06T07:36:09Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T07:14:14Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-13T07:29:56Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-15T13:11:50Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6812,
+      "title": "chore: Bump actions/checkout from 6 to 7",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-06-25T14:22:48Z",
+      "mergedAt": "2026-06-28T06:25:05Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-25T14:29:17Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-25T14:50:37Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-28T06:24:51Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6813,
+      "title": "chore: add new sponsor",
+      "author": {
+        "login": "Eomm",
+        "isBot": false
+      },
+      "createdAt": "2026-06-25T15:37:01Z",
+      "mergedAt": "2026-06-28T06:23:06Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-25T15:47:31Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-26T08:44:29Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-27T10:01:27Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6809,
+      "title": "chore: replace http with https in urls",
+      "author": {
+        "login": "Fdawgs",
+        "isBot": false
+      },
+      "createdAt": "2026-06-22T17:50:51Z",
+      "mergedAt": "2026-06-24T08:35:41Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-23T07:02:48Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-23T10:45:02Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-24T08:35:33Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6799,
+      "title": "fix: clear socket._meta after response to prevent keep-alive leaks",
+      "author": {
+        "login": "nerkoux",
+        "isBot": false
+      },
+      "createdAt": "2026-06-18T12:13:39Z",
+      "mergedAt": "2026-06-19T15:21:35Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-18T16:45:02Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 3
+        },
+        {
+          "author": {
+            "login": "nerkoux",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-18T18:02:52Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "nerkoux",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-18T18:03:05Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "nerkoux",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-18T18:05:26Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-19T08:38:36Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-19T08:39:43Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-19T13:45:34Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6808,
+      "title": "chore(package.json): fix delvedor's personal url",
+      "author": {
+        "login": "Fdawgs",
+        "isBot": false
+      },
+      "createdAt": "2026-06-22T16:21:25Z",
+      "mergedAt": "2026-06-23T11:23:59Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-22T16:43:26Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-23T07:03:06Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-23T10:47:07Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-23T11:23:51Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6801,
+      "title": "chore: Bump fastify-plugin from 5.1.0 to 6.0.0",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-06-18T14:24:40Z",
+      "mergedAt": "2026-06-23T08:25:30Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-18T14:34:03Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-18T15:06:32Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "climba03003",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-23T08:24:52Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6792,
+      "title": "docs(sponsors): Update sponsors list by removing two entries",
+      "author": {
+        "login": "Eomm",
+        "isBot": false
+      },
+      "createdAt": "2026-06-17T12:45:30Z",
+      "mergedAt": "2026-06-22T05:31:34Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-17T13:15:12Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-17T14:37:35Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-17T14:45:47Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-21T14:26:28Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-21T15:09:17Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-22T05:31:32Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6803,
+      "title": "fix: avoid double slash when joining nested prefixes",
+      "author": {
+        "login": "rohithvegesna",
+        "isBot": false
+      },
+      "createdAt": "2026-06-20T03:20:41Z",
+      "mergedAt": "2026-06-21T12:54:18Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-20T06:15:36Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-21T08:44:56Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-21T12:54:01Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6788,
+      "title": "chore: Bump esbuild from 0.25.12 to 0.28.1 in /test/bundler/esbuild in the npm_and_yarn group across 1 directory",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-06-14T02:19:30Z",
+      "mergedAt": "2026-06-14T02:25:11Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-14T02:25:09Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6760,
+      "title": "docs: add fastify-param-schema-validation to ecosystem",
+      "author": {
+        "login": "Player1205",
+        "isBot": false
+      },
+      "createdAt": "2026-06-06T08:20:53Z",
+      "mergedAt": "2026-06-11T12:53:25Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-11T09:25:28Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-11T09:26:28Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-11T12:53:17Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6713,
+      "title": "chore(warnings): correct duplicate 'not' typos in inline comments",
+      "author": {
+        "login": "mixelburg",
+        "isBot": false
+      },
+      "createdAt": "2026-05-05T22:22:38Z",
+      "mergedAt": "2026-06-11T12:29:51Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-22T09:28:49Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-11T12:29:07Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6741,
+      "title": "docs: update ajv-errors guidance",
+      "author": {
+        "login": "Herrtian",
+        "isBot": false
+      },
+      "createdAt": "2026-05-29T08:35:13Z",
+      "mergedAt": "2026-06-11T11:40:16Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-02T16:29:44Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-03T06:46:49Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-03T11:13:09Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-11T07:51:53Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-11T08:11:29Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-11T11:39:54Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6762,
+      "title": "chore: rename type test files",
+      "author": {
+        "login": "mrazauskas",
+        "isBot": false
+      },
+      "createdAt": "2026-06-07T15:08:39Z",
+      "mergedAt": "2026-06-11T09:24:14Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T15:31:41Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T18:10:06Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T21:31:17Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-11T09:11:07Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6733,
+      "title": "docs: add fastify-ata as a JSON Schema validator option",
+      "author": {
+        "login": "mertcanaltin",
+        "isBot": false
+      },
+      "createdAt": "2026-05-24T18:12:09Z",
+      "mergedAt": "2026-06-11T08:20:00Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-25T09:25:56Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-31T17:01:29Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "mertcanaltin",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-31T17:13:11Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-02T16:31:45Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "mertcanaltin",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-02T21:59:43Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "mertcanaltin",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-02T22:00:09Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-05T08:47:38Z",
+          "state": "APPROVED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "mertcanaltin",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-06T19:21:01Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T17:46:18Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-09T10:27:46Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6776,
+      "title": "docs(typo): Write-Plugin.md",
+      "author": {
+        "login": "zakirimadullahprogrammer-tech",
+        "isBot": false
+      },
+      "createdAt": "2026-06-09T16:53:59Z",
+      "mergedAt": "2026-06-10T09:10:14Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-10T08:17:02Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6742,
+      "title": "docs(ecosystem): add @inferdi/fastify",
+      "author": {
+        "login": "maxrendel",
+        "isBot": false
+      },
+      "createdAt": "2026-05-29T17:46:40Z",
+      "mergedAt": "2026-06-10T08:18:45Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-31T16:59:19Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-02T07:20:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-10T08:18:38Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6774,
+      "title": "fix: replace `AssertionError` with `FST_ERR_PLUGIN_DEPENDENCY_NOT_REGISTERED` in `checkDependencies`",
+      "author": {
+        "login": "aquie00t",
+        "isBot": false
+      },
+      "createdAt": "2026-06-08T19:05:25Z",
+      "mergedAt": "2026-06-09T12:27:33Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-08T19:24:24Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-08T19:26:07Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-09T07:15:09Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-09T11:37:21Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-09T11:48:59Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "aquie00t",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-09T11:57:36Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "aquie00t",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-09T11:59:56Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-09T12:17:12Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-09T12:18:46Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6759,
+      "title": "refactor(decorate): replace `find` with `some` in `hasKey` for correct boolean semantics",
+      "author": {
+        "login": "aquie00t",
+        "isBot": false
+      },
+      "createdAt": "2026-06-05T18:28:31Z",
+      "mergedAt": "2026-06-09T10:55:48Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-06T07:23:35Z",
+          "state": "APPROVED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T07:13:34Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6735,
+      "title": "docs: remove HackerOne reporting link",
+      "author": {
+        "login": "jhcpeixoto",
+        "isBot": false
+      },
+      "createdAt": "2026-05-27T14:36:26Z",
+      "mergedAt": "2026-06-09T07:55:44Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-31T16:47:37Z",
+          "state": "CHANGES_REQUESTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-01T06:42:20Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-03T06:31:26Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T18:09:19Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6747,
+      "title": "docs: fix doubled braces in serializerCompiler signature",
+      "author": {
+        "login": "DucMinhNe",
+        "isBot": false
+      },
+      "createdAt": "2026-06-03T01:57:18Z",
+      "mergedAt": "2026-06-09T07:54:46Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-03T06:33:16Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T13:22:38Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Fdawgs",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-09T07:54:13Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6727,
+      "title": "chore: migrate type tests to TSTyche assertions (part two)",
+      "author": {
+        "login": "mrazauskas",
+        "isBot": false
+      },
+      "createdAt": "2026-05-18T10:34:48Z",
+      "mergedAt": "2026-06-07T14:31:29Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mrazauskas",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-18T10:49:26Z",
+          "state": "COMMENTED",
+          "commentCount": 4
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-02T16:46:10Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T14:21:22Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T14:28:48Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6726,
+      "title": "chore: migrate type tests to TSTyche assertions (part one)",
+      "author": {
+        "login": "mrazauskas",
+        "isBot": false
+      },
+      "createdAt": "2026-05-18T08:06:28Z",
+      "mergedAt": "2026-06-07T14:16:42Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "mrazauskas",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-18T08:33:21Z",
+          "state": "COMMENTED",
+          "commentCount": 6
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-18T09:21:35Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-05-28T13:40:20Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "mcollina",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T14:07:22Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6746,
+      "title": "fix: chunk large HTTP/2 buffer replies",
+      "author": {
+        "login": "mcollina",
+        "isBot": false
+      },
+      "createdAt": "2026-06-02T13:03:14Z",
+      "mergedAt": "2026-06-07T13:19:47Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-03T12:40:04Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-04T08:32:18Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "gurgunday",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-07T08:26:49Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6754,
+      "title": "docs(Warnings): remove retired FSTWRN002 warning code",
+      "author": {
+        "login": "leestana01",
+        "isBot": false
+      },
+      "createdAt": "2026-06-05T08:58:34Z",
+      "mergedAt": "2026-06-06T07:23:15Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-05T09:02:08Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "jean-michelet",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-06T07:23:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6728,
+      "title": "ci: add node 26 to test matrices",
+      "author": {
+        "login": "Fdawgs",
+        "isBot": false
+      },
+      "createdAt": "2026-05-18T14:34:43Z",
+      "mergedAt": "2026-06-05T11:38:44Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-05T06:44:33Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-05T08:03:29Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-05T08:25:57Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Tony133",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-05T11:07:30Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6731,
+      "title": "docs(Errors): fix incorrect usage of root fastify inside plugin scope",
+      "author": {
+        "login": "Rpaudel379",
+        "isBot": false
+      },
+      "createdAt": "2026-05-21T06:27:27Z",
+      "mergedAt": "2026-06-05T08:17:52Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "copilot-pull-request-reviewer",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-03T06:33:27Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "Rpaudel379",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-04T02:10:27Z",
+          "state": "COMMENTED",
+          "commentCount": 1
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-04T08:30:02Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6752,
+      "title": "chore: Bump concurrently from 9.2.1 to 10.0.0",
+      "author": {
+        "login": "dependabot",
+        "isBot": true
+      },
+      "createdAt": "2026-06-04T14:24:14Z",
+      "mergedAt": "2026-06-04T14:30:07Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "github-actions",
+            "isBot": true
+          },
+          "submittedAt": "2026-06-04T14:30:04Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6730,
+      "title": "test: fix Node.js 26 compatibility issues",
+      "author": {
+        "login": "aquie00t",
+        "isBot": false
+      },
+      "createdAt": "2026-05-19T20:28:19Z",
+      "mergedAt": "2026-06-04T08:48:28Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-04T08:32:41Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "Eomm",
+            "isBot": false
+          },
+          "submittedAt": "2026-06-04T08:48:05Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    },
+    {
+      "number": 6594,
+      "title": "docs: add fastify-intlayer to ecosystem documentation",
+      "author": {
+        "login": "aymericzip",
+        "isBot": false
+      },
+      "createdAt": "2026-03-18T22:59:04Z",
+      "mergedAt": "2026-06-03T09:10:42Z",
+      "reviews": [
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-19T09:23:19Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-26T11:38:38Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-27T10:03:24Z",
+          "state": "COMMENTED",
+          "commentCount": 0
+        },
+        {
+          "author": {
+            "login": "metcoder95",
+            "isBot": false
+          },
+          "submittedAt": "2026-03-27T10:21:33Z",
+          "state": "APPROVED",
+          "commentCount": 0
+        }
+      ]
+    }
+  ],
+  "truncated": false,
+  "rateLimitRemaining": 4975
+}

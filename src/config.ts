@@ -33,10 +33,21 @@ const schema = z.object({
   ),
   /** When set, every /v1 request must carry `Authorization: Bearer <token>`. */
   API_TOKEN: optionalText(16),
+  /**
+   * The address this process's port is published on by whatever is in front of
+   * it, which for a container is the host side of the port mapping. A loopback
+   * value here is what lets the service bind 0.0.0.0 inside a container without
+   * a token. It is an address rather than a boolean on purpose: the compose
+   * file feeds the same variable to the port mapping and to this, so widening
+   * the publish cannot leave a stale exemption behind.
+   */
+  PUBLISHED_ON: optionalText(),
   LOG_LEVEL: z.preprocess(
     blankToUndefined,
     z.enum(['silent', 'fatal', 'error', 'warn', 'info', 'debug', 'trace']).default('info'),
   ),
+  /** Built frontend directory. Set in the container; unset in development. */
+  STATIC_ROOT: optionalText(),
   CACHE_PATH: z.preprocess(blankToUndefined, z.string().default('./data/cache.db')),
   CACHE_TTL_SECONDS: z.preprocess(
     blankToUndefined,
@@ -68,14 +79,54 @@ const LOOPBACK = new Set(['127.0.0.1', '::1', 'localhost']);
  * both endpoints spend real money: one burns a GitHub rate limit, the other
  * calls a model per request. So the token is optional locally and required the
  * moment the bind address stops being loopback.
+ *
+ * A container has to bind 0.0.0.0 for its published port to work at all, and
+ * the process cannot see that the port is published only to the host's
+ * loopback. ALLOW_UNAUTHENTICATED_BIND is how an operator states that the
+ * boundary is handled elsewhere. It is deliberately a separate, named decision
+ * rather than a silent exemption for anything that looks containerised.
  */
 export function assertReachableConfigIsSafe(config: Config): void {
-  if (!LOOPBACK.has(config.HOST) && config.API_TOKEN === undefined) {
-    throw new Error(
-      `HOST is ${config.HOST}, so this service is reachable from outside this machine. ` +
-        'Set API_TOKEN (16 characters or more) to require a bearer token, or set HOST=127.0.0.1.',
-    );
+  if (LOOPBACK.has(config.HOST)) return;
+  if (config.API_TOKEN !== undefined) return;
+  if (config.PUBLISHED_ON !== undefined && LOOPBACK.has(config.PUBLISHED_ON)) return;
+
+  throw new Error(
+    `HOST is ${config.HOST}, so this service is reachable from outside this process` +
+      (config.PUBLISHED_ON === undefined
+        ? '. '
+        : `, and its port is published on ${config.PUBLISHED_ON}. `) +
+      'Set API_TOKEN (16 characters or more) to require a bearer token, or set HOST=127.0.0.1. ' +
+      "In a container, publishing the port on the host's loopback and passing that same address as " +
+      'PUBLISHED_ON is what grants the exemption.',
+  );
+}
+
+export interface Exposure {
+  message: string;
+  /** True when the process is open and trusting a declaration to confine it. */
+  warn: boolean;
+}
+
+/**
+ * One line at boot saying which of the three states the process is in. The
+ * third is logged as a warning rather than as information, because it is the
+ * only one whose safety rests on something this process cannot verify.
+ */
+export function describeExposure(config: Config): Exposure {
+  if (config.API_TOKEN !== undefined) {
+    return { message: 'a bearer token is required on every /v1 request', warn: false };
   }
+  if (LOOPBACK.has(config.HOST)) {
+    return { message: `bound to ${config.HOST}, reachable from this machine only`, warn: false };
+  }
+  return {
+    message:
+      `bound to ${config.HOST} with no token, on the declaration that its port is published on ` +
+      `${config.PUBLISHED_ON}. Nothing here can check that. If this port is reachable from ` +
+      'anywhere else, set API_TOKEN now.',
+    warn: true,
+  };
 }
 
 export function corsOrigins(config: Config): string[] {

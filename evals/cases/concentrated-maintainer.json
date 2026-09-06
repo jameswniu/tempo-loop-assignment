@@ -1,0 +1,338 @@
+{
+  "repository": "honojs/hono",
+  "window": {
+    "from": "2026-06-01T00:00:00.000Z",
+    "to": "2026-09-01T00:00:00.000Z"
+  },
+  "sampleComplete": true,
+  "totals": {
+    "pullRequestsMerged": 126,
+    "pullRequestsAuthoredByBots": 0,
+    "pullRequestsReviewed": 78,
+    "pullRequestsUnreviewed": 48,
+    "reviewsSubmitted": 91,
+    "contributors": 44,
+    "botAccountsExcluded": 1
+  },
+  "contributors": [
+    {
+      "login": "yusukebe",
+      "pullRequestsAuthored": 47,
+      "pullRequestsReviewed": 75,
+      "reviewsSubmitted": 81,
+      "reviewComments": 7
+    },
+    {
+      "login": "usualoma",
+      "pullRequestsAuthored": 15,
+      "pullRequestsReviewed": 2,
+      "reviewsSubmitted": 2,
+      "reviewComments": 3
+    },
+    {
+      "login": "spellsaif",
+      "pullRequestsAuthored": 9,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "Ersaoktaviannn",
+      "pullRequestsAuthored": 6,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "adityajha77",
+      "pullRequestsAuthored": 5,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "kibertoad",
+      "pullRequestsAuthored": 4,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "ababove20-jpg",
+      "pullRequestsAuthored": 0,
+      "pullRequestsReviewed": 2,
+      "reviewsSubmitted": 5,
+      "reviewComments": 0
+    },
+    {
+      "login": "arhxam",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "BarryThePenguin",
+      "pullRequestsAuthored": 0,
+      "pullRequestsReviewed": 2,
+      "reviewsSubmitted": 2,
+      "reviewComments": 0
+    },
+    {
+      "login": "BlankParticle",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 1,
+      "reviewsSubmitted": 1,
+      "reviewComments": 0
+    },
+    {
+      "login": "iNeoO",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "MahathirMohammadShuvo",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "sahenjp",
+      "pullRequestsAuthored": 2,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "akahoshi1421",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "Arman-Luthra",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "ashunar0",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "Cherry",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "codebybilal18",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "contactjawad",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "devteamaegis",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "dr4gan0x",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "EduardF1",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "gianghungtien",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "Jaybhade",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "Jr-14",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "kridaydave",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "lx3133584",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "mahirhir",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "Mohammad-Faiz-Cloud-Engineer",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "na-trium-144",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "natsuki-engr",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "nikachello",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "nyxst4ck",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "ogyamada",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "pacocartones",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "ryuapp",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "sarathfrancis90",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "shellhaki",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "Sriharsha-dev369",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "tan7vir",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "tushardev-365",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "VihaanAgarwal",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "volukren",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    },
+    {
+      "login": "yigiterturk-dev",
+      "pullRequestsAuthored": 1,
+      "pullRequestsReviewed": 0,
+      "reviewsSubmitted": 0,
+      "reviewComments": 0
+    }
+  ],
+  "reviewLatency": {
+    "medianHours": 37.19,
+    "p90Hours": 153.28,
+    "sampleSize": 78
+  },
+  "reviewConcentration": {
+    "topReviewer": "yusukebe",
+    "pullRequestsReviewed": 75,
+    "denominator": 78,
+    "share": 0.9615
+  }
+}
