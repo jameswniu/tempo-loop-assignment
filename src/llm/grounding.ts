@@ -23,11 +23,16 @@ export interface GroundingReport {
   evidenceTotal: number;
   evidenceGrounded: number;
   /**
-   * Numbers that appear in the prose but match no computed value. Advisory: a
-   * legitimate restatement the rule below does not anticipate lands here too,
-   * so this flags text for a human rather than declaring it wrong.
+   * Numbers in the prose that match no computed value at all. These are
+   * fabrications and they fail the request.
    */
   unverifiedNumbersInNarrative: number[];
+  /**
+   * Numbers in the prose that match a computed value the model did not put in
+   * its evidence array. The figure is real, the bookkeeping is untidy, so this
+   * is reported and does not fail the request.
+   */
+  uncitedNumbersInNarrative: number[];
 }
 
 /** JSON round-trips and percentage arithmetic both introduce tiny error. */
@@ -103,8 +108,19 @@ const DATE_SHAPED = /\d{4}-\d{2}-\d{2}(?:[T ][\d:.]+(?:Z|[+-]\d{2}:?\d{2})?)?/g;
  * Numbers, matched with any percent marker that follows them. Grouped numerals
  * are matched whole, because splitting "1,000" on the comma reads it as 1 and
  * 000, both of which match something harmless.
+ *
+ * A digit run PRECEDED by a letter, hyphen or underscore belongs to an
+ * identifier rather than to a claim. GitHub logins routinely carry digits, and
+ * without this the 20 inside a username like ababove20-jpg is reported as an
+ * invented number.
+ *
+ * The test is deliberately only on what comes before. An earlier version also
+ * skipped a number FOLLOWED by a letter or hyphen, which exempted every
+ * ordinary compact form a narrative uses, so "90-day", "24h" and "2x" passed
+ * the gate without being checked at all. Those are exactly where a fabricated
+ * or unit-converted figure would hide.
  */
-const NUMBER_WITH_CONTEXT = /(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)\s*(%|percent\b)?/gi;
+const NUMBER_WITH_CONTEXT = /(?<![A-Za-z0-9_-])(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)\s*(%|percent\b)?/gi;
 
 /**
  * Pulls every number out of the prose and checks each against the fact set.
@@ -126,38 +142,72 @@ const NUMBER_WITH_CONTEXT = /(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)\s*(%|p
  * solve. The exact guarantee lives in the evidence array, which is bound to
  * metric ids. This is the backstop for prose.
  */
-export function scanNarrativeNumbers(narrative: string, cited: Fact[], window: Window): number[] {
-  const plain = new Set<number>();
-  const asPercentage = new Set<number>();
-  for (const fact of cited) {
-    for (const form of roundedForms(fact.value)) plain.add(round12(form));
-    if (fact.unit === 'share') {
-      for (const form of roundedForms(fact.value * 100)) asPercentage.add(round12(form));
+export interface NumberScan {
+  /** Matches nothing computed anywhere. Fabricated. */
+  fabricated: number[];
+  /** Matches a computed value the model did not cite. Real but unrecorded. */
+  uncited: number[];
+}
+
+export function scanNarrativeNumbers(
+  narrative: string,
+  cited: Fact[],
+  all: Fact[],
+  window: Window,
+): NumberScan {
+  const allow = (facts: Fact[]) => {
+    const plain = new Set<number>();
+    const asPercentage = new Set<number>();
+    for (const fact of facts) {
+      for (const form of roundedForms(fact.value)) plain.add(round12(form));
+      if (fact.unit === 'share') {
+        for (const form of roundedForms(fact.value * 100)) asPercentage.add(round12(form));
+      }
     }
-  }
+    return { plain, asPercentage };
+  };
+
+  const citedForms = allow(cited);
+  const everyForm = allow(all);
+  const { plain, asPercentage } = citedForms;
   // The narrative names its own period, so the years of the window are prose.
   // Months and days are not allowed loose: a whole date is stripped instead.
   for (const instant of [window.from, window.to]) plain.add(new Date(instant).getUTCFullYear());
 
+  for (const instant of [window.from, window.to]) everyForm.plain.add(new Date(instant).getUTCFullYear());
+
   const prose = digitiseNumberWords(narrative.replace(DATE_SHAPED, ' '));
-  const unverified: number[] = [];
+  const fabricated: number[] = [];
+  const uncited: number[] = [];
   for (const match of prose.matchAll(NUMBER_WITH_CONTEXT)) {
     const value = round12(Number(match[1]!.replace(/,/g, '')));
     if (!Number.isFinite(value)) continue;
     const isPercentage = match[2] !== undefined;
+
     if (plain.has(value) || (isPercentage && asPercentage.has(value))) continue;
-    if (!unverified.includes(value)) unverified.push(value);
+
+    // Real figure, just not recorded in the evidence array. Worth reporting,
+    // not worth refusing an otherwise sound answer over. Treating this the same
+    // as a fabrication means a model that mentions a true median without
+    // formally citing it gets its answer thrown away.
+    if (everyForm.plain.has(value) || (isPercentage && everyForm.asPercentage.has(value))) {
+      if (!uncited.includes(value)) uncited.push(value);
+      continue;
+    }
+
+    if (!fabricated.includes(value)) fabricated.push(value);
   }
-  return unverified;
+  return { fabricated, uncited };
 }
 
-export function buildReport(evidence: GroundedEvidence[], unverifiedNumbers: number[]): GroundingReport {
+export function buildReport(evidence: GroundedEvidence[], scan: NumberScan): GroundingReport {
   const grounded = evidence.filter((e) => e.grounded).length;
   return {
     score: evidence.length === 0 ? null : round12(grounded / evidence.length),
     evidenceTotal: evidence.length,
     evidenceGrounded: grounded,
-    unverifiedNumbersInNarrative: unverifiedNumbers,
+    unverifiedNumbersInNarrative: scan.fabricated,
+    uncitedNumbersInNarrative: scan.uncited,
   };
 }
 

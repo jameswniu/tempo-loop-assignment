@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { CacheStore } from '../src/cache/store.js';
 import type { GitHubClient } from '../src/github/client.js';
 import { PrivateRepositoryError, RepositoryNotFoundError, UpstreamRateLimitError } from '../src/github/client.js';
-import type { LlmProvider } from '../src/llm/provider.js';
+import { LlmError, type LlmProvider } from '../src/llm/provider.js';
 import { InsightsService } from '../src/service.js';
 import { buildServer } from '../src/server.js';
 import { SAMPLE } from './fixtures.js';
@@ -180,6 +180,57 @@ describe('GET /v1/insights/narrative', () => {
     expect(body.evidence[0].problem).toBe('cited 99 but totals.pullRequestsMerged is 5');
   });
 
+  /**
+   * A sound answer that used a real figure without recording it is returned as
+   * it stands. Spending the retry on that was measured and made results worse,
+   * so the draw is kept in reserve for a genuinely bad answer.
+   */
+  it('does not spend a draw tidying an unrecorded figure', async () => {
+    let attempt = 0;
+    const provider: LlmProvider = {
+      name: 'stub',
+      model: 'stub-1',
+      complete: async () => {
+        attempt += 1;
+        return {
+          json:
+            attempt === 1
+              ? {
+                  ...goodOutput,
+                  // 1 is totals.pullRequestsUnreviewed, real but not cited here.
+                  narrative: 'Five merged, 3 reviewed, and 1 went in unreviewed.',
+                }
+              : goodOutput,
+          inputTokens: 10,
+          outputTokens: 20,
+        };
+      },
+    };
+    const app = serverWith({ provider });
+    const response = await app.inject({
+      method: 'GET',
+      url: '/v1/insights/narrative?repo=acme/widgets&from=2026-06-01&to=2026-07-01',
+    });
+    expect(attempt).toBe(1);
+    expect(response.statusCode).toBe(200);
+    expect(response.json().grounding.uncitedNumbersInNarrative).toEqual([1]);
+  });
+
+  it('accepts an unrecorded figure rather than failing when the draws run out', async () => {
+    const app = serverWith({
+      provider: stubProvider({
+        ...goodOutput,
+        narrative: 'Five merged, 3 reviewed, and 1 went in unreviewed.',
+      }),
+    });
+    const response = await app.inject({
+      method: 'GET',
+      url: '/v1/insights/narrative?repo=acme/widgets&from=2026-06-01&to=2026-07-01',
+    });
+    expect(response.statusCode).toBe(200);
+    expect(response.json().grounding.uncitedNumbersInNarrative).toEqual([1]);
+  });
+
   it('retries once before failing, because a second draw usually lands clean', async () => {
     let attempt = 0;
     const flaky: LlmProvider = {
@@ -226,6 +277,48 @@ describe('GET /v1/insights/narrative', () => {
     });
     expect(response.statusCode).toBe(502);
     expect(response.json().grounding.unverifiedNumbersInNarrative).toEqual([14, 81]);
+  });
+
+  it('retries a malformed response before giving up on it', async () => {
+    // Strict schemas still let a model return the right keys with empty
+    // strings. That is a bad draw, not a broken endpoint, so it gets the retry.
+    let attempt = 0;
+    const flaky: LlmProvider = {
+      name: 'stub',
+      model: 'stub-1',
+      complete: async () => {
+        attempt += 1;
+        return {
+          json: attempt === 1 ? { narrative: '', hypothesis: { statement: '', confidence: 0.5, reasoning: '' }, evidence: [] } : goodOutput,
+          inputTokens: 10,
+          outputTokens: 20,
+        };
+      },
+    };
+    const response = await serverWith({ provider: flaky }).inject({
+      method: 'GET',
+      url: '/v1/insights/narrative?repo=acme/widgets&from=2026-06-01&to=2026-07-01',
+    });
+    expect(attempt).toBe(2);
+    expect(response.statusCode).toBe(200);
+  });
+
+  it('answers 502, not 500, when a provider ignores the schema and returns prose', async () => {
+    // OPENAI_BASE_URL invites endpoints whose schema support varies, so this is
+    // the compatibility boundary rather than a hypothetical.
+    const prose: LlmProvider = {
+      name: 'stub',
+      model: 'stub-1',
+      complete: async () => {
+        throw new LlmError('model returned content that is not JSON: Sure! Here is the analysis');
+      },
+    };
+    const response = await serverWith({ provider: prose }).inject({
+      method: 'GET',
+      url: '/v1/insights/narrative?repo=acme/widgets&from=2026-06-01&to=2026-07-01',
+    });
+    expect(response.statusCode).toBe(502);
+    expect(response.json().error).toBe('model_error');
   });
 
   it('answers 502 when the model returns something that is not the agreed shape', async () => {

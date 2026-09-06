@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { perAttemptTimeout } from '../src/llm/provider.js';
 import {
   assertReachableConfigIsSafe,
   corsOrigins,
@@ -130,5 +131,18 @@ describe('corsOrigins', () => {
   it('splits and trims the configured list', () => {
     const config = loadConfig({ ...base, CORS_ORIGINS: 'http://a.test , http://b.test ,' });
     expect(corsOrigins(config)).toEqual(['http://a.test', 'http://b.test']);
+  });
+});
+
+describe('perAttemptTimeout', () => {
+  it('divides the remaining budget across the attempts the SDK may fund', () => {
+    // An SDK timeout is per attempt and the SDK retries once, so handing it the
+    // whole budget lets one call run for twice that long.
+    expect(perAttemptTimeout(60_000)).toBe(30_000);
+    expect(perAttemptTimeout(75_000)).toBe(37_500);
+  });
+
+  it('keeps a floor so a nearly spent budget still makes one real attempt', () => {
+    expect(perAttemptTimeout(100)).toBe(1_000);
   });
 });

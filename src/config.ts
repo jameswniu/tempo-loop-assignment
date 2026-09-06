@@ -20,6 +20,12 @@ const schema = z.object({
   GITHUB_TOKEN: z.string().min(1, 'GITHUB_TOKEN is required'),
   ANTHROPIC_API_KEY: optionalText(),
   OPENAI_API_KEY: optionalText(),
+  /**
+   * Base URL for the OpenAI-compatible adapter. Left unset it talks to OpenAI.
+   * Set, it talks to anything speaking the same chat API, which is most
+   * providers now, so swapping vendors is configuration rather than code.
+   */
+  OPENAI_BASE_URL: optionalText(),
   LLM_PROVIDER: z.preprocess(blankToUndefined, z.enum(['anthropic', 'openai']).default('anthropic')),
   LLM_MODEL: z.preprocess(blankToUndefined, z.string().default('claude-sonnet-5')),
   PORT: z.preprocess(blankToUndefined, z.coerce.number().int().positive().default(8080)),

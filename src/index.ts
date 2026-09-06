@@ -23,7 +23,7 @@ const provider: LlmProvider | null =
     ? null
     : config.LLM_PROVIDER === 'anthropic'
       ? new AnthropicProvider(key, config.LLM_MODEL)
-      : new OpenAIProvider(key, config.LLM_MODEL);
+      : new OpenAIProvider(key, config.LLM_MODEL, config.OPENAI_BASE_URL);
 
 const app = buildServer({
   service: new InsightsService(new GitHubClient(config.GITHUB_TOKEN), cache),

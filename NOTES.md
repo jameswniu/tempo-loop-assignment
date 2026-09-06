@@ -32,7 +32,7 @@ npm run dev
 cd frontend && npm install && npm run dev
 ```
 
-`npm test` runs 113 tests. `npm run eval` runs the model evaluation suite, described below. Node 22
+`npm test` runs 128 tests. `npm run eval` runs the model evaluation suite, described below. Node 22
 or later, which the lockfile requires.
 
 ## The metric, and why this one
@@ -132,11 +132,26 @@ whether somebody set one. The cost of the stricter rule falls on `docker compose
 command, which the brief asks for directly. Someone deploying this for real should set `API_TOKEN`
 and stop thinking about it.
 
-**The prose number scan is a backstop, not a proof.** It checks that every number in the model's
-text has a counterpart among the facts the model cited. It cannot tell whether the sentence around
-the number is true, so a cited value reused for a different claim still passes. The exact guarantee
-lives in the evidence array, which is bound to metric ids. I would not describe this check as more
-than it is.
+**A real figure used without being recorded is reported, not refused.** The adversarial review
+argued four separate times that this should fail the request, and its example is a fair one. A model
+can write "3 rollbacks" with no rollback metric anywhere, and 3 happens to be a real contributor
+count, so it passes as merely uncited. I held because the alternative refuses sound answers over
+bookkeeping, and because most runs contain at least one such number, so requiring zero would reject
+most good answers. I did measure the middle option of spending the retry on tidying these up, and it
+made results worse. The draw that had been catching fabrications went on polish instead, and the
+suite fell from 18 of 20 to 16 and 17. This is a precision and recall trade with no free answer, and
+this paragraph is here so the choice is visible rather than buried.
+
+**The prose number scan is a backstop, not a proof.** It has two tiers. A number matching nothing
+computed is a fabrication and fails the request. A number that matches a computed value the model
+did not cite is reported and does not, because refusing an otherwise sound answer over bookkeeping
+is the wrong trade and small integers coincide with some contributor row constantly.
+
+Neither tier can tell whether the sentence around a number is true. A real example from a run: the
+model wrote that one reviewer handled "over half" of reviewed pull requests when the figure is 52
+of 110, which is under half. There is no digit in "over half", so nothing was flagged. The exact
+guarantee lives in the evidence array, which is bound to metric ids, and I would not describe this
+check as more than it is.
 
 **Inline comments are attributed to reviewers, not to threads.** Comment counts come from each
 review submission, so a comment left outside a formal review is not counted.
@@ -155,9 +170,33 @@ An evaluation suite in `evals/`. Four cases frozen from real repositories, chose
 shapes: a concentrated maintainer, a distributed team, a large mixed one, and a solo repository
 where nobody reviews anything. Each case asserts that the citations ground, that no number is
 invented, that the model reached for the metric that actually carries the story, and that its
-confidence sits in a defensible band. It runs both providers when both keys are present and prints
-the pass counts side by side, which is the check I would want before swapping a model. The OpenAI
-adapter exists for exactly this and is never on the request path.
+confidence sits in a defensible band. Cases run concurrently, so a full run is about 25 seconds.
+
+What it currently reports, against `qwen-plus` through an OpenAI-compatible endpoint: 16 or 17 of 20
+checks on each of eight consecutive runs, so a median of 85% and a spread of 80 to 85. Every run
+returns a well-formed answer for all four cases.
+
+Those numbers are lower than the ones I nearly wrote here. An earlier five-run sample came back 18,
+18, 18, 18 and 17, and I was about to report 18 of 20 as the headline. The next three runs were 14
+of 16, 19 of 20 and 17 of 20, which made it obvious the first sample was a streak rather than a
+measurement. Two of those eight runs also contained a case that returned no usable answer at all, a
+hard failure a reviewer running the suite once had a real chance of hitting. Retrying a malformed
+response instead of throwing it straight past the retry loop removed those entirely, zero in the
+next eight runs, and tightened the spread from 75 to 95 down to 80 to 85.
+
+What still fails is consistent and is the same thing each time. The model does arithmetic it was
+told not to do, adding three contributors' review counts into a total of 180 that appears nowhere
+in the fact table, and the service refuses those answers. That is the gate working rather than a
+defect to tune away, and it is the number worth reporting: how often a given model produces an
+answer this service will accept.
+
+Reaching that number took eight measured runs and found three real defects, none of which any
+amount of stub testing would have surfaced. The prompt contained a contradiction, telling the model
+to cite every number it used and also to keep the evidence array to three to six entries. Instructions
+in a system message rather than a user message made the model return an empty evidence array on
+every attempt while the narrative came back fine, so the failure was silent. And telling the model
+to cite everything led it to write metric ids inline in the prose instead of filling the array,
+because nothing had told it the two fields have different jobs.
 
 `docs/REFEREE.md` is not part of the assignment. It is a card for every number a reader of this
 repository will see, naming what is counted, what the denominator is, the rule that decides a
