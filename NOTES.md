@@ -77,7 +77,9 @@ The deployed path, `qwen-plus` through the service's own adapter, scored a media
 
 I used a coding agent throughout, which is how I work now and what the brief encourages.
 
-The design is mine. Which metrics answer the question and what their denominators are, the half-open window, the bot rule, the fact table as the model's only vocabulary, failing the request rather than warning on it, and what to leave out. Test expectations were written by hand and the figures checked against GitHub's own search before I trusted them.
+The design is mine. Which metrics answer the question, and what their denominators are. The half-open window and the bot rule. The fact table as the model's only vocabulary. Failing the request rather than warning on it, and what to leave out.
+
+Test expectations were written by hand, and the figures checked against GitHub's own search before I trusted them.
 
 Where it earned its place is review. Every change went through an adversarial pass by a second model told to refute rather than approve, before each commit. That caught four real defects.
 
