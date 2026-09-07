@@ -38,13 +38,13 @@ curl 'localhost:8080/v1/insights?repo=honojs/hono&from=2026-06-01&to=2026-09-01'
 curl 'localhost:8080/v1/insights/narrative?repo=honojs/hono&from=2026-06-01&to=2026-09-01'
 ```
 
-A classic token with no scopes ticked is enough, since only public repositories are read. Without an LLM key the metrics endpoint works and the narrative endpoint answers 503 saying so.
+A classic token with no scopes ticked is enough, since only public repositories are read. Without an LLM key the metrics endpoint still works and the narrative endpoint answers 503.
 
 ---
 
 ## The metric, and why this one
 
-Contributor counts by commits are easy to compute and say very little. What a team actually wants to know is whether review is a shared habit or one person's job, so the window is the pull requests merged in `[from, to)` and three figures carry the story.
+Commit counts say little about how a team works. What a team wants to know is whether review is a shared habit or one person's job, so three figures carry the story.
 
 | | The question it answers | Where its truth comes from | On hono, summer 2026 |
 |:---|:---|:---|:---|
@@ -52,17 +52,15 @@ Contributor counts by commits are easy to compute and say very little. What a te
 | **Wait for first review** | When review comes, how long did the change sit? | Hours from opening to the first outside review, median and p90 | A median of 37 hours and a tail past six days |
 | **Top reviewer share** | Is review a shared habit or one person's job? | Reviewed pull requests touched by the single busiest reviewer | One person on 75 of 78 |
 
-Run that over `honojs/hono` for the summer and one maintainer reviewed 96% of everything, while 48 of 126 pull requests merged with no outside review at all. Run it over `fastify/fastify` for the same window and the busiest reviewer is at 47%, one pull request went unreviewed, and the median first review lands in about eight hours. Same three numbers, two completely different working cultures.
+On `honojs/hono` one maintainer reviewed 96% of everything, and 48 of 126 pull requests merged with no outside review. On `fastify/fastify`, same window, the busiest reviewer is at 47% and the median first review lands in about eight hours. Same three numbers, two different working cultures.
 
 <p align="center"><img src="docs/images/signals.png" alt="Three health signals for hono over the summer, with the contributor table below" width="100%"></p>
 
 ## How it is built
 
-Four layers, each of which can be understood without the others. A GitHub client fetches merged pull requests and their reviews. A pure function turns those into metrics. A service ties fetch, cache and compute together. Fastify exposes two endpoints.
+Four layers, each readable without the others. A GitHub client fetches merged pull requests and their reviews, a pure function turns them into metrics, a service ties fetch, cache and compute together, and Fastify exposes two endpoints.
 
-`computeInsights` takes pull requests and a window and returns numbers, with no network, no clock and no database. That is what lets a fixture with hand-checked expectations pin every counting rule, and those tests are the ones I would keep if I could keep only one file.
-
-The fetch is one paginated GraphQL query rather than REST. REST would be a list call plus a reviews call and a comments call per pull request, roughly 1 + 2N requests against a 5000 an hour budget. GraphQL is N/50, and the `merged:` search qualifier does the window filtering upstream, so nothing is downloaded and then discarded. Responses are cached in SQLite keyed on the exact query, which needs no extra service for a reviewer to start.
+`computeInsights` has no network, no clock and no database, so a fixture pins every counting rule. The fetch is one paginated GraphQL query, N/50 requests where REST would need 1 + 2N, and the `merged:` qualifier filters upstream. Responses are cached in SQLite, keyed on the exact query.
 
 <p align="center">
   <img src="assets/system-map.svg" alt="Request path. How a request flows. Fetch, compute, then hold the narrative to the numbers. 2 endpoints, 134 tests green, a suite with no network and no key. 01 fetch, GitHubClient, one search query with the merged range as its qualifier, 50 pull requests a page, authors and reviewers typed by typename, 404 when missing, 403 when private, 429 when rate limited. 02 compute, computeInsights, a half open window, self review never counts, a bot's pull request leaves every review figure, reviewed plus unreviewed plus bot authored equals merged. 03 ground, generateNarrative, a fact per number, each citation compared exactly, a mismatch gets one retry then a 502." width="100%">
@@ -70,9 +68,9 @@ The fetch is one paginated GraphQL query rather than REST. REST would be a list 
 
 ## The narrative, and the check on it
 
-The model never sees raw JSON. It gets a flat fact table, one line per number, each with an id, a value, a unit and a plain description, and it is told it may cite nothing else. The answer comes back as structured output, and then the service checks the model's own work. Every evidence item's metric id is looked up and its value compared exactly, and every number appearing anywhere in the prose must have a counterpart in the table. If either check fails the request is retried once, with the mismatch named, and then returns 502 with the report attached.
+The model gets a flat fact table, one line per number with an id, a value and a unit, and may cite nothing else. The service then checks its work. Every citation is looked up and compared exactly, and every number in the prose must exist in the table. A mismatch is one retry with the mismatch named, then a 502 with the report attached.
 
-That last decision changed during the build. The first version returned 200 with the failures noted in a metadata block, which felt honest. It is not. Any client that renders the narrative and ignores the metadata shows fabricated numbers under a success status, which makes the check decorative. A narrative carrying numbers that do not match the metrics is a failed answer, so it fails.
+The first version returned 200 with the failures in a metadata block. A client that ignores the metadata then shows fabricated numbers under a success, so a narrative that fails the check now fails the request.
 
 <p align="center"><img src="docs/images/narrative.png" alt="The generated narrative, its hypothesis with a confidence gauge, and the evidence chain where each claim names the metric it rests on" width="100%"></p>
 
@@ -83,25 +81,25 @@ That last decision changed during the build. The first version returned 200 with
 
 ## Decisions worth flagging
 
-- Bots are separated, not silently dropped. `pullRequestsMerged` counts everything merged, so it can be checked against GitHub's own search, and bot-authored pull requests are then reported apart and excluded from every review figure. On fastify, 20 dependabot pull requests in one quarter understated the top reviewer's share by five points, 0.4231 against 0.4727. The account type comes from GraphQL's `__typename`, because `dependabot` arrives with no marker in its name.
-- A capped sample withholds its derived statistics. GitHub search returns at most 1000 results, and past that a median and a share computed from whichever pull requests sorted first are a biased slice wearing false precision. So they come back null, the response says the sample is incomplete, and the model is told so before it writes.
-- Private repositories are refused with a 403, however wide the token's scope, so this endpoint cannot be used to read private activity.
-- Auth is conditional. On loopback there is no bearer token, because a reviewer should be able to curl it. The moment the host is not loopback, the process refuses to start without a token or an explicit declaration that the port is published on the host's loopback.
-- A real figure the model used without citing is reported beside the answer, not refused. Refusing would reject most sound answers over bookkeeping, and spending the retry on tidying those up was measured and made the suite worse, 18 of 20 down to 16 and 17.
-- The wait's percentile is named by its id. The model writes p90 and cites `reviewLatency.p90Hours`, and the spelled out ordinal is refused. Nine rounds of grammar tried to tell the p90 wait from a contributor's percentile sentence by sentence, and a rule that parses English was never going to converge.
+- Bots are separated, not dropped, and typed by GraphQL's `__typename`, because on fastify 20 dependabot pull requests understated the top reviewer's share by five points.
+- A sample capped at GitHub's 1000 results withholds its median and share, since a slice that happened to sort first is false precision.
+- Private repositories get a 403, however wide the token's scope.
+- Loopback needs no token, and any other host refuses to start without one or an explicit declaration.
+- A real figure used without a citation is reported, not refused, because spending the retry on it took the suite from 18 of 20 down to 16 and 17.
+- The wait's percentile is named by its id, p90, and the spelled out ordinal is refused, after nine rounds of grammar failed to parse the English.
 
 ## The eval suite
 
-Four cases frozen from real repositories, a concentrated maintainer, a distributed team, a large mixed one and a solo repository where nobody reviews anything. Each asserts that the citations ground, that no number is invented, that the metric carrying the story is cited, that the confidence sits in a band written before the model was ever run, and that the evidence chain is not empty. A case the provider never answers fails all five, so every run is out of twenty.
+Four cases frozen from real repositories, five checks each, so every run is out of twenty. A case the provider never answers fails all five.
 
-Over eight runs the deployed path, `qwen-plus` through the service's own adapter, scored a median of 90%, with two runs that lost cases to provider timeouts counted at full weight. The shipped default model, `claude-sonnet-5`, was measured as well, through the Claude Code command line on a subscription login, and scored 97.5% over its own eight runs. That compares the model and not the path, because the service reaches Claude through the Anthropic SDK with an API key, and that adapter has not been run.
+The deployed path, `qwen-plus` through the service's own adapter, scored a median of 90% over eight runs, timeouts counted at full weight. The shipped default, `claude-sonnet-5`, scored 97.5% through the Claude Code command line on a subscription login. That compares the model, not the path, since the SDK adapter with an API key has not been run.
 
 <p align="center"><img src="assets/eval-panel.svg" alt="The most recent eval run, checks passed per case for each model" width="100%"></p>
 
 ## What I left out, and why
 
-- The cache does not revalidate visibility. A public repository that goes private stays served from cache until the 15 minute TTL runs out, because checking on every hit costs the upstream request the cache exists to avoid.
-- The prose scan cannot judge a sentence. One run wrote that a reviewer handled over half of the reviewed pull requests when the figure was 52 of 110, and there is no digit in over half. The exact guarantee lives in the evidence array.
-- No commit or issue signals, and no splitting of a window past the 1000 result cap. Both would widen the story, and a smaller thing I can fully explain seemed better than a larger one I could not.
+- The cache does not revalidate visibility, so a repository that goes private stays served for up to 15 minutes.
+- The prose scan cannot judge a sentence, so "over half" of 52 in 110 passed with no digit to catch.
+- No commit or issue signals, and no splitting of a window past the 1000 result cap, because a smaller thing fully explained beat a larger one I could not.
 
 More in [NOTES.md](NOTES.md), and a card for every number above in [docs/REFEREE.md](docs/REFEREE.md).
