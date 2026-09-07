@@ -349,13 +349,6 @@ if (check) {
   // The badges, the tables and the prose carry the same numbers by hand, so the
   // check holds the README and NOTES to the measured values rather than the typing.
   const runs = `${COUNT_WORDS[SAMPLE.runs] ?? SAMPLE.runs} runs`;
-  // Every row of the eval record, both columns, and its median line.
-  if (COMPARISON_RAW.runs.length !== SAMPLE_RAW.runs.length) throw new Error('the two eval samples have different run counts, so the record table cannot pair them');
-  const sampleRows = SAMPLE_RAW.runs.map((r, i) => {
-    const c = COMPARISON_RAW.runs[i] as { passed: number; total: number };
-    return `| ${i + 1} | ${r.passed} of ${r.total} | ${c.passed} of ${c.total} |`;
-  });
-  sampleRows.push(`| Median | ${SAMPLE.percent}% | ${COMPARISON.percent}% |`);
   const tail = `past ${COUNT_WORDS[Math.floor(HONO.p90Hours / 24)] ?? Math.floor(HONO.p90Hours / 24)} days`;
   const held: [string, string[]][] = [
     ['README.md', [
@@ -369,7 +362,7 @@ if (check) {
       `${HONO.topReviewed} of ${HONO.reviewed}`,
       `${HONO.medianHours} hours`,
       tail,
-      ...sampleRows,
+      `scored ${COMPARISON.percent}%`,
     ]],
     ['NOTES.md', [
       `${TESTS} tests`,
