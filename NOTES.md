@@ -83,9 +83,9 @@ Test expectations were written by hand, and the figures checked against GitHub's
 
 Where it earned its place is review. Every change went through an adversarial pass by a second model told to refute rather than approve, before each commit. That caught four real defects.
 
-- A build script pointing at a path the build never produced, so `npm run build && npm start` would have failed for a reviewer following the README.
-- An auth bypass where percent-encoding the path reached the route while skipping a guard that matched the URL as text.
-- A cache key built from the clock, so the default no-date URL missed upstream on every request.
-- The 200-with-a-warning decision above.
+- A build script pointing at a path the build never produced. `npm run build && npm start` would have failed for a reviewer following the README, so the build output and the start path now come from one place.
+- An auth bypass where percent-encoding the path reached the route while skipping a guard that matched the URL as text. I moved the guards into a routed plugin, which costs a layer of indirection and is why they cannot be dodged by spelling.
+- A cache key built from the clock, so the default no-date URL missed upstream on every request. Bucketing the default window to the hour fixed it, and the trade is that a request at the top of the hour sees a window up to 60 minutes old.
+- The 200-with-a-warning decision above, which I changed to a 502 and accepted that a caller now gets no prose at all rather than prose it cannot trust.
 
 Two of those were regressions the review itself introduced a round earlier, which is why it runs more than once. On the last round it argued once more that an uncited real figure should fail the request, and I did not take it.
