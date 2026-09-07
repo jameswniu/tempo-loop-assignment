@@ -1,30 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 484" width="100%" role="img" aria-label="Review insights">
-<defs><linearGradient id="rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5f5f5"/><stop offset="0.5" stop-color="#d4d4d8"/><stop offset="1" stop-color="#a1a1aa"/></linearGradient></defs>
-<rect width="1200" height="484" fill="#0f1319"/>
-<rect x="0" y="0" width="6" height="484" fill="#345c8f"/>
-<text x="56" y="64" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#8b949e" letter-spacing="4">EVERY NUMBER CHECKED</text>
-<text x="56" y="132" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="60" fill="#ffffff" font-weight="700">Review insights</text>
-<text x="56" y="176" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#c9d1d9">A narrative that may only cite what the page computed.</text>
-<rect x="56" y="214" width="340" height="122" fill="#161b22" stroke="url(#rim)" stroke-width="1.5"/><rect x="57.5" y="215.5" width="337" height="1" fill="#ffffff" fill-opacity="0.18"/>
-<text x="78" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#ffffff" font-weight="700">96%</text>
-<text x="78" y="314" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#8b949e">one reviewer, hono</text>
-<rect x="430" y="214" width="340" height="122" fill="#161b22" stroke="url(#rim)" stroke-width="1.5"/><rect x="431.5" y="215.5" width="337" height="1" fill="#ffffff" fill-opacity="0.18"/>
-<text x="452" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#ffffff" font-weight="700">134</text>
-<text x="452" y="314" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#8b949e">tests, rules pinned</text>
-<rect x="804" y="214" width="340" height="122" fill="#161b22" stroke="url(#rim)" stroke-width="1.5"/><rect x="805.5" y="215.5" width="337" height="1" fill="#ffffff" fill-opacity="0.18"/>
-<text x="826" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#ffffff" font-weight="700">90%</text>
-<text x="826" y="314" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#8b949e">eval pass, median of 8</text>
-<rect x="56" y="346" width="104" height="38" rx="19" fill="#161b22" stroke="#a1a1aa" stroke-width="1"/>
-<text x="108" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#c9d1d9" text-anchor="middle">fetch</text>
-<rect x="174" y="346" width="131" height="38" rx="19" fill="#161b22" stroke="#a1a1aa" stroke-width="1"/>
-<text x="239.5" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#c9d1d9" text-anchor="middle">compute</text>
-<rect x="319" y="346" width="172" height="38" rx="19" fill="#161b22" stroke="#a1a1aa" stroke-width="1"/>
-<text x="405" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#c9d1d9" text-anchor="middle">fact table</text>
-<rect x="505" y="346" width="104" height="38" rx="19" fill="#161b22" stroke="#a1a1aa" stroke-width="1"/>
-<text x="557" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#c9d1d9" text-anchor="middle">model</text>
+<rect x="0.5" y="0.5" width="1199" height="483" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+<text x="56" y="64" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#57606a" letter-spacing="4">PULL REQUEST REVIEW METRICS</text>
+<text x="56" y="132" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="60" fill="#1f2328" font-weight="700">Review insights</text>
+<text x="56" y="176" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#57606a">Merged pull request metrics, and a narrative checked against them.</text>
+<rect x="56" y="214" width="340" height="122" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+<text x="78" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#1f2328" font-weight="700">96%</text>
+<text x="78" y="314" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#57606a">one reviewer, hono</text>
+<rect x="430" y="214" width="340" height="122" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+<text x="452" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#1f2328" font-weight="700">134</text>
+<text x="452" y="314" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#57606a">tests</text>
+<rect x="804" y="214" width="340" height="122" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+<text x="826" y="280" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" fill="#1f2328" font-weight="700">90%</text>
+<text x="826" y="314" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#57606a">eval median, 8 runs</text>
+<rect x="56" y="346" width="104" height="38" rx="19" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+<text x="108" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#1f2328" text-anchor="middle">fetch</text>
+<rect x="174" y="346" width="131" height="38" rx="19" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+<text x="239.5" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#1f2328" text-anchor="middle">compute</text>
+<rect x="319" y="346" width="172" height="38" rx="19" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+<text x="405" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#1f2328" text-anchor="middle">fact table</text>
+<rect x="505" y="346" width="104" height="38" rx="19" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+<text x="557" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#1f2328" text-anchor="middle">model</text>
 <rect x="623" y="346" width="104" height="38" rx="19" fill="#345c8f" stroke="#345c8f" stroke-width="1"/>
 <text x="675" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#ffffff" text-anchor="middle">check</text>
-<rect x="741" y="346" width="118" height="38" rx="19" fill="#161b22" stroke="#a1a1aa" stroke-width="1"/>
-<text x="800" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#c9d1d9" text-anchor="middle">answer</text>
-<text x="56" y="438" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#8b949e">npm run verify  ·  npm test  ·  npm run eval</text>
+<rect x="741" y="346" width="118" height="38" rx="19" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+<text x="800" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#1f2328" text-anchor="middle">answer</text>
+<text x="56" y="438" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#57606a">npm run verify  ·  npm test  ·  npm run eval</text>
 </svg>

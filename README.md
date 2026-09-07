@@ -1,8 +1,6 @@
 <p align="center">
-  <img src="assets/hero.svg" alt="Review insights. Every number checked. A narrative that may only cite what the page computed. Three tiles read 96 percent for one reviewer on hono, 134 tests with the rules pinned, and 90 percent eval pass as the median of eight runs. The stages run fetch, compute, fact table, model, check, answer, with check highlighted. The footer names npm run verify, npm test and npm run eval." width="100%">
+  <img src="assets/hero.svg" alt="Pull request review metrics. Review insights. Merged pull request metrics, and a narrative checked against them. Three tiles read 96 percent for one reviewer on hono, 134 tests, and 90 percent eval median over 8 runs. The stages run fetch, compute, fact table, model, check, answer, with check highlighted. The footer names npm run verify, npm test and npm run eval." width="100%">
 </p>
-
-<p align="center"><em>A model can write the explanation. It cannot be the one who checks it.</em></p>
 
 <div align="center">
 
@@ -12,11 +10,8 @@
 
 <p align="center">
 <a href="https://github.com/jameswniu/tempo-loop-assignment/actions/workflows/checks.yml"><img alt="checks" src="https://github.com/jameswniu/tempo-loop-assignment/actions/workflows/checks.yml/badge.svg?branch=main"></a>
-<img alt="134 tests" src="https://img.shields.io/badge/tests-134-345c8f?style=flat-square&labelColor=0f1319">
-<img alt="eval, 90 percent of checks as the median of 8 runs" src="https://img.shields.io/badge/eval-90%25_median_of_8_runs-345c8f?style=flat-square&labelColor=0f1319">
-<img alt="4 frozen cases from real repositories" src="https://img.shields.io/badge/frozen_cases-4_real_repositories-6e7681?style=flat-square&labelColor=0f1319">
-<img alt="grounding, a mismatch is a 502 and never a 200" src="https://img.shields.io/badge/grounding-502_on_a_mismatch-1a7f37?style=flat-square&labelColor=0f1319">
-<img alt="MIT license" src="https://img.shields.io/badge/license-MIT-6e7681?style=flat-square&labelColor=0f1319">
+<img alt="134 tests" src="https://img.shields.io/badge/tests-134-345c8f?style=flat-square&labelColor=57606a">
+<img alt="MIT license" src="https://img.shields.io/badge/license-MIT-6e7681?style=flat-square&labelColor=57606a">
 </p>
 
 <div align="center">
@@ -25,7 +20,7 @@
 
 <strong>A service that reads a GitHub repository's merged pull requests and reports how the team reviews its own work.</strong><br/>
 A second endpoint asks a language model to explain the numbers, then checks every figure in the answer against the numbers it was given.<br/>
-If a figure does not match, the request fails. The model never gets the last word.
+If a figure does not match, the request fails.
 
 <br/>
 
@@ -35,21 +30,21 @@ If a figure does not match, the request fails. The model never gets the last wor
 
 ---
 
-**Three figures carry the page, and each answers a different question.**
+Three figures, each answering a different question.
 
-| | The question it answers | Where its truth comes from | What it looks like when it is bad |
+| | The question it answers | Where its truth comes from | On hono, this summer |
 |:---|:---|:---|:---|
-| **Merged without review** | How much ships with nobody but the author looking? | Merged pull requests with no review from anyone else | 48 of 126 on hono this summer |
+| **Merged without review** | How much ships with nobody but the author looking? | Merged pull requests with no review from anyone else | 48 of 126 |
 | **Wait for first review** | When review happens, how long does a change sit first? | Hours from opening to the first outside review, median and p90 | A median of 37 hours and a tail past six days |
 | **Top reviewer share** | Is review a shared habit or one person's job? | Reviewed pull requests touched by the single busiest reviewer | One person on 75 of 78 |
 
-Contributor counts by commits are easy to compute and say almost nothing. These three separate a team that reviews each other's work from one where a single maintainer is both the bottleneck and the queue. Run them over `honojs/hono` and one maintainer reviewed 96% of everything. Run them over `fastify/fastify` for the same window and the busiest reviewer is at 47%, one pull request went unreviewed, and the median first review lands in about eight hours. Same three numbers, two different working cultures.
+Commit counts say little about how a team works. These three separate a team that reviews each other's work from one where a single maintainer is the bottleneck. On `honojs/hono` one maintainer reviewed 96% of everything. On `fastify/fastify`, same window, the busiest reviewer is at 47%, one pull request went unreviewed, and the median first review lands in about eight hours.
 
 <table>
   <tr>
-    <td width="33%" align="center" valign="top"><a href="#1-the-metric"><img src="docs/images/cell-signals.gif" alt="The three signals loading for hono, each with a colour and a verdict" width="100%"></a><br><b>The metric.</b> Every number is computed by a pure function over merged pull requests, and a fixture with hand-checked expectations pins each counting rule. <a href="#1-the-metric">See the rules</a></td>
-    <td width="33%" align="center" valign="top"><a href="#2-the-grounded-narrative"><img src="docs/images/cell-narrative.gif" alt="The model's explanation arriving with its evidence chain, each claim beside the metric it rests on" width="100%"></a><br><b>The narrative.</b> The model gets a fact table and may cite nothing else. Every citation is looked up before a word is shown. <a href="#2-the-grounded-narrative">See the check</a></td>
-    <td width="33%" align="center" valign="top"><a href="#3-the-eval-suite"><img src="assets/eval-panel.svg" alt="The eval run, four frozen cases with checks passed per case" width="100%"></a><br><b>The eval.</b> Four cases frozen from real repositories, every check exact, run before any change to the prompt or the model. <a href="#3-the-eval-suite">See the suite</a></td>
+    <td width="33%" align="center" valign="top"><a href="#1-the-metric"><img src="docs/images/cell-signals.gif" alt="The three signals loading for hono, each with a colour and a verdict" width="100%"></a><br>A pure function over merged pull requests, each counting rule pinned by a fixture. <a href="#1-the-metric">The rules</a></td>
+    <td width="33%" align="center" valign="top"><a href="#2-the-grounded-narrative"><img src="docs/images/cell-narrative.gif" alt="The model's explanation arriving with its evidence chain, each claim beside the metric it rests on" width="100%"></a><br>A fact table the model may not go beyond, every citation checked before a word is shown. <a href="#2-the-grounded-narrative">The check</a></td>
+    <td width="33%" align="center" valign="top"><a href="#3-the-eval-suite"><img src="assets/eval-panel.svg" alt="The eval run, four frozen cases with checks passed per case" width="100%"></a><br>Four frozen cases, run before any change to the prompt or the model. <a href="#3-the-eval-suite">The suite</a></td>
   </tr>
 </table>
 
@@ -95,7 +90,7 @@ The model gets a fact table, one line per number with an id, a value and a unit,
 <p align="center"><img src="docs/images/narrative.png" alt="The generated narrative, its hypothesis with a confidence gauge, and the evidence chain where each claim names the metric it rests on" width="100%"></p>
 
 <p align="center">
-  <a href="https://github.com/jameswniu/tempo-loop-assignment/raw/main/docs/images/demo.mp4"><img src="docs/images/demo.gif" alt="Recording of the page loading hono's metrics and asking the model to explain them" width="520"></a>
+  <a href="https://github.com/jameswniu/tempo-loop-assignment/raw/main/docs/images/demo.mp4"><img src="docs/images/demo.gif" alt="Recording of the page loading hono's metrics and asking the model to explain them" width="100%"></a>
 </p>
 <p align="center"><sub><a href="https://github.com/jameswniu/tempo-loop-assignment/raw/main/docs/images/demo.mp4">Watch the recording</a></sub></p>
 

@@ -18,12 +18,15 @@ import type { PullRequestRecord, Window } from '../src/metrics/types.js';
 const VIEW_W = 1200;
 const FONT_FLOOR = 22;
 
-const ink = '#0f1319';
+// The page's own light palette, the same tokens the React page uses, so the
+// figures and the screenshots beside them read as one surface.
 const paper = '#ffffff';
-const silver = { top: '#f5f5f5', mid: '#d4d4d8', low: '#a1a1aa' };
+const panel = '#f6f8fa';
+const line = '#d0d7de';
+const ink = '#1f2328';
+const muted = '#57606a';
 const accent = '#345c8f';
 const good = '#1a7f37';
-const grayText = '#8b949e';
 const mono = "ui-monospace, 'SF Mono', Menlo, Consolas, monospace";
 const sans = "-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
 
@@ -42,18 +45,18 @@ function fits(text: string, size: number, boxWidth: number, pad: number, bold = 
 
 function text(x: number, y: number, s: string, opts: { size: number; fill?: string; weight?: number; family?: string; anchor?: string; spacing?: number; upper?: boolean }): string {
   const t = opts.upper ? s.toUpperCase() : s;
-  return `<text x="${x}" y="${y}" font-family="${opts.family ?? sans}" font-size="${opts.size}" fill="${opts.fill ?? paper}"` +
+  return `<text x="${x}" y="${y}" font-family="${opts.family ?? sans}" font-size="${opts.size}" fill="${opts.fill ?? ink}"` +
     `${opts.weight ? ` font-weight="${opts.weight}"` : ''}${opts.anchor ? ` text-anchor="${opts.anchor}"` : ''}` +
     `${opts.spacing ? ` letter-spacing="${opts.spacing}"` : ''}>${esc(t)}</text>`;
 }
 
-const rimDefs = `<defs><linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">` +
-  `<stop offset="0" stop-color="${silver.top}"/><stop offset="0.5" stop-color="${silver.mid}"/><stop offset="1" stop-color="${silver.low}"/>` +
-  `</linearGradient></defs>`;
+/** The figure's own edge on GitHub's white page, one hairline and a soft corner. */
+function frame(h: number): string {
+  return `<rect x="0.5" y="0.5" width="${VIEW_W - 1}" height="${h - 1}" rx="8" fill="${paper}" stroke="${line}"/>`;
+}
 
-function card(x: number, y: number, w: number, h: number, fill = '#161b22'): string {
-  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}" stroke="url(#rim)" stroke-width="1.5"/>` +
-    `<rect x="${x + 1.5}" y="${y + 1.5}" width="${w - 3}" height="1" fill="#ffffff" fill-opacity="0.18"/>`;
+function card(x: number, y: number, w: number, h: number, fill = panel): string {
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="${fill}" stroke="${line}" stroke-width="1"/>`;
 }
 
 /* ---------------- hero ---------------- */
@@ -68,21 +71,19 @@ export function hero(tiles: Tile[], footer: string): string {
   const H = 484;
   const parts: string[] = [];
   parts.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${VIEW_W} ${H}" width="100%" role="img" aria-label="Review insights">`);
-  parts.push(rimDefs);
-  parts.push(`<rect width="${VIEW_W}" height="${H}" fill="${ink}"/>`);
-  parts.push(`<rect x="0" y="0" width="6" height="${H}" fill="${accent}"/>`);
+  parts.push(frame(H));
 
-  const kicker = 'every number checked';
+  const kicker = 'pull request review metrics';
   fits(kicker, 22, VIEW_W, 56, false, 'hero kicker');
-  parts.push(text(56, 64, kicker, { size: 22, family: mono, fill: grayText, spacing: 4, upper: true }));
+  parts.push(text(56, 64, kicker, { size: 22, family: mono, fill: muted, spacing: 4, upper: true }));
 
   const title = 'Review insights';
   fits(title, 60, VIEW_W, 56, true, 'hero title');
   parts.push(text(56, 132, title, { size: 60, weight: 700 }));
 
-  const sub = 'A narrative that may only cite what the page computed.';
+  const sub = 'Merged pull request metrics, and a narrative checked against them.';
   fits(sub, 26, VIEW_W, 56, false, 'hero subtitle');
-  parts.push(text(56, 176, sub, { size: 26, fill: '#c9d1d9' }));
+  parts.push(text(56, 176, sub, { size: 26, fill: muted }));
 
   const tileW = 340, tileH = 122, gap = 34, top = 214;
   tiles.forEach((t, i) => {
@@ -91,7 +92,7 @@ export function hero(tiles: Tile[], footer: string): string {
     fits(t.number, 54, tileW, 22, true, `tile ${i} number`);
     parts.push(text(x + 22, top + 66, t.number, { size: 54, weight: 700 }));
     fits(t.caption, 22, tileW, 22, false, `tile ${i} caption`);
-    parts.push(text(x + 22, top + 100, t.caption, { size: 22, fill: grayText }));
+    parts.push(text(x + 22, top + 100, t.caption, { size: 22, fill: muted }));
   });
 
   const stages = ['fetch', 'compute', 'fact table', 'model', 'check', 'answer'];
@@ -101,15 +102,15 @@ export function hero(tiles: Tile[], footer: string): string {
   for (const s of stages) {
     const w = Math.round(s.length * 22 * 0.62) + 36;
     const hot = s === highlight;
-    parts.push(`<rect x="${px}" y="${py - 26}" width="${w}" height="38" rx="19" fill="${hot ? accent : '#161b22'}" stroke="${hot ? accent : silver.low}" stroke-width="1"/>`);
+    parts.push(`<rect x="${px}" y="${py - 26}" width="${w}" height="38" rx="19" fill="${hot ? accent : panel}" stroke="${hot ? accent : line}" stroke-width="1"/>`);
     fits(s, 22, w, 18, false, `stage pill ${s}`);
-    parts.push(text(px + w / 2, py, s, { size: 22, family: mono, anchor: 'middle', fill: hot ? paper : '#c9d1d9' }));
+    parts.push(text(px + w / 2, py, s, { size: 22, family: mono, anchor: 'middle', fill: hot ? paper : ink }));
     px += w + 14;
   }
   if (px - 14 > VIEW_W - 56) throw new Error(`stage pills overrun the right margin by ${px - 14 - (VIEW_W - 56)}`);
 
   fits(footer, 22, VIEW_W, 56, false, 'hero footer');
-  parts.push(text(56, 438, footer, { size: 22, family: mono, fill: grayText }));
+  parts.push(text(56, 438, footer, { size: 22, family: mono, fill: muted }));
   parts.push('</svg>');
   return parts.join('\n');
 }
@@ -126,16 +127,14 @@ export function systemMap(sections: Section[]): string {
   const H = Math.max(...sections.map(columnBottom)) + 56;
   const p: string[] = [];
   p.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${VIEW_W} ${H}" width="100%" role="img" aria-label="System map">`);
-  p.push(rimDefs);
-  p.push(`<rect width="${VIEW_W}" height="${H}" fill="${ink}"/>`);
-  p.push(`<rect x="0" y="0" width="6" height="${H}" fill="${accent}"/>`);
-  p.push(text(56, 58, 'system map', { size: 22, family: mono, fill: grayText, spacing: 4, upper: true }));
-  const title = 'One query in, one checked answer';
+  p.push(frame(H));
+  p.push(text(56, 58, 'request path', { size: 22, family: mono, fill: muted, spacing: 4, upper: true }));
+  const title = 'How a request flows';
   fits(title, 40, 820, 0, true, 'map title');
   p.push(text(56, 108, title, { size: 40, weight: 700 }));
-  const sub = 'The last layer refuses what it cannot trace to the first.';
+  const sub = 'Fetch, compute, check the narrative against the numbers.';
   fits(sub, 24, 820, 0, false, 'map subtitle');
-  p.push(text(56, 144, sub, { size: 24, fill: '#c9d1d9' }));
+  p.push(text(56, 144, sub, { size: 24, fill: muted }));
 
   const box = { x: 900, y: 40, w: 244, h: 84 };
   p.push(card(box.x, box.y, box.w, box.h));
@@ -144,14 +143,14 @@ export function systemMap(sections: Section[]): string {
   fits(stat1, 26, box.w, 18, true, 'stat box 1');
   fits(stat2, 22, box.w, 18, false, 'stat box 2');
   p.push(text(box.x + 18, box.y + 36, stat1, { size: 26, weight: 700 }));
-  p.push(text(box.x + 18, box.y + 68, stat2, { size: 22, family: mono, fill: grayText }));
+  p.push(text(box.x + 18, box.y + 68, stat2, { size: 22, family: mono, fill: muted }));
 
   const colW = 340, gapX = 34, top = 190;
   sections.forEach((s, i) => {
     const x = 56 + i * (colW + gapX);
-    p.push(text(x, top, `${s.code}  ${s.label}`, { size: 22, family: mono, fill: accent === '#345c8f' ? '#7aa2d4' : accent, spacing: 2, upper: true }));
+    p.push(text(x, top, `${s.code}  ${s.label}`, { size: 22, family: mono, fill: accent, spacing: 2, upper: true }));
     fits(s.note, 22, colW, 0, false, `section ${s.code} note`);
-    p.push(text(x, top + 30, s.note, { size: 22, fill: grayText }));
+    p.push(text(x, top + 30, s.note, { size: 22, fill: muted }));
     let y = top + 52;
     for (const c of s.cards) {
       const h = 64 + c.lines.length * 30 + 34;
@@ -160,10 +159,10 @@ export function systemMap(sections: Section[]): string {
       p.push(text(x + 20, y + 40, c.title, { size: 26, weight: 700 }));
       c.lines.forEach((ln, j) => {
         fits(ln, 22, colW, 20, false, `card ${c.title} line ${j}`);
-        p.push(text(x + 20, y + 74 + j * 30, ln, { size: 22, fill: '#c9d1d9' }));
+        p.push(text(x + 20, y + 74 + j * 30, ln, { size: 22, fill: ink }));
       });
       fits(c.foot, 22, colW, 20, false, `card ${c.title} foot`);
-      p.push(text(x + 20, y + h - 18, c.foot, { size: 22, family: mono, fill: grayText }));
+      p.push(text(x + 20, y + h - 18, c.foot, { size: 22, family: mono, fill: muted }));
       y += h + 18;
     }
   });
@@ -185,19 +184,19 @@ function evalBlock(p: string[], run: RunSummary, top: number, first: boolean): n
   fits(title, 40, 800, 0, true, `eval title ${run.model}`);
   p.push(text(56, top + head, title, { size: 40, weight: 700 }));
   const count = COUNT_WORDS[run.cases.length] ?? String(run.cases.length);
-  const sub = `${run.model}, ${count} frozen cases, every check exact`;
+  const sub = `${run.model}, ${count} frozen cases`;
   fits(sub, 22, 1090, 0, false, `eval subtitle ${run.model}`);
-  p.push(text(56, top + head + 32, sub, { size: 22, family: mono, fill: grayText }));
+  p.push(text(56, top + head + 32, sub, { size: 22, family: mono, fill: muted }));
 
   const barX = 520, barW = 560;
   run.cases.forEach((c, i) => {
     const y = top + head + 82 + i * 58;
     fits(c.name, 24, barX - 56, 0, false, `case ${c.name}`);
-    p.push(text(56, y + 8, c.name, { size: 24, fill: '#c9d1d9' }));
-    p.push(`<rect x="${barX}" y="${y - 14}" width="${barW}" height="28" fill="#161b22" stroke="url(#rim)" stroke-width="1"/>`);
+    p.push(text(56, y + 8, c.name, { size: 24, fill: ink }));
+    p.push(`<rect x="${barX}" y="${y - 14}" width="${barW}" height="28" rx="4" fill="${panel}" stroke="${line}" stroke-width="1"/>`);
     const w = Math.round((c.passed / Math.max(c.total, 1)) * barW);
     p.push(`<rect x="${barX}" y="${y - 14}" width="${w}" height="28" fill="${c.passed === c.total ? good : accent}"/>`);
-    p.push(text(barX + barW + 16, y + 8, `${c.passed}/${c.total}`, { size: 24, family: mono, fill: paper }));
+    p.push(text(barX + barW + 16, y + 8, `${c.passed}/${c.total}`, { size: 24, family: mono, fill: ink }));
   });
   return head + 42 + run.cases.length * 58;
 }
@@ -209,21 +208,19 @@ export function evalPanel(run: LastRun): string {
   const H = heights.reduce((s, h) => s + h, 0) + GAP * (run.runs.length - 1) + 70;
   const p: string[] = [];
   p.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${VIEW_W} ${H}" width="100%" role="img" aria-label="Eval run">`);
-  p.push(rimDefs);
-  p.push(`<rect width="${VIEW_W}" height="${H}" fill="${ink}"/>`);
-  p.push(`<rect x="0" y="0" width="6" height="${H}" fill="${accent}"/>`);
-  p.push(text(56, 58, 'eval run', { size: 22, family: mono, fill: grayText, spacing: 4, upper: true }));
+  p.push(frame(H));
+  p.push(text(56, 58, 'latest eval run', { size: 22, family: mono, fill: muted, spacing: 4, upper: true }));
   let top = 0;
   run.runs.forEach((r, i) => {
     if (i > 0) {
-      p.push(`<line x1="56" y1="${top + GAP / 2}" x2="${VIEW_W - 56}" y2="${top + GAP / 2}" stroke="url(#rim)" stroke-width="1"/>`);
+      p.push(`<line x1="56" y1="${top + GAP / 2}" x2="${VIEW_W - 56}" y2="${top + GAP / 2}" stroke="${line}" stroke-width="1"/>`);
       top += GAP;
     }
     top += evalBlock(p, r, top, i === 0);
   });
   const foot = 'npm run eval   (writes evals/last-run.json, which drew this panel)';
   fits(foot, 22, VIEW_W, 56, false, 'eval footer');
-  p.push(text(56, H - 30, foot, { size: 22, family: mono, fill: grayText }));
+  p.push(text(56, H - 30, foot, { size: 22, family: mono, fill: muted }));
   p.push('</svg>');
   return p.join('\n');
 }
@@ -277,22 +274,22 @@ function build(): Record<string, string> {
   out['assets/hero.svg'] = hero(
     [
       { number: `${SHARE}%`, caption: 'one reviewer, hono' },
-      { number: `${TESTS}`, caption: 'tests, rules pinned' },
-      { number: `${SAMPLE.percent}%`, caption: `eval pass, median of ${SAMPLE.runs}` },
+      { number: `${TESTS}`, caption: 'tests' },
+      { number: `${SAMPLE.percent}%`, caption: `eval median, ${SAMPLE.runs} runs` },
     ],
     'npm run verify  ·  npm test  ·  npm run eval',
   );
   out['assets/system-map.svg'] = systemMap([
     {
-      code: '01', label: 'fetch', note: 'one query, filtered above',
+      code: '01', label: 'fetch', note: 'one GraphQL search',
       cards: [{ title: 'GraphQL search', lines: ['merged: does the window', '50 pull requests a page', 'bots by __typename'], foot: 'src/github/client.ts' }],
     },
     {
-      code: '02', label: 'compute', note: 'pure, so a fixture pins it',
+      code: '02', label: 'compute', note: 'a pure function',
       cards: [{ title: 'computeInsights', lines: ['half-open [from, to)', 'no self-review counts', 'sums back to merged'], foot: 'src/metrics/compute.ts' }],
     },
     {
-      code: '03', label: 'ground', note: 'ids in, every one checked',
+      code: '03', label: 'ground', note: 'every citation checked',
       cards: [{ title: 'generateNarrative', lines: ['fact table in, JSON out', 'each citation looked up', 'a mismatch is a 502'], foot: 'src/llm/narrative.ts' }],
     },
   ]);
@@ -320,9 +317,10 @@ for (const [path, svg] of Object.entries(files)) {
 if (check) {
   // The badges and the prose carry the same numbers by hand, so the check
   // holds the README and NOTES to the measured values rather than the typing.
+  const runs = `${COUNT_WORDS[SAMPLE.runs] ?? SAMPLE.runs} runs`;
   const held: [string, string[]][] = [
-    ['README.md', [`eval-${SAMPLE.percent}%25_median_of_${SAMPLE.runs}_runs`, `a median of ${SAMPLE.percent}%`, `tests-${TESTS}-`, `${TESTS} tests`, `${SHARE}%`]],
-    ['NOTES.md', [`${TESTS} tests`, `${SHARE}%`, `a median of ${SAMPLE.percent}%`]],
+    ['README.md', [`a median of ${SAMPLE.percent}%`, runs, `tests-${TESTS}-`, `${TESTS} tests`, `${SHARE}%`]],
+    ['NOTES.md', [`${TESTS} tests`, `${SHARE}%`, `a median of ${SAMPLE.percent}%`, runs]],
   ];
   for (const [doc, needles] of held) {
     const body = readFileSync(doc, 'utf8');
