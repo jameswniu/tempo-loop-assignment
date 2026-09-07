@@ -35,5 +35,44 @@
       "passed": 18,
       "total": 20
     }
-  ]
+  ],
+  "comparison": {
+    "model": "claude-sonnet-5",
+    "command": "npm run eval -- claude-code",
+    "note": "Eight consecutive runs through the Claude Code command line on a subscription login, the same prompts and schema, with the wait percentile named by its id. One run lost one case to a command line timeout, five failed checks by the same rule. This compares the model and not the deployed path, so it stays out of the badge and the hero and only fills the second column of the README's eval record.",
+    "runs": [
+      {
+        "passed": 20,
+        "total": 20
+      },
+      {
+        "passed": 15,
+        "total": 20
+      },
+      {
+        "passed": 20,
+        "total": 20
+      },
+      {
+        "passed": 19,
+        "total": 20
+      },
+      {
+        "passed": 19,
+        "total": 20
+      },
+      {
+        "passed": 19,
+        "total": 20
+      },
+      {
+        "passed": 20,
+        "total": 20
+      },
+      {
+        "passed": 20,
+        "total": 20
+      }
+    ]
+  }
 }

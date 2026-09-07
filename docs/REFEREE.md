@@ -24,7 +24,7 @@ found by reading each one back. Every reference below has now been checked again
 ## Cards
 
 ```
-Claim     "one maintainer reviewed 96% of everything" (NOTES.md line 48, README.md prose, the README hero tile reading 96% one reviewer, hono)
+Claim     "one maintainer reviewed 96% of everything" (NOTES.md line 48, README.md prose, the README hero card reading 75 of 78, one reviewer, 96%)
 Unit      share of REVIEWED pull requests that yusukebe reviewed, so the denominator is the 78 human-authored pull requests that got at least one review from somebody other than their author, not the 126 merged
 Match     a person counts as having reviewed a pull request when they submitted at least one review on it, they are not its author, and neither they nor the author is a bot account (compute.ts line 154 drops the self-review, line 136 drops the whole pull request when a bot opened it), and each pull request counts once for that person no matter how many times they reviewed it
 Set       126 pull requests merged into honojs/hono in the window, 0 of them opened by a bot, 48 with no outside review at all, 1 bot account seen and excluded, and the reviews come from the first 100 per pull request plus any further pages fetched (client.ts line 169), which no pull request in this set needed
@@ -35,7 +35,7 @@ Knob      whether unreviewed pull requests join the denominator, at which case t
 ```
 
 ```
-Claim     "48 of 126 pull requests merged with no outside review" (NOTES.md lines 48 and 49)
+Claim     "48 of 126 pull requests merged with no outside review" (NOTES.md lines 48 and 49, the README table, and the README hero card reading 48 of 126)
 Unit      human-authored pull requests merged in the window where nobody but the author submitted a review, over every pull request merged in the window including bot-authored ones
 Match     a pull request is unreviewed when firstExternalReviewAt returns null (compute.ts line 65), meaning it carries no review from a non-bot account that is not its author, and a review by the author never counts however substantial it is
 Set       the same 126 merged pull requests, and because hono had 0 bot-authored pull requests in this window the two denominators coincide here, which they do not on fastify
@@ -54,6 +54,17 @@ Command   npx tsx tools/verify-claims.ts, reviewLatency.medianHours, computed by
 Sibling   the p90 on the same set is 121.08 hours, so the slowest tenth waits more than five days while the middle waits eight hours, and honojs/hono's median over its own set is 37.19 hours
 Bound     the median is the mean of the two middle values on an even sample, which is the one reported figure that is not itself an observed wait, and none of this distinguishes a pull request that sat unread from one that was not ready to read
 Knob      excluding unreviewed pull requests from the sample, since counting them at any finite penalty would move both the median and the p90 upward on hono far more than on fastify
+```
+
+```
+Claim     "a 37 hour median and the p90 at 153 hours" for hono (the README hero card reading 02 wait, and the README table row reading a median of 37 hours and a tail past six days)
+Unit      hours from a pull request opening to the first review submitted on it by somebody other than its author, the median and the p90 over the 78 human-authored hono pull requests that received such a review
+Match     the same clock as the fastify card above, createdAt to the earliest submittedAt by a non-bot account that is not the author, clamped at zero, with unreviewed pull requests left out of the sample rather than counted as infinitely slow, and the p90 taken at the nearest rank so it is always a wait somebody actually had
+Set       78 of hono's 126 merged pull requests over 2026-06-01 to 2026-09-01, the ones with at least one outside review, and 153.28 hours is 6.4 days, which is the tail past six days in the table
+Command   npx tsx tools/verify-claims.ts prints the median, 37.19, and tools/figures.ts recomputes both figures from evals/cases/raw/honojs-hono.json when it draws the hero, rounds each to the hour, and npm run figures:check fails if the hero or the README stops matching
+Sibling   fastify over the same window is 8.36 hours at the median and 121.08 at the p90, so hono's typical wait is more than four times longer and its slow tail 32 hours longer
+Bound     the p90 on 78 waits is one pull request's wait, so a single slow review moves it, and neither number distinguishes a pull request that sat unread from one that was not ready to read
+Knob      nearest rank against interpolation for the p90, which would land it between two observed waits, and whether unreviewed pull requests join the sample at some penalty, which would move hono far more than fastify
 ```
 
 ```
@@ -90,18 +101,18 @@ Knob      the window length, since the only remedy in this version is to ask for
 ```
 
 ```
-Claim     "17 to 19 of 20 on the six of eight consecutive runs that completed, two cases lost to timeouts on each of the other two, a median of 90%" (NOTES.md, README.md section 3, the README hero tile reading 90% eval pass, median of 8, and the eval badge)
+Claim     "17 to 19 of 20 on the six of eight consecutive runs that completed, two cases lost to timeouts on each of the other two, a median of 90%" (NOTES.md, README.md section 3 and its eval record table, the README hero footer reading eval median 90% over 8 runs, and the eval badge)
 Unit      individual assertions passed across the four frozen cases in one run of the suite, always out of twenty, because a case that fails to return the agreed shape, or that the provider never answers, fails all five of its checks
 Match     a check passes on an exact condition: every evidence citation resolves to its metric id and matches its value, no number in the prose is absent from the whole fact table, at least one metric from each required group is cited, and the hypothesis confidence falls inside a band written per case before the model was ever run
 Set       four cases in evals/cases, frozen from honojs/hono, fastify/fastify, vitest-dev/vitest and jameswniu/multi-agent-rl-mapf-drone-navigation, all over 2026-06-01 to 2026-09-01, answered by qwen-plus through Alibaba's OpenAI-compatible endpoint at default temperature, through the same adapter a request takes
-Command   npm run eval -- openai, roughly 25 seconds when the provider answers, and eight consecutive runs with the wait percentile named by its id produced 9, 17, 18, 19, 18, 9, 18 and 18 of 20, the two runs at 9 each carrying two cases lost to a provider timeout at five failed checks apiece. The sample is committed as evals/sample.json, tools/figures.ts generates the hero tile from it, and npm run figures:check fails if the README badge or prose stops matching it
+Command   npm run eval -- openai, roughly 25 seconds when the provider answers, and eight consecutive runs with the wait percentile named by its id produced 9, 17, 18, 19, 18, 9, 18 and 18 of 20, the two runs at 9 each carrying two cases lost to a provider timeout at five failed checks apiece. The sample is committed as evals/sample.json, tools/figures.ts draws the hero footer from it and holds the README's eval record table to it, and npm run figures:check fails if the badge, the table or the prose stops matching it
 Sibling   claude-sonnet-5, the shipped default model, through the Claude Code command line on a subscription login, npm run eval -- claude-code, eight consecutive runs on the same rule produced 20, 15, 20, 19, 19, 19, 20 and 20 of 20, a median of 97.5%, the 15 a command line timeout at five failed checks. That compares the model and not the deployed path, since the command line is not the SDK adapter the service calls and prepends its own system text, and the Anthropic adapter path has not been run at all. Every earlier sample is stated in NOTES.md, as the harness counted it at the time
 Bound     the deployed path is measured with a model that is not the shipped default, because the default needs a paid key and the command line does not. Eight runs is a small sample, two of the eight lost cases to the provider rather than to the model and the headline carries that at full weight, and the bands were written by the same person who wrote the prompt
 Knob      the arithmetic rule in the system prompt, which the added-up totals violate across the completed qwen runs, the confidence bands in evals/cases.ts, which Claude sits below twice, and the 30 second attempt limit in src/llm/provider.ts, which two runs hit
 ```
 
 ```
-Claim     "npm test runs 134 tests" (NOTES.md line 35, the README hero tile reading 134 tests, rules pinned, and the tests badge)
+Claim     "npm test runs 134 tests" (NOTES.md line 35, the README hero footer and the system map's stat box reading 134 tests, the run block, and the tests badge)
 Unit      test cases that pass in the vitest suite, across 5 files, counting each case generated by it.each separately
 Match     a passing assertion block as vitest counts it, which is the tests total in its own summary line
 Command   npm test

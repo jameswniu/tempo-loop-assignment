@@ -263,11 +263,12 @@ and the 90% on the hero and the badge is the median over `evals/sample.json`, th
 named above, which the same check holds the README's own text to. Each string in a figure passes a fit
 guard at generation time that names the offending text rather than letting it overflow a card, and
 `npm run figures:check` fails CI if a committed figure drifts from its generator, or if the README
-or these notes stop carrying the three hero numbers as measured: the 96% is recomputed from the
-frozen hono payload, the test count comes from running the suite, and the eval median from
-`evals/sample.json`. The other figures in the prose, 48 of 126, 75 of 78, the fastify 47%, are
-recomputed by `npx tsx tools/verify-claims.ts` and each has a card in `docs/REFEREE.md`, but nothing
-fails CI when the prose drifts from them. That is a gap I know about and have not closed. The
+or these notes stop carrying the hero numbers as measured: hono's 48 of 126, 37 hour median, 153 hour
+p90 and 75 of 78 are recomputed from the frozen hono payload, the test count comes from running the
+suite, and the eval median from `evals/sample.json`. The fastify figures in the prose, the 47% and the
+eight hour median, are recomputed by `npx tsx tools/verify-claims.ts` and each has a card in
+`docs/REFEREE.md`, but nothing fails CI when the prose drifts from them. That is a gap I know about
+and have not closed. The
 screenshots and the recording under `docs/images` are captures of the running page over the same
 frozen window, and they are the one thing here that no script regenerates.
 

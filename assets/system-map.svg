@@ -1,33 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 486" width="100%" role="img" aria-label="System map">
-<rect x="0.5" y="0.5" width="1199" height="485" rx="8" fill="#ffffff" stroke="#d0d7de"/>
-<text x="56" y="58" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#57606a" letter-spacing="4">REQUEST PATH</text>
-<text x="56" y="108" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="40" fill="#1f2328" font-weight="700">How a request flows</text>
-<text x="56" y="144" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" fill="#57606a">Fetch, compute, check the narrative against the numbers.</text>
-<rect x="900" y="40" width="244" height="84" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
-<text x="918" y="76" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#1f2328" font-weight="700">2 endpoints</text>
-<text x="918" y="108" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#57606a">N / 50 calls</text>
-<text x="56" y="190" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#345c8f" letter-spacing="2">01  FETCH</text>
-<text x="56" y="220" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#57606a">one GraphQL search</text>
-<rect x="56" y="242" width="340" height="188" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
-<text x="76" y="282" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#1f2328" font-weight="700">GraphQL search</text>
-<text x="76" y="316" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#1f2328">merged: does the window</text>
-<text x="76" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#1f2328">50 pull requests a page</text>
-<text x="76" y="376" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#1f2328">bots by __typename</text>
-<text x="76" y="412" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#57606a">src/github/client.ts</text>
-<text x="430" y="190" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#345c8f" letter-spacing="2">02  COMPUTE</text>
-<text x="430" y="220" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#57606a">a pure function</text>
-<rect x="430" y="242" width="340" height="188" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
-<text x="450" y="282" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#1f2328" font-weight="700">computeInsights</text>
-<text x="450" y="316" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#1f2328">half-open [from, to)</text>
-<text x="450" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#1f2328">no self-review counts</text>
-<text x="450" y="376" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#1f2328">sums back to merged</text>
-<text x="450" y="412" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#57606a">src/metrics/compute.ts</text>
-<text x="804" y="190" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#345c8f" letter-spacing="2">03  GROUND</text>
-<text x="804" y="220" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#57606a">every citation checked</text>
-<rect x="804" y="242" width="340" height="188" rx="6" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
-<text x="824" y="282" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#1f2328" font-weight="700">generateNarrative</text>
-<text x="824" y="316" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#1f2328">fact table in, JSON out</text>
-<text x="824" y="346" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#1f2328">each citation looked up</text>
-<text x="824" y="376" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" fill="#1f2328">a mismatch is a 502</text>
-<text x="824" y="412" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#57606a">src/llm/narrative.ts</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1034" width="100%" role="img" aria-label="System map">
+<rect x="0" y="0" width="1200" height="1034" fill="#141413"/>
+<rect x="0" y="0" width="8" height="1034" fill="#CC785C"/>
+<text x="48" y="56" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#CC785C" font-weight="700" letter-spacing="4">REQUEST PATH</text>
+<text x="48" y="108" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="44" fill="#F4F1EA" font-weight="700">How a request flows</text>
+<text x="48" y="156" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="24" fill="#B8B0A4">Fetch, compute, then hold the narrative to the numbers.</text>
+<rect x="746" y="40" width="430" height="96" rx="10" fill="#1F1E1D" stroke="#3A3734" stroke-width="1.5"/>
+<text x="768" y="80" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#F4F1EA">2 endpoints / 134 tests green</text>
+<text x="768" y="116" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#F4F1EA">suite: no network, no key</text>
+<text x="48" y="204" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#CC785C" font-weight="700" letter-spacing="2">01  FETCH</text>
+<text x="310" y="204" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#B8B0A4">one GraphQL search, the merged qualifier does the window</text>
+<rect x="48" y="222" width="1104" height="202" rx="10" fill="#1F1E1D" stroke="#3A3734" stroke-width="1.5"/><rect x="48" y="222" width="6" height="202" rx="3" fill="#CC785C"/>
+<text x="74" y="266" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="26" fill="#F4F1EA" font-weight="700">GitHubClient, src/github/client.ts</text>
+<text x="74" y="304" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" fill="#F4F1EA">one search query with the merged range as its qualifier, 50 pull requests a page</text>
+<text x="74" y="338" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" fill="#F4F1EA">authors and reviewers typed by __typename, so a Bot is a Bot whatever its login</text>
+<text x="74" y="372" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" fill="#F4F1EA">404 when the repository is missing, 403 when private, 429 when GitHub rate limits</text>
+<text x="74" y="406" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#B8B0A4">GET /v1/insights?repo=honojs/hono&amp;from=2026-06-01&amp;to=2026-09-01</text>
+<text x="48" y="472" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#CC785C" font-weight="700" letter-spacing="2">02  COMPUTE</text>
+<text x="310" y="472" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#B8B0A4">a pure function, no network, no clock, no database</text>
+<rect x="48" y="490" width="1104" height="202" rx="10" fill="#1F1E1D" stroke="#3A3734" stroke-width="1.5"/><rect x="48" y="490" width="6" height="202" rx="3" fill="#CC785C"/>
+<text x="74" y="534" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="26" fill="#F4F1EA" font-weight="700">computeInsights, src/metrics/compute.ts</text>
+<text x="74" y="572" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" fill="#F4F1EA">half open, [from, to), so a merge at the to instant belongs to the next period</text>
+<text x="74" y="606" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" fill="#F4F1EA">self review never counts, and a bot's pull request leaves every review figure</text>
+<text x="74" y="640" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" fill="#F4F1EA">reviewed plus unreviewed plus bot authored equals merged, and a test asserts it</text>
+<text x="74" y="674" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#B8B0A4">every counting rule pinned by a fixture in test/metrics.test.ts</text>
+<text x="48" y="740" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#CC785C" font-weight="700" letter-spacing="2">03  GROUND</text>
+<text x="310" y="740" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#B8B0A4">a fact table in, JSON out, every citation looked up</text>
+<rect x="48" y="758" width="1104" height="202" rx="10" fill="#1F1E1D" stroke="#3A3734" stroke-width="1.5"/><rect x="48" y="758" width="6" height="202" rx="3" fill="#CC785C"/>
+<text x="74" y="802" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="26" fill="#F4F1EA" font-weight="700">generateNarrative, src/llm/narrative.ts</text>
+<text x="74" y="840" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" fill="#F4F1EA">a fact per number, id, value and unit, and the model may cite nothing else</text>
+<text x="74" y="874" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" fill="#F4F1EA">each citation compared exactly, every number in the prose matched to the table</text>
+<text x="74" y="908" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" fill="#F4F1EA">a mismatch gets one retry with the mismatch named, then a 502, never a 200</text>
+<text x="74" y="942" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#B8B0A4">GET /v1/insights/narrative, same query, the answer beside the metrics it cites</text>
+<text x="48" y="1004" font-family="SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="22" fill="#B8B0A4">drawn by tools/figures.ts, npm run figures:check fails when a figure drifts</text>
 </svg>
