@@ -62,6 +62,8 @@ That last part changed during the build. The first version returned 200 with the
 
 - A React page with the figures, the contributor table and the narrative beside its evidence chain. It shows the failure rather than the prose when the check fails, and discards a narrative that arrives after the metrics on screen have changed.
 - An eval suite in `evals/`, four cases frozen from real repositories, five checks each, so a run is out of twenty and a case the provider never answers fails all five.
+- Those same four cases are what I tuned the prompt against, so the score below says I have not broken anything. It says nothing about a repository it has never seen.
+- Two more repositories, scored on their own, is the first thing I would add.
 - Every figure on the landing page is generated from the repository's own numbers, and `npm run figures:check` fails CI when one drifts or the pages stop carrying the numbers as measured. `docs/REFEREE.md` holds a card for every number a reader sees.
 
 The deployed path, `qwen-plus` through the service's own adapter, scored a median of 90% over eight runs with provider timeouts counted at full weight. The shipped default, `claude-sonnet-5`, scored a median of 97.5% through the Claude Code command line, which compares the model rather than the path, since the SDK adapter with an API key has not been run. What still fails on the completed qwen runs is arithmetic the prompt forbids, totals added up from figures the fact table never held.
